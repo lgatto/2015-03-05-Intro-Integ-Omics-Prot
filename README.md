@@ -51,13 +51,12 @@ natural choice for data stemming from genomics, transcriptomics,
 epigenomics, etc that directly rely on mapping their data features
 along a genome reference.
 
-Mapping
+#### Mapping, database reduction, database expansion
 
 - [Pang et al. (2014)](http://www.ncbi.nlm.nih.gov/pubmed/24152167)
 - [Evans et al. (2012)](http://www.ncbi.nlm.nih.gov/pubmed/23142869)
 - [Sheynkman et al. (2014)](http://www.ncbi.nlm.nih.gov/pubmed/25149441)
-
-- [Wang and Zhang (2013)[http://www.ncbi.nlm.nih.gov/pubmed/24058055] [`customProDB`](http://bioconductor.org/packages/release/bioc/html/customProDB.html)
+- [Wang and Zhang (2013)](http://www.ncbi.nlm.nih.gov/pubmed/24058055) [`customProDB`](http://bioconductor.org/packages/release/bioc/html/customProDB.html)
 
 
 
