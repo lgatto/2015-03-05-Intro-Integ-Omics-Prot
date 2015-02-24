@@ -41,7 +41,8 @@ BUT
 
 
 ```r
-
+cvg <- read.csv("./data/Ensembl_76.csv", skip = 17, stringsAsFactors = FALSE)
+summary(cvg$"X..coverage")
 ```
 
 Impact on inference and missing values.

@@ -37,7 +37,15 @@ BUT
    proteins do not make explicitly reference to the genome they
    originate from.
 
-2. coverage: % vs X - inference and missing values.
+2. **coverage**: % vs X
+
+
+```r
+cvg <- read.csv("./data/Ensembl_76.csv", skip = 17, stringsAsFactors = FALSE)
+summary(cvg$"X..coverage")
+```
+
+Impact on inference and missing values.
 
 
 ### Mapping peptides to genomic coordinates: =Pbase=, but see also others.
