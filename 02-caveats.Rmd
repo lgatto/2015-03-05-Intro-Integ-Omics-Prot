@@ -15,7 +15,7 @@ from.
 
 ```{r ids, cache=TRUE}
 ## The UniProt human proteome (release 2015_02)
-library("Pbase")
+suppressPackageStartupMessages(supplibrary("Pbase"))
 up <- Proteins("data/HUMAN_2015_02.fasta.gz")
 
 ## Using the accession number to Ensembl Biomart query
@@ -23,7 +23,6 @@ up <- Proteins("data/HUMAN_2015_02.fasta.gz")
 library("biomaRt")
 ens <- useMart("ensembl", "hsapiens_gene_ensembl")
 ens
-
 upbm <- select(ens, keys = seqnames(up),
                keytype = "uniprot_swissprot_accession",
                columns = c(
