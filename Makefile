@@ -1,4 +1,4 @@
-README.md: README.Rmd
-	Rscript -e "knitr::knit('README.Rmd')"
+02-caveats.md: 02-caveats.Rmd
+	Rscript -e "knitr::knit('02-caveats.Rmd')"
 
-all: README.md
+all: 02-caveats.md
