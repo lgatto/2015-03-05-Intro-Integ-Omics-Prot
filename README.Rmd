@@ -39,8 +39,7 @@ BUT
 
 2. **coverage**: % vs X
 
-
-```r
+```{r cvg}
 cvg <- read.csv("./data/Ensembl_76.csv", skip = 17, stringsAsFactors = FALSE)
 summary(cvg$"X..coverage")
 ```
@@ -48,7 +47,7 @@ summary(cvg$"X..coverage")
 Impact on inference and missing values.
 
 
-### Mapping peptides to genomic coordinates: =Pbase=, but see also others.
+### Mapping peptides to genomic coordinates: `Pbase`, but see also others.
 
 Different approaches to integration exist: (i) model- or network-based
 approaches that identify common patterns in different data sources as

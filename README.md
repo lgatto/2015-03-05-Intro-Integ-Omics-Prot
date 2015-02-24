@@ -45,10 +45,15 @@ cvg <- read.csv("./data/Ensembl_76.csv", skip = 17, stringsAsFactors = FALSE)
 summary(cvg$"X..coverage")
 ```
 
+```
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   0.000   6.813  38.890  39.870  67.620 100.000
+```
+
 Impact on inference and missing values.
 
 
-### Mapping peptides to genomic coordinates: =Pbase=, but see also others.
+### Mapping peptides to genomic coordinates: `Pbase`, but see also others.
 
 Different approaches to integration exist: (i) model- or network-based
 approaches that identify common patterns in different data sources as
