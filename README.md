@@ -1,6 +1,5 @@
 # Introduction to Integrative Omics
 
-
 - http://www.ebi.ac.uk/training/course/introduction-integrative-omics
 - Tuesday, March 3, 2015 - Friday, March 6, 2015
 - European Bioinformatics Institute
@@ -8,7 +7,7 @@
 | When              | What                                              |
 |-------------------|---------------------------------------------------|
 | Wed 17:30 - 18:00 |  ~~Keynote Lecture II~~ Intoduction to proteomics |
-| Thu 09:00 - 10:30 | The nature of proteomics data – caveats for integration ~~(Tutorial with hands on)~~ |
+| Thu 09:00 - 10:30 | The nature of proteomics data – caveats for integration and use cases ~~(Tutorial with hands on)~~ |
 
 ## Introduction to proteomics
 
@@ -22,11 +21,11 @@
   post-translational modifications, protein-protein interactions,
   spatial proteomics.
 
-## Integrating proteomics data
+## Integrating proteomics data: caveats
 
 ### Similarities and differences with high-throughput sequencing data
 
-Mapping of
+**Mapping** of
 - peptides along protein sequences (although not explicitly considered
   a mapping task)
 - short reads along genome coordinates
@@ -40,18 +39,14 @@ BUT
 2. **coverage**: % vs X
 
 
-```r
-cvg <- read.csv("./data/Ensembl_76.csv", skip = 17, stringsAsFactors = FALSE)
-summary(cvg$"X..coverage")
-```
-
 ```
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##   0.000   6.813  38.890  39.870  67.620 100.000
 ```
 
-Impact on inference and missing values.
+This has an impact on **protein inference* and **missing values**.
 
+## Integrating proteomics data: use cases
 
 ### Mapping peptides to genomic coordinates: `Pbase`, but see also others.
 
