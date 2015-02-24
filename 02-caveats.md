@@ -16,14 +16,7 @@ from.
 
 ```r
 ## The UniProt human proteome (release 2015_02)
-suppressPackageStartupMessages(supplibrary("Pbase"))
-```
-
-```
-## Error in withCallingHandlers(expr, packageStartupMessage = function(c) invokeRestart("muffleMessage")): could not find function "supplibrary"
-```
-
-```r
+suppressPackageStartupMessages(library("Pbase"))
 up <- Proteins("data/HUMAN_2015_02.fasta.gz")
 
 ## Using the accession number to Ensembl Biomart query

@@ -15,7 +15,7 @@ from.
 
 ```{r ids, cache=TRUE}
 ## The UniProt human proteome (release 2015_02)
-suppressPackageStartupMessages(supplibrary("Pbase"))
+suppressPackageStartupMessages(library("Pbase"))
 up <- Proteins("data/HUMAN_2015_02.fasta.gz")
 
 ## Using the accession number to Ensembl Biomart query
