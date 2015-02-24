@@ -10,5 +10,5 @@
 | Thu 09:00 - 10:30 | The nature of proteomics data – caveats for integration and use cases ~~(Tutorial with hands on)~~ |
 
 - [Introduction](./01-proteomics.md)
-- Caveats
+- [Caveats](./02-caveats.md)
 - Use cases
