@@ -24,11 +24,20 @@
 
 ## Integrating proteomics data
 
-Similarities and, most importantly, differences with high-throughput
-sequencing data.
+### Similarities and differences with high-throughput sequencing data
 
-Examples and discussion of proteomics data integration (with `R` code).
+Mapping of
+- peptides along protein sequences (although not explicitly considered
+  a mapping task)
+- short reads along genome coordinates
 
+BUT
+
+1. the protein database and the genome are _independent_, i.e. the
+   proteins do not make explicitly reference to the genome they
+   originate from.
+
+2. coverage: % vs X - inference and missing values.
 
 
 ### Mapping peptides to genomic coordinates: =Pbase=, but see also others.
@@ -56,8 +65,11 @@ along a genome reference.
 - [Pang et al. (2014)](http://www.ncbi.nlm.nih.gov/pubmed/24152167)
 - [Evans et al. (2012)](http://www.ncbi.nlm.nih.gov/pubmed/23142869)
 - [Sheynkman et al. (2014)](http://www.ncbi.nlm.nih.gov/pubmed/25149441)
+- [Qeli and Ahrens (2010)](http://www.ncbi.nlm.nih.gov/pubmed/20622826)
+
 - [Wang and Zhang (2013)](http://www.ncbi.nlm.nih.gov/pubmed/24058055) [`customProDB`](http://bioconductor.org/packages/release/bioc/html/customProDB.html)
 
+- [Boekel et al (2014)](http://www.ncbi.nlm.nih.gov/pubmed/25658277)
 
 
 ### Combining quantitative spatial proteomics and (binary) annotation features
