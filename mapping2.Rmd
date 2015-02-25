@@ -81,9 +81,9 @@ grTr <- lapply(pcgrl, function(i)
 plotTracks(grTr)
 ```
 
-## Descriminating transcripts
+## Discriminating transcripts
 
-```{r protfromgenome, echo=FALSE}
+```{r protfromgenome, echo=FALSE, message=FALSE}
 library("BSgenome.Hsapiens.NCBI.GRCh38")
 if (!"chr1" %in% seqnames(BSgenome.Hsapiens.NCBI.GRCh38))
     seqnames(BSgenome.Hsapiens.NCBI.GRCh38)[1:23] <-
@@ -102,8 +102,9 @@ laln <- sapply(lseq, pairwiseAlignment, aa(p[k]))
 sapply(laln, nmatch)/width(aa(p[k]))
 ```
 
-```{r ki, echo=FALSE}
+```{r align, echo=FALSE}
 ki <- which.max(sapply(laln, nmatch))
+writePairwiseAlignments(laln[[ki]])
 ```
 
 We see that transcript number `r ki`, `r eid[ki]`, perfectly aligns

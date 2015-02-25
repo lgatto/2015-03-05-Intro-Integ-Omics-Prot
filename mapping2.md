@@ -138,13 +138,9 @@ plotTracks(grTr)
 
 ![plot of chunk givtr](figure/givtr-1.png) 
 
-## Descriminating transcripts
+## Discriminating transcripts
 
 
-```
-## Loading required package: BSgenome
-## Loading required package: Biostrings
-```
 
 We extract the transcript sequences, translate them into protein
 sequences and align each to our original protein sequence.
@@ -165,6 +161,89 @@ sapply(laln, nmatch)/width(aa(p[k]))
 ```
 
 
+```
+## ########################################
+## # Program: Biostrings (version 2.35.11), a Bioconductor package
+## # Rundate: Wed Feb 25 19:00:06 2015
+## ########################################
+## #=======================================
+## #
+## # Aligned_sequences: 2
+## # 1: P1
+## # 2: P02545
+## # Matrix: NA
+## # Gap_penalty: 14.0
+## # Extend_penalty: 4.0
+## #
+## # Length: 665
+## # Identity:     664/665 (99.8%)
+## # Similarity:    NA/665 (NA%)
+## # Gaps:           1/665 (0.2%)
+## # Score: 2843.652
+## #
+## #
+## #=======================================
+## 
+## P1                 1 METPSQRRATRSGAQASSTPLSPTRITRLQEKEDLQELNDRLAVYIDRVR     50
+##                      ||||||||||||||||||||||||||||||||||||||||||||||||||
+## P02545             1 METPSQRRATRSGAQASSTPLSPTRITRLQEKEDLQELNDRLAVYIDRVR     50
+## 
+## P1                51 SLETENAGLRLRITESEEVVSREVSGIKAAYEAELGDARKTLDSVAKERA    100
+##                      ||||||||||||||||||||||||||||||||||||||||||||||||||
+## P02545            51 SLETENAGLRLRITESEEVVSREVSGIKAAYEAELGDARKTLDSVAKERA    100
+## 
+## P1               101 RLQLELSKVREEFKELKARNTKKEGDLIAAQARLKDLEALLNSKEAALST    150
+##                      ||||||||||||||||||||||||||||||||||||||||||||||||||
+## P02545           101 RLQLELSKVREEFKELKARNTKKEGDLIAAQARLKDLEALLNSKEAALST    150
+## 
+## P1               151 ALSEKRTLEGELHDLRGQVAKLEAALGEAKKQLQDEMLRRVDAENRLQTM    200
+##                      ||||||||||||||||||||||||||||||||||||||||||||||||||
+## P02545           151 ALSEKRTLEGELHDLRGQVAKLEAALGEAKKQLQDEMLRRVDAENRLQTM    200
+## 
+## P1               201 KEELDFQKNIYSEELRETKRRHETRLVEIDNGKQREFESRLADALQELRA    250
+##                      ||||||||||||||||||||||||||||||||||||||||||||||||||
+## P02545           201 KEELDFQKNIYSEELRETKRRHETRLVEIDNGKQREFESRLADALQELRA    250
+## 
+## P1               251 QHEDQVEQYKKELEKTYSAKLDNARQSAERNSNLVGAAHEELQQSRIRID    300
+##                      ||||||||||||||||||||||||||||||||||||||||||||||||||
+## P02545           251 QHEDQVEQYKKELEKTYSAKLDNARQSAERNSNLVGAAHEELQQSRIRID    300
+## 
+## P1               301 SLSAQLSQLQKQLAAKEAKLRDLEDSLARERDTSRRLLAEKEREMAEMRA    350
+##                      ||||||||||||||||||||||||||||||||||||||||||||||||||
+## P02545           301 SLSAQLSQLQKQLAAKEAKLRDLEDSLARERDTSRRLLAEKEREMAEMRA    350
+## 
+## P1               351 RMQQQLDEYQELLDIKLALDMEIHAYRKLLEGEEERLRLSPSPTSQRSRG    400
+##                      ||||||||||||||||||||||||||||||||||||||||||||||||||
+## P02545           351 RMQQQLDEYQELLDIKLALDMEIHAYRKLLEGEEERLRLSPSPTSQRSRG    400
+## 
+## P1               401 RASSHSSQTQGGGSVTKKRKLESTESRSSFSQHARTSGRVAVEEVDEEGK    450
+##                      ||||||||||||||||||||||||||||||||||||||||||||||||||
+## P02545           401 RASSHSSQTQGGGSVTKKRKLESTESRSSFSQHARTSGRVAVEEVDEEGK    450
+## 
+## P1               451 FVRLRNKSNEDQSMGNWQIKRQNGDDPLLTYRFPPKFTLKAGQVVTIWAA    500
+##                      ||||||||||||||||||||||||||||||||||||||||||||||||||
+## P02545           451 FVRLRNKSNEDQSMGNWQIKRQNGDDPLLTYRFPPKFTLKAGQVVTIWAA    500
+## 
+## P1               501 GAGATHSPPTDLVWKAQNTWGCGNSLRTALINSTGEEVAMRKLVRSVTVV    550
+##                      ||||||||||||||||||||||||||||||||||||||||||||||||||
+## P02545           501 GAGATHSPPTDLVWKAQNTWGCGNSLRTALINSTGEEVAMRKLVRSVTVV    550
+## 
+## P1               551 EDDEDEDGDDLLHHHHGSHCSSSGDPAEYNLRSRTVLCGTCGQPADKASA    600
+##                      ||||||||||||||||||||||||||||||||||||||||||||||||||
+## P02545           551 EDDEDEDGDDLLHHHHGSHCSSSGDPAEYNLRSRTVLCGTCGQPADKASA    600
+## 
+## P1               601 SGSGAQVGGPISSGSSASSVTVTRSYRSVGGSGGGSFGDNLVTRSYLLGN    650
+##                      ||||||||||||||||||||||||||||||||||||||||||||||||||
+## P02545           601 SGSGAQVGGPISSGSSASSVTVTRSYRSVGGSGGGSFGDNLVTRSYLLGN    650
+## 
+## P1               651 SSPRTQSPQNCSIM*    665
+##                      |||||||||||||| 
+## P02545           651 SSPRTQSPQNCSIM-    664
+## 
+## 
+## #---------------------------------------
+## #---------------------------------------
+```
 
 We see that transcript number 2, ENST00000368300, perfectly aligns
 with our protein sequence. This is also the transcipt that corresponds
