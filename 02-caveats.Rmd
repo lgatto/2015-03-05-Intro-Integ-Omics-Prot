@@ -24,7 +24,10 @@ from.
 
 ![DB in proteomics](./figures/indep-prot-db.png)
 
+![DB in proteomics](./figures/gen-prot-db.png)
 
+If we want to map UniProt accession to genomic identifiers (Ensembl
+transcipt identifiers)
 
 ```{r ids, cache=TRUE}
 ## The UniProt human proteome (release 2015_02)
