@@ -11,4 +11,5 @@
 
 - [Introduction](./01-proteomics.md)
 - [Caveats](./02-caveats.md)
-- Use cases
+- Use case: [mapping](./03-mapping.md)
+- Use case: [transfer learning](./04-transfer-learning.md)
