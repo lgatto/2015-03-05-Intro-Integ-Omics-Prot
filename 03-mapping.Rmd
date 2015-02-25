@@ -71,7 +71,7 @@ plotTracks(list(ideoTrack, axisTrack, grTrack, pepTrack),
 
 Maintaining access to the raw MS data
 
-```{r gviz3, echo=FALSE}
+```{r gviz3, echo=FALSE, fig.width=12}
 data(pms)
 
 library("ggplot2")
