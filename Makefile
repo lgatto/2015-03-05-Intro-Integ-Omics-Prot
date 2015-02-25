@@ -1,4 +1,4 @@
 %.md: %.Rmd
 	Rscript -e "knitr::knit('$^')"
 
-all: 02-caveats.md 03-mapping.md 04-transfer-learning.md
+all: caveats.md mapping.md mapping2.Rmd transfer-learning.md
