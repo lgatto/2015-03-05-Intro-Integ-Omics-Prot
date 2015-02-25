@@ -119,4 +119,22 @@ This has an impact on **protein inference** and **missing values**.
 
 ## Missing values
 
+ There are two types of mechanisms resulting in missing values in
+ LC/MSMS experiments.
 
+- Missing values resulting from absence of detection of a feature,
+  despite ions being present at detectable concentrations.  For
+  example in the case of ion suppression or as a result from the
+  stochastic, data-dependent nature of the MS acquisition
+  method. These missing value are expected to be randomly distributed
+  in the data and are defined as **missing at random** (MAR) or
+  **missing completely at random** (MCAR).
+
+- Missing values resulting from the absence of the low abundance of
+  ions (below the limit of detection of the instrument). These missing
+  values are not expected to be randomly distributed in the data and
+  are defined as **missing not at random** (MNAR).
+
+MNAR features should ideally be imputed with a **left-censor**
+method. Conversely, it is recommended to use **hot desk** methods when
+data are missing at random.
