@@ -5,34 +5,23 @@ Illustration with [`Pbase`](http://bioconductor.org/packages/devel/bioc/html/Pba
 
 
 We have an example data composed of 9 proteins, with
-UniProt accession numbers and Ensembl transcipt identifers:
+UniProt accession numbers and Ensembl transcipt identifers and each
+protein has a set experimentally observed peptides:
 
 
-```r
-kable(cbind(Acc = seqnames(p), ENST = acols(p)$ENST))
-```
+|Acc      |ENST            |npep |
+|:--------|:---------------|:----|
+|A4UGR9   |ENST00000409195 |36   |
+|A6H8Y1   |ENST00000358731 |23   |
+|O43707   |ENST00000252699 |6    |
+|O75369   |ENST00000295956 |13   |
+|P00558   |ENST00000373316 |5    |
+|P02545   |ENST00000368300 |12   |
+|P04075   |ENST00000338110 |21   |
+|P04075-2 |ENST00000395248 |20   |
+|P60709   |ENST00000331789 |1    |
 
-
-
-|         |Acc      |ENST            |
-|:--------|:--------|:---------------|
-|A4UGR9   |A4UGR9   |ENST00000409195 |
-|A6H8Y1   |A6H8Y1   |ENST00000358731 |
-|O43707   |O43707   |ENST00000252699 |
-|O75369   |O75369   |ENST00000295956 |
-|P00558   |P00558   |ENST00000373316 |
-|P02545   |P02545   |ENST00000368300 |
-|P04075   |P04075   |ENST00000338110 |
-|P04075-2 |P04075-2 |ENST00000395248 |
-|P60709   |P60709   |ENST00000331789 |
-
-And each of these proteins have a set experimentally observed
-peptides:
-
-
-| A4UGR9| A6H8Y1| O43707| O75369| P00558| P02545| P04075| P04075-2| P60709|
-|------:|------:|------:|------:|------:|------:|------:|--------:|------:|
-|     36|     23|      6|     13|      5|     12|     21|       20|      1|
+For example, P00558:
 
 ![plot of chunk pplot1](figure/pplot1-1.png) 
 

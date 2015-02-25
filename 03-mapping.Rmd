@@ -9,18 +9,17 @@ data(p)
 ```
 
 We have an example data composed of `r length(p)` proteins, with
-UniProt accession numbers and Ensembl transcipt identifers:
+UniProt accession numbers and Ensembl transcipt identifers and each
+protein has a set experimentally observed peptides:
 
-```{r ids}
-kable(cbind(Acc = seqnames(p), ENST = acols(p)$ENST))
+```{r ids, echo=FALSE}
+kable(cbind(Acc = seqnames(p),
+            ENST = acols(p)$ENST,
+            npep = elementLengths(pranges(p))),
+      row.names = 0)
 ```
 
-And each of these proteins have a set experimentally observed
-peptides:
-
-```{r, echo=FALSE}
-kable(rbind(elementLengths(pranges(p))))
-```
+For example, `r seqnames(p)[5]`:
 
 ```{r pplot1, echo=FALSE}
 plot(p[5])
@@ -28,12 +27,12 @@ plot(p[5])
 
 ## Genomic coordinates of the transcripts/exons
 
-```{r etrid2grl, echo=TRUE}
+```{r etrid2grl, echo=TRUE, cache=TRUE}
 grl <- etrid2grl(acols(p)$ENST)
 pcgrl <- proteinCoding(grl)
 ```
 
-```{r gviz1, echo=FALSE}
+```{r gviz1, echo=FALSE, cache=TRUE}
 grTrack <- GeneRegionTrack(grl[[5]],
                            name = acols(p)$ENST[5])
 grTrack2 <- GeneRegionTrack(pcgrl[[5]],
