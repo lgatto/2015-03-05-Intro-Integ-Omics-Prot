@@ -133,14 +133,16 @@ values** for quantitation.
   in the data and are defined as **missing at random** (MAR) or
   **missing completely at random** (MCAR).
 
-- Missing values resulting from the absence of the low abundance of
-  ions (below the limit of detection of the instrument). These missing
-  values are not expected to be randomly distributed in the data and
-  are defined as **missing not at random** (MNAR).
+- Biologically relevant missing values, resulting from the absence of
+  the low abundance of ions (below the limit of detection of the
+  instrument). These missing values are not expected to be randomly
+  distributed in the data and are defined as **missing not at random**
+  (MNAR).
 
 MNAR features should ideally be imputed with a **left-censor**
-method. Conversely, it is recommended to use **hot desk** methods when
-data are missing at random.
+(minimum value, ~zero~, ...)  method. Conversely, it is recommended to
+use **hot deck** methods (nearest neighbour, maximum likelihood, ...)
+when data are missing at random.
 
 
 ```r
