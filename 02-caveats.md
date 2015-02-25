@@ -7,7 +7,13 @@
 
 But...
 
-## Protein and gene identifers
+## Protein inference
+
+![Basic peptide grouping](./figures/F5.large.jpg)
+
+From [Nesvizhskii and Aebersold (2005)](http://www.ncbi.nlm.nih.gov/pubmed/16009968)
+
+## Mapping protein and gene identifers
 
 The protein database and the genome are _independent_, i.e. the
 proteins do not make explicitly reference to the genome they originate
@@ -18,7 +24,14 @@ from.
 ## The UniProt human proteome (release 2015_02)
 suppressPackageStartupMessages(library("Pbase"))
 up <- Proteins("data/HUMAN_2015_02.fasta.gz")
+length(up)
+```
 
+```
+## [1] 89796
+```
+
+```r
 ## Using the accession number to Ensembl Biomart query
 ## for transcript identifiers
 library("biomaRt")
@@ -40,15 +53,14 @@ upbm <- select(ens, keys = seqnames(up),
                    "ensembl_transcript_id"))
 ```
 
+
 ```r
 ## How many UniProt accession with Ensembl transcripts were found?
 table(seqnames(up) %in% unique(upbm$uniprot_swissprot_accession))
 ```
 
 ```
-## 
-## FALSE  TRUE 
-## 70781 19015
+## Error in match(x, table, nomatch = 0L): could not find function "seqnames"
 ```
 
 
@@ -69,7 +81,7 @@ table(table(upbm$uniprot_swissprot_accession))
 
 ## Coverage
 
-**coverage**: % vs X
+**coverage** in proteomics in `%` and RNA-Seq `X`
 
 
 ```r
@@ -84,3 +96,7 @@ summary(cvg$coverage)
 ```
 
 This has an impact on **protein inference* and **missing values**.
+
+## Missing values
+
+

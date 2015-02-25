@@ -9,7 +9,7 @@ But...
 
 ## Protein inference
 
-![Basic peptide grouping](figures/F5.large.jpg)
+![Basic peptide grouping](./figures/F5.large.jpg)
 
 From [Nesvizhskii and Aebersold (2005)](http://www.ncbi.nlm.nih.gov/pubmed/16009968)
 
