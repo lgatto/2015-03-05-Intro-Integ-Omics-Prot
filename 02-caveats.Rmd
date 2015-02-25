@@ -84,10 +84,13 @@ barplot(tab)
 - Proteomics in `%`
 - RNA-Seq in fold `X`
 
-```{r cvg}
+The following values are higher bounds, without peptide filtering for
+gene groups.
+
+```{r cvg, echo=FALSE}
 cvg <- data.table::fread("./data/Ensembl_76.csv", skip = 17,
                          stringsAsFactors = FALSE)
-summary(cvg$coverage)
+kable(rbind(summary(cvg$coverage)))
 ```
 
 This has an impact on **protein inference** (see above) and **missing

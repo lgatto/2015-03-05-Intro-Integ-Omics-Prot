@@ -61,17 +61,13 @@ transcipt identifiers):
 - Proteomics in `%`
 - RNA-Seq in fold `X`
 
+The following values are higher bounds, without peptide filtering for
+gene groups.
 
-```r
-cvg <- data.table::fread("./data/Ensembl_76.csv", skip = 17,
-                         stringsAsFactors = FALSE)
-summary(cvg$coverage)
-```
 
-```
-##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   0.000   6.813  38.890  39.870  67.620 100.000
-```
+| Min.| 1st Qu.| Median|  Mean| 3rd Qu.| Max.|
+|----:|-------:|------:|-----:|-------:|----:|
+|    0|   6.813|  38.89| 39.87|   67.62|  100|
 
 This has an impact on **protein inference** (see above) and **missing
 values** for quantitation.
