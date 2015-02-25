@@ -1,5 +1,7 @@
 # Proteomics data: caveats
 
+
+
 **Mapping** of *peptides along protein sequences (although not
   explicitly considered a mapping task)* and *short reads along genome
   coordinates*.
@@ -32,7 +34,7 @@ transcipt identifiers)
 
 ```r
 ## The UniProt human proteome (release 2015_02)
-suppressPackageStartupMessages(library("Pbase"))
+library("Pbase")
 up <- Proteins("data/HUMAN_2015_02.fasta.gz")
 length(up)
 ```
@@ -70,7 +72,9 @@ table(seqnames(up) %in% unique(upbm$uniprot_swissprot_accession))
 ```
 
 ```
-## Error in match(x, table, nomatch = 0L): could not find function "seqnames"
+## 
+## FALSE  TRUE 
+## 70781 19015
 ```
 
 
