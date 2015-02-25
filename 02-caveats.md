@@ -51,20 +51,9 @@ transcipt identifiers):
 |-----:|-----:|
 | 70781| 19015|
 
-- Among these, most map to mulitple transcript identifiers.
+- Among these, about half map to mulitple transcript identifiers.
 
-
-```r
-## How many transcripts per accession do we find?
-tab <- rbind(table(table(upbm$uniprot_swissprot_accession)))
-kable(tab)
-```
-
-
-
-|    1|    2|    3|    4|   5|   6|   7|   8|  9| 10| 11| 12| 13| 14| 15| 16| 17| 18| 19| 20| 21| 22| 23| 24| 27| 29| 30| 31| 32| 33| 35| 42| 44| 50| 59| 90|
-|----:|----:|----:|----:|---:|---:|---:|---:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|
-| 8237| 5056| 2602| 1404| 713| 383| 219| 112| 78| 56| 35| 17| 16| 15| 12|  8|  7|  4|  6|  5|  5|  2|  2|  3|  1|  1|  1|  2|  3|  1|  3|  2|  1|  1|  1|  1|
+![plot of chunk ids2](figure/ids2-1.png) 
 **Caveat**: Mapping between single protein and unique transcripts?
 
 ## Coverage

@@ -70,12 +70,12 @@ tab <- rbind(table(seqnames(up) %in% unique(upbm$uniprot_swissprot_accession)))
 kable(tab)
 ```
 
-- Among these, most map to mulitple transcript identifiers.
+- Among these, about half map to mulitple transcript identifiers.
 
-```{r ids2}
+```{r ids2, echo=FALSE}
 ## How many transcripts per accession do we find?
 tab <- rbind(table(table(upbm$uniprot_swissprot_accession)))
-kable(tab)
+barplot(tab)
 ```
 **Caveat**: Mapping between single protein and unique transcripts?
 
