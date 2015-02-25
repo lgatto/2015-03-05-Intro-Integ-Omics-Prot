@@ -5,6 +5,7 @@ Illustration with [`Pbase`](http://bioconductor.org/packages/devel/bioc/html/Pba
 ```{r env, echo=FALSE}
 suppressPackageStartupMessages(library("Pbase"))
 library("knitr")
+opts_chunk$set(fig.width=12, fig.height=7)
 library("rtracklayer")
 data(p)
 ```
@@ -71,7 +72,7 @@ plotTracks(list(ideoTrack, axisTrack, grTrack, pepTrack),
 
 Maintaining access to the raw MS data
 
-```{r gviz3, echo=FALSE, fig.width=12}
+```{r gviz3, echo=FALSE}
 data(pms)
 
 library("ggplot2")
