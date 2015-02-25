@@ -135,9 +135,6 @@ abline(h = 8, col = "red")
 x <- impute(naset, method = "mixed",
             randna = fData(naset)$randna,
             mar = "knn", mnar = "min")
-## xv <- MSnbase:::imageNA2(naset, factor(rep(1:2, each = 8)))
-## plot(fData(naset)$randna[xv],
-##      ylab = "MNAR - MAR")
 ```
 
 

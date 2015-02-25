@@ -13,3 +13,14 @@
 - [Caveats](./02-caveats.md)
 - Use case: [mapping](./03-mapping.md)
 - Use case: [transfer learning](./04-transfer-learning.md)
+
+
+### References
+
+- [Pang et al. (2014)](http://www.ncbi.nlm.nih.gov/pubmed/24152167)
+- [Evans et al. (2012)](http://www.ncbi.nlm.nih.gov/pubmed/23142869)
+- [Sheynkman et al. (2014)](http://www.ncbi.nlm.nih.gov/pubmed/25149441)
+- [Qeli and Ahrens (2010)](http://www.ncbi.nlm.nih.gov/pubmed/20622826)
+- [Wang and Zhang (2013)](http://www.ncbi.nlm.nih.gov/pubmed/24058055) [`customProDB`](http://bioconductor.org/packages/release/bioc/html/customProDB.html)
+- [Boekel et al (2014)](http://www.ncbi.nlm.nih.gov/pubmed/25658277)
+
