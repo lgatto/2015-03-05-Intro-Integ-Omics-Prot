@@ -3,6 +3,7 @@
 ```{r env, echo=FALSE}
 suppressPackageStartupMessages(library("Pbase"))
 suppressPackageStartupMessages(library("MSnbase"))
+library("knitr")
 ```
 
 **Mapping** of *peptides along protein sequences (although not
@@ -38,19 +39,18 @@ from.
 ![linking with genomics](./figure/gen-prot-db.png)
 
 If we want to map UniProt accession to genomic identifiers (Ensembl
-transcipt identifiers)
+transcipt identifiers):
 
-```{r ids, cache=TRUE}
+
+```{r ids, cache=TRUE, echo=FALSE}
 ## The UniProt human proteome (release 2015_02)
 library("Pbase")
 up <- Proteins("data/HUMAN_2015_02.fasta.gz")
-length(up)
 
 ## Using the accession number to Ensembl Biomart query
 ## for transcript identifiers
 library("biomaRt")
 ens <- useMart("ensembl", "hsapiens_gene_ensembl")
-ens
 upbm <- select(ens, keys = seqnames(up),
                keytype = "uniprot_swissprot_accession",
                columns = c(
@@ -58,14 +58,22 @@ upbm <- select(ens, keys = seqnames(up),
                    "ensembl_transcript_id"))
 ```
 
+- The UniProt human proteome (release 2015_02) has `r length(up)` entries.
+
+- If we query the Ensembl Biomart server for their transcript
+  identifiers, we obtain results for `r unique(upbm$uniprot_swissprot_accession)`.
+
+
 ```{r ids1}
 ## How many UniProt accession with Ensembl transcripts were found?
-table(seqnames(up) %in% unique(upbm$uniprot_swissprot_accession))
+kable(table(seqnames(up) %in% unique(upbm$uniprot_swissprot_accession)))
 ```
+
+- Among these, most map to mulitple transcript identifiers.
 
 ```{r ids2}
 ## How many transcripts per accession do we find?
-table(table(upbm$uniprot_swissprot_accession))
+kable(table(table(upbm$uniprot_swissprot_accession)))
 ```
 **Caveat**: Mapping between single protein and unique transcripts?
 
