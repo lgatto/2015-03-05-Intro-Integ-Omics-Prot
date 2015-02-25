@@ -2,6 +2,7 @@
 
 ```{r env, echo=FALSE}
 suppressPackageStartupMessages(library("Pbase"))
+suppressPackageStartupMessages(library("MSnbase"))
 ```
 
 **Mapping** of *peptides along protein sequences (although not
@@ -12,10 +13,10 @@ But...
 
 ## Protein inference
 
-<!-- ![Basic peptide grouping](./figures/F5.large.jpg) -->
+<!-- ![Basic peptide grouping](./figure/F5.large.jpg) -->
 
 
-![Peptide evidence classes](./figures/nbt0710-647-F2.gif)
+![Peptide evidence classes](./figure/nbt0710-647-F2.gif)
 
 From [Qeli and Ahrens (2010)](http://www.ncbi.nlm.nih.gov/pubmed/20622826).
 See also [Nesvizhskii and Aebersold (2005)](http://www.ncbi.nlm.nih.gov/pubmed/16009968).
@@ -32,9 +33,9 @@ The protein database and the genome are _independent_, i.e. the
 proteins do not make explicitly reference to the genome they originate
 from.
 
-![DB in proteomics](./figures/indep-prot-db.png)
+![DB in proteomics](./figure/indep-prot-db.png)
 
-![linking with genomics](./figures/gen-prot-db.png)
+![linking with genomics](./figure/gen-prot-db.png)
 
 If we want to map UniProt accession to genomic identifiers (Ensembl
 transcipt identifiers)

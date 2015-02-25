@@ -10,10 +10,10 @@ But...
 
 ## Protein inference
 
-<!-- ![Basic peptide grouping](./figures/F5.large.jpg) -->
+<!-- ![Basic peptide grouping](./figure/F5.large.jpg) -->
 
 
-![Peptide evidence classes](./figures/nbt0710-647-F2.gif)
+![Peptide evidence classes](./figure/nbt0710-647-F2.gif)
 
 From [Qeli and Ahrens (2010)](http://www.ncbi.nlm.nih.gov/pubmed/20622826).
 See also [Nesvizhskii and Aebersold (2005)](http://www.ncbi.nlm.nih.gov/pubmed/16009968).
@@ -30,9 +30,9 @@ The protein database and the genome are _independent_, i.e. the
 proteins do not make explicitly reference to the genome they originate
 from.
 
-![DB in proteomics](./figures/indep-prot-db.png)
+![DB in proteomics](./figure/indep-prot-db.png)
 
-![linking with genomics](./figures/gen-prot-db.png)
+![linking with genomics](./figure/gen-prot-db.png)
 
 If we want to map UniProt accession to genomic identifiers (Ensembl
 transcipt identifiers)
@@ -145,47 +145,6 @@ data are missing at random.
 
 ```r
 library("MSnbase")
-```
-
-```
-## Loading required package: Biobase
-## Welcome to Bioconductor
-## 
-##     Vignettes contain introductory material; view with
-##     'browseVignettes()'. To cite Bioconductor, see
-##     'citation("Biobase")', and for packages 'citation("pkgname")'.
-## 
-## Loading required package: mzR
-## 
-## Attaching package: 'mzR'
-## 
-## The following object is masked from 'package:Gviz':
-## 
-##     score
-## 
-## The following object is masked from 'package:GenomicRanges':
-## 
-##     score
-## 
-## The following object is masked from 'package:IRanges':
-## 
-##     score
-## 
-## Loading required package: BiocParallel
-## 
-## This is MSnbase version 1.15.6 
-##   Read '?MSnbase' and references therein for information
-##   about the package and how getting started.
-## 
-## 
-## Attaching package: 'MSnbase'
-## 
-## The following object is masked from 'package:stats':
-## 
-##     smooth
-```
-
-```r
 data(naset)
 
 table(is.na(naset))
