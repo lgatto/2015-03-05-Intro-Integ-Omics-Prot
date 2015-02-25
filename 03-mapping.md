@@ -2,22 +2,21 @@
 
 
 
-## Goal
-
-
-```r
-Pbase:::mapplot()
-```
+The **goal** is to map peptides from protein coordinates (1 to *L_p*)
+to genomic coordinates.
 
 ![plot of chunk mapplot](figure/mapplot-1.png) 
 
-Illustration with [`Pbase`](http://bioconductor.org/packages/devel/bioc/html/Pbase.html).
+Illustration with the
+[`Pbase`](http://bioconductor.org/packages/devel/bioc/html/Pbase.html)
+Bioconductor package (devel version).
 
 ## Data
 
-We have an example data composed of 9 proteins, with
-UniProt accession numbers and Ensembl transcipt identifers and each
-protein has a set experimentally observed peptides:
+We have an example data, named `p`, composed of 9
+proteins, with UniProt accession numbers and Ensembl transcipt
+identifers and each protein has a set experimentally observed
+peptides:
 
 
 |Acc      |ENST            |npep |
@@ -63,5 +62,5 @@ Maintaining access to the raw MS data
 
 See also
 [Pang et al. (2014)](http://www.ncbi.nlm.nih.gov/pubmed/24152167),
-Tools to covisualize and coanalyze proteomic data with genomes and
-transcriptomes: validation of genes and alternative mRNA splicing.
+*Tools to covisualize and coanalyze proteomic data with genomes and
+transcriptomes: validation of genes and alternative mRNA splicing.*
