@@ -3,26 +3,26 @@
 
 
 **Mapping** of *peptides along protein sequences (although not
-  explicitly considered a mapping task)* and *short reads along genome
-  coordinates*.
+  explicitly considered a mapping exercise)* and *short reads along
+  genome coordinates*.
 
 But...
 
 ## Protein inference
 
-![Basic peptide grouping](./figures/F5.large.jpg)
-
-From
-[Nesvizhskii and Aebersold (2005)](http://www.ncbi.nlm.nih.gov/pubmed/16009968).
+<!-- ![Basic peptide grouping](./figures/F5.large.jpg) -->
 
 
 ![Peptide evidence classes](./figures/nbt0710-647-F2.gif)
 
-From [Qeli and Ahrens (2010)](http://www.ncbi.nlm.nih.gov/pubmed/20622826)
+From [Qeli and Ahrens (2010)](http://www.ncbi.nlm.nih.gov/pubmed/20622826).
+See also [Nesvizhskii and Aebersold (2005)](http://www.ncbi.nlm.nih.gov/pubmed/16009968).
 
 Often, in proteomics experiments, the features represent single
-proteins and **groups of indistinguishable proteins** identified by
-shared (non-unique) peptides.
+proteins and **groups** of indistinguishable or non-differentiable
+proteins identified by shared (non-unique) peptides.
+
+**Caveat**: Mapping between protein groups and unique transcripts?
 
 ## Mapping protein and gene identifers
 
@@ -98,10 +98,12 @@ table(table(upbm$uniprot_swissprot_accession))
 ##   35   42   44   50   59   90 
 ##    3    2    1    1    1    1
 ```
+**Caveat**: Mapping between single protein and unique transcripts?
 
 ## Coverage
 
-**coverage** in proteomics in `%` and RNA-Seq `X`
+- Proteomics in `%`
+- RNA-Seq in fold `X`
 
 
 ```r
@@ -115,7 +117,8 @@ summary(cvg$coverage)
 ##   0.000   6.813  38.890  39.870  67.620 100.000
 ```
 
-This has an impact on **protein inference** and **missing values**.
+This has an impact on **protein inference** (see above) and **missing
+values** for quantitation.
 
 ## Missing values
 
@@ -138,3 +141,90 @@ This has an impact on **protein inference** and **missing values**.
 MNAR features should ideally be imputed with a **left-censor**
 method. Conversely, it is recommended to use **hot desk** methods when
 data are missing at random.
+
+
+```r
+library("MSnbase")
+```
+
+```
+## Loading required package: Biobase
+## Welcome to Bioconductor
+## 
+##     Vignettes contain introductory material; view with
+##     'browseVignettes()'. To cite Bioconductor, see
+##     'citation("Biobase")', and for packages 'citation("pkgname")'.
+## 
+## Loading required package: mzR
+## 
+## Attaching package: 'mzR'
+## 
+## The following object is masked from 'package:Gviz':
+## 
+##     score
+## 
+## The following object is masked from 'package:GenomicRanges':
+## 
+##     score
+## 
+## The following object is masked from 'package:IRanges':
+## 
+##     score
+## 
+## Loading required package: BiocParallel
+## 
+## This is MSnbase version 1.15.6 
+##   Read '?MSnbase' and references therein for information
+##   about the package and how getting started.
+## 
+## 
+## Attaching package: 'MSnbase'
+## 
+## The following object is masked from 'package:stats':
+## 
+##     smooth
+```
+
+```r
+data(naset)
+
+table(is.na(naset))
+```
+
+```
+## 
+## FALSE  TRUE 
+## 10254   770
+```
+
+```r
+table(fData(naset)$nNA)
+```
+
+```
+## 
+##   0   1   2   3   4   8   9  10 
+## 301 247  91  13   2  23  10   2
+```
+
+```r
+fData(naset)$rwmn <- rowMeans(exprs(naset), na.rm = TRUE)
+
+boxplot(fData(naset)$nNA ~ fData(naset)$randna,
+        names = c("MNAR", "MAR"),
+        ylab = "Number of missing values")
+abline(h = 8, col = "red")
+```
+
+![plot of chunk impute](figure/impute-1.png) 
+
+```r
+x <- impute(naset, method = "mixed",
+            randna = fData(naset)$randna,
+            mar = "knn", mnar = "min")
+## xv <- MSnbase:::imageNA2(naset, factor(rep(1:2, each = 8)))
+## plot(fData(naset)$randna[xv],
+##      ylab = "MNAR - MAR")
+```
+
+
