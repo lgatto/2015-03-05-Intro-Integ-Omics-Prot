@@ -13,10 +13,16 @@ But...
 ![Basic peptide grouping](./figures/F5.large.jpg)
 
 From
-[Nesvizhskii and Aebersold (2005)](http://www.ncbi.nlm.nih.gov/pubmed/16009968). Often,
-in proteomics experiments, the features represent single proteins and
-groups of indistinguishable proteins identified by shared (non-unique)
-peptides.
+[Nesvizhskii and Aebersold (2005)](http://www.ncbi.nlm.nih.gov/pubmed/16009968).
+
+
+![Peptide evidence classes](./figures/nbt0710-647-F2.gif)
+
+From [Qeli and Ahrens (2010)](http://www.ncbi.nlm.nih.gov/pubmed/20622826)
+
+Often, in proteomics experiments, the features represent single
+proteins and **groups of indistinguishable proteins** identified by
+shared (non-unique) peptides.
 
 ## Mapping protein and gene identifers
 
@@ -26,7 +32,7 @@ from.
 
 ![DB in proteomics](./figures/indep-prot-db.png)
 
-![DB in proteomics](./figures/gen-prot-db.png)
+![linking with genomics](./figures/gen-prot-db.png)
 
 If we want to map UniProt accession to genomic identifiers (Ensembl
 transcipt identifiers)
@@ -109,7 +115,7 @@ summary(cvg$coverage)
 ##   0.000   6.813  38.890  39.870  67.620 100.000
 ```
 
-This has an impact on **protein inference* and **missing values**.
+This has an impact on **protein inference** and **missing values**.
 
 ## Missing values
 
