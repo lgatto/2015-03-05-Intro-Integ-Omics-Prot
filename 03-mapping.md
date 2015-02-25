@@ -34,3 +34,18 @@ pcgrl <- proteinCoding(grl)
 ```
 
 ![plot of chunk gviz1](figure/gviz1-1.png) 
+
+## Mapping peptides to the genome
+
+
+```r
+res <- pmapToGenome(p, pcgrl)
+```
+
+![plot of chunk gviz2](figure/gviz2-1.png) 
+
+## Detailed annotation tracks
+
+Maintaining access to the raw MS data
+
+![plot of chunk gviz3](figure/gviz3-1.png) 

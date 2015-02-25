@@ -5,6 +5,7 @@ Illustration with [`Pbase`](http://bioconductor.org/packages/devel/bioc/html/Pba
 ```{r env, echo=FALSE}
 suppressPackageStartupMessages(library("Pbase"))
 library("knitr")
+library("rtracklayer")
 data(p)
 ```
 
@@ -42,5 +43,54 @@ ideoTrack <- IdeogramTrack(genome = "hg38",
 axisTrack <- GenomeAxisTrack()
 plotTracks(list(ideoTrack, axisTrack, grTrack, grTrack2),
            add53 = TRUE, add35 = TRUE)
+```
 
+## Mapping peptides to the genome
+
+```{r pmap}
+res <- pmapToGenome(p, pcgrl)
+```
+
+```{r gviz2, echo=FALSE}
+.res <- res[[5]]
+pepTrack <- AnnotationTrack(start = start(.res),
+                            end = end(.res),
+                            chr = chrom(.res),
+                            strand = strand(.res),
+                            id = mcols(.res)$pepseq,
+                            name = paste0(seqnames(p[5]),
+                                " peptides"))
+plotTracks(list(ideoTrack, axisTrack, grTrack, pepTrack),
+           groupAnnotation = "id",
+           just.group = "below",
+           fontsize.group = 9,
+           add53 = TRUE, add35 = TRUE)
+```
+
+## Detailed annotation tracks
+
+Maintaining access to the raw MS data
+
+```{r gviz3, echo=FALSE}
+data(pms)
+
+library("ggplot2")
+details <- function(identifier, ...) {
+    p <- plot(pms[[as.numeric(identifier)]], full=TRUE, plot=FALSE) + ggtitle("") 
+    p <- p + theme_bw() + theme(axis.text.y = element_blank(),
+                                axis.text.x = element_blank()) + 
+                                labs(x = NULL, y = NULL)
+    print(p, newpage=FALSE)
+}
+
+deTrack <- AnnotationTrack(start = start(.res),
+                           end = end(.res),
+                           genome = "hg38", chromosom = "chrX",
+                           id = pcols(p)[[5]]$acquisitionNum,
+                           name = "MS2 spectra",
+                           stacking = "squish", fun = details)
+
+
+plotTracks(list(ideoTrack, axisTrack, deTrack, grTrack),
+           add53 = TRUE, add35 = TRUE)
 ```
