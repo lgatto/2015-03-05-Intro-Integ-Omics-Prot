@@ -1,7 +1,5 @@
 # Mapping peptides to genomic coordinates
 
-Illustration with [`Pbase`](http://bioconductor.org/packages/devel/bioc/html/Pbase.html).
-
 ```{r env, echo=FALSE}
 suppressPackageStartupMessages(library("Pbase"))
 library("knitr")
@@ -9,6 +7,16 @@ opts_chunk$set(fig.width=12, fig.height=7)
 library("rtracklayer")
 data(p)
 ```
+
+## Goal
+
+```{r mapplot}
+Pbase:::mapplot()
+```
+
+Illustration with [`Pbase`](http://bioconductor.org/packages/devel/bioc/html/Pbase.html).
+
+## Data
 
 We have an example data composed of `r length(p)` proteins, with
 UniProt accession numbers and Ensembl transcipt identifers and each
@@ -95,3 +103,8 @@ deTrack <- AnnotationTrack(start = start(.res),
 plotTracks(list(ideoTrack, axisTrack, deTrack, grTrack),
            add53 = TRUE, add35 = TRUE)
 ```
+
+See also
+[Pang et al. (2014)](http://www.ncbi.nlm.nih.gov/pubmed/24152167),
+Tools to covisualize and coanalyze proteomic data with genomes and
+transcriptomes: validation of genes and alternative mRNA splicing.

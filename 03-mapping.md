@@ -1,8 +1,19 @@
 # Mapping peptides to genomic coordinates
 
+
+
+## Goal
+
+
+```r
+Pbase:::mapplot()
+```
+
+![plot of chunk mapplot](figure/mapplot-1.png) 
+
 Illustration with [`Pbase`](http://bioconductor.org/packages/devel/bioc/html/Pbase.html).
 
-
+## Data
 
 We have an example data composed of 9 proteins, with
 UniProt accession numbers and Ensembl transcipt identifers and each
@@ -49,3 +60,8 @@ res <- pmapToGenome(p, pcgrl)
 Maintaining access to the raw MS data
 
 ![plot of chunk gviz3](figure/gviz3-1.png) 
+
+See also
+[Pang et al. (2014)](http://www.ncbi.nlm.nih.gov/pubmed/24152167),
+Tools to covisualize and coanalyze proteomic data with genomes and
+transcriptomes: validation of genes and alternative mRNA splicing.
