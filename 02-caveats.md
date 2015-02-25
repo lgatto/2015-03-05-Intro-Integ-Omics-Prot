@@ -1,5 +1,4 @@
-# Integrating proteomics data: caveats
-
+# Proteomics data: caveats
 
 **Mapping** of *peptides along protein sequences (although not
   explicitly considered a mapping task)* and *short reads along genome
@@ -11,13 +10,21 @@ But...
 
 ![Basic peptide grouping](./figures/F5.large.jpg)
 
-From [Nesvizhskii and Aebersold (2005)](http://www.ncbi.nlm.nih.gov/pubmed/16009968)
+From
+[Nesvizhskii and Aebersold (2005)](http://www.ncbi.nlm.nih.gov/pubmed/16009968). Often,
+in proteomics experiments, the features represent single proteins and
+groups of indistinguishable proteins identified by shared (non-unique)
+peptides.
 
 ## Mapping protein and gene identifers
 
 The protein database and the genome are _independent_, i.e. the
 proteins do not make explicitly reference to the genome they originate
 from.
+
+![DB in proteomics](./figures/indep-prot-db.png)
+
+
 
 
 ```r
