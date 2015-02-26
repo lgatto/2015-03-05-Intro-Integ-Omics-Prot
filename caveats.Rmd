@@ -143,7 +143,7 @@ any(is.na(filterNA(naset)))
 
 
 ![RSR KNN and MinDet imputation](./figure/imp-sim.png)
-
+(`KNN` and `MinDet` - with Cosmin Lazar and Thomas Burger)
 
 MNAR features should ideally be imputed with a **left-censor**
 (minimum value, ~zero~, ...)  method. Conversely, it is recommended to
