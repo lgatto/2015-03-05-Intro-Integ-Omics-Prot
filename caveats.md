@@ -20,7 +20,7 @@ gene groups.
 
 | Min.| 1st Qu.| Median|  Mean| 3rd Qu.| Max.|
 |----:|-------:|------:|-----:|-------:|----:|
-|    0|   6.813|  38.89| 39.87|   67.62|  100|
+|    0|   10.61|  42.41| 42.13|   69.51|  100|
 
 This has an impact on **protein inference** (see above) and **missing
 values** for quantitation.
@@ -122,9 +122,9 @@ processingData(flt)
 
 ```
 ## - - - Processing information - - -
-## Subset [689,16][301,16] Thu Feb 26 11:14:27 2015 
-## Removed features with more than 0 NAs: Thu Feb 26 11:14:28 2015 
-## Dropped featureData's levels Thu Feb 26 11:14:28 2015 
+## Subset [689,16][301,16] Thu Feb 26 11:17:35 2015 
+## Removed features with more than 0 NAs: Thu Feb 26 11:17:35 2015 
+## Dropped featureData's levels Thu Feb 26 11:17:35 2015 
 ##  MSnbase version: 1.15.6
 ```
 

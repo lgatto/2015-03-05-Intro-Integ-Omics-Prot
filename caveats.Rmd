@@ -24,7 +24,8 @@ gene groups.
 cvg <- data.table::fread("./data/Ensembl_76.csv", skip = 17,
                          stringsAsFactors = FALSE)
 sel <- cvg$length > 100 & cvg$length < 10000
-hist(cvg$coverage[sel], breaks = 100, xlab = "coverage", main = "")
+cvg <- cvg[sel, ]
+hist(cvg$coverage, breaks = 100, xlab = "coverage", main = "")
 kable(rbind(summary(cvg$coverage)))
 ```
 
