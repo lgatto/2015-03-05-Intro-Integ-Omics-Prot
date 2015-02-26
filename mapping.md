@@ -52,43 +52,13 @@ pcgrl <- proteinCoding(grl)
 res <- pmapToGenome(p, pcgrl)
 ```
 
-```
-## Warning: Mapping failed. Returning an empty range.
-```
-
-```
-## Warning: Mapping failed. Returning an empty range.
-```
-
-```
-## Warning: Mapping failed. Returning an empty range.
-```
-
-```
-## Warning: Mapping failed. Returning an empty range.
-```
-
-
-```
-## Warning in plotTracks(list(ideoTrack, axisTrack, grTrack, pepTrack),
-## groupAnnotation = "id", : The track chromosomes in 'trackList' differ.
-## Setting all tracks to chromosome 'chrX'
-```
-
 ![plot of chunk gviz2](figure/gviz2-1.png) 
 
 ## Detailed annotation tracks
 
 Maintaining access to the raw MS data
 
-
-```
-## Error in .fillWithDefaults(data.frame(start = as.integer(start), end = as.integer(end)), : Number of elements in argument 'id' is invalid
-```
-
-```
-## Error in plotTracks(list(ideoTrack, axisTrack, deTrack, grTrack), add53 = TRUE, : object 'deTrack' not found
-```
+![plot of chunk gviz3](figure/gviz3-1.png) 
 
 See also
 [Pang et al. (2014)](http://www.ncbi.nlm.nih.gov/pubmed/24152167),
