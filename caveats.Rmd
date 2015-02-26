@@ -12,6 +12,23 @@ library("knitr")
 
 But...
 
+## Coverage
+
+- Proteomics in `%`
+- RNA-Seq in fold `X`
+
+The following values are higher bounds, without peptide filtering for
+gene groups.
+
+```{r cvg, echo=FALSE}
+cvg <- data.table::fread("./data/Ensembl_76.csv", skip = 17,
+                         stringsAsFactors = FALSE)
+kable(rbind(summary(cvg$coverage)))
+```
+
+This has an impact on **protein inference** (see above) and **missing
+values** for quantitation.
+
 ## Protein inference
 
 <!-- ![Basic peptide grouping](./figure/F5.large.jpg) -->
@@ -79,27 +96,32 @@ barplot(tab)
 ```
 **Caveat**: Mapping between single protein and unique transcripts?
 
-## Coverage
-
-- Proteomics in `%`
-- RNA-Seq in fold `X`
-
-The following values are higher bounds, without peptide filtering for
-gene groups.
-
-```{r cvg, echo=FALSE}
-cvg <- data.table::fread("./data/Ensembl_76.csv", skip = 17,
-                         stringsAsFactors = FALSE)
-kable(rbind(summary(cvg$coverage)))
-```
-
-This has an impact on **protein inference** (see above) and **missing
-values** for quantitation.
-
 ## Missing values
 
- There are two types of mechanisms resulting in missing values in
- LC/MSMS experiments.
+There are two types of mechanisms resulting in missing values in
+LC/MSMS experiments.
+
+```{r}
+library("MSnbase")
+data(naset)
+dim(naset)
+
+table(is.na(naset))
+table(fData(naset)$nNA)
+```
+
+Options are:
+
+1. Remove missing values, or at least features or samples with
+   excessive number of missing values:
+
+```{r}
+flt <- filterNA(naset)
+processingData(flt)
+any(is.na(filterNA(naset)))
+```
+
+2. Data imputation
 
 - Missing values resulting from absence of detection of a feature,
   despite ions being present at detectable concentrations.  For
@@ -109,8 +131,8 @@ values** for quantitation.
   in the data and are defined as **missing at random** (MAR) or
   **missing completely at random** (MCAR).
 
-- Biologically relevant missing values, resulting from the absence of
-  the low abundance of ions (below the limit of detection of the
+- Biologically relevant missing values, resulting from the *absence*
+  of the low abundance of ions (below the limit of detection of the
   instrument). These missing values are not expected to be randomly
   distributed in the data and are defined as **missing not at random**
   (MNAR).
@@ -120,15 +142,20 @@ MNAR features should ideally be imputed with a **left-censor**
 use **hot deck** methods (nearest neighbour, maximum likelihood, ...)
 when data are missing at random.
 
+```{r xv, echo=FALSE}
+x <- impute(naset, "zero")
+exprs(x)[exprs(x) != 0] <- 1
+
+library("gplots")
+heatmap.2(mx, col = c("lightgray", "black"),
+          scale = "none", dendrogram = "none",
+          trace = "none", keysize = 0.1, key = FALSE,
+          RowSideColors = ifelse(fData(x)$randna, "orange", "brown"),
+          ColSideColors = rep(c("steelblue", "darkolivegreen"), each = 8))
+```
+
+
 ```{r impute}
-library("MSnbase")
-data(naset)
-
-table(is.na(naset))
-table(fData(naset)$nNA)
-
-fData(naset)$rwmn <- rowMeans(exprs(naset), na.rm = TRUE)
-
 boxplot(fData(naset)$nNA ~ fData(naset)$randna,
         names = c("MNAR", "MAR"),
         ylab = "Number of missing values")
@@ -138,5 +165,4 @@ x <- impute(naset, method = "mixed",
             randna = fData(naset)$randna,
             mar = "knn", mnar = "min")
 ```
-
 

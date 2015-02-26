@@ -8,6 +8,22 @@
 
 But...
 
+## Coverage
+
+- Proteomics in `%`
+- RNA-Seq in fold `X`
+
+The following values are higher bounds, without peptide filtering for
+gene groups.
+
+
+| Min.| 1st Qu.| Median|  Mean| 3rd Qu.| Max.|
+|----:|-------:|------:|-----:|-------:|----:|
+|    0|   6.813|  38.89| 39.87|   67.62|  100|
+
+This has an impact on **protein inference** (see above) and **missing
+values** for quantitation.
+
 ## Protein inference
 
 <!-- ![Basic peptide grouping](./figure/F5.large.jpg) -->
@@ -56,51 +72,23 @@ transcipt identifiers):
 ![plot of chunk ids2](figure/ids2-1.png) 
 **Caveat**: Mapping between single protein and unique transcripts?
 
-## Coverage
-
-- Proteomics in `%`
-- RNA-Seq in fold `X`
-
-The following values are higher bounds, without peptide filtering for
-gene groups.
-
-
-| Min.| 1st Qu.| Median|  Mean| 3rd Qu.| Max.|
-|----:|-------:|------:|-----:|-------:|----:|
-|    0|   6.813|  38.89| 39.87|   67.62|  100|
-
-This has an impact on **protein inference** (see above) and **missing
-values** for quantitation.
-
 ## Missing values
 
- There are two types of mechanisms resulting in missing values in
- LC/MSMS experiments.
-
-- Missing values resulting from absence of detection of a feature,
-  despite ions being present at detectable concentrations.  For
-  example in the case of ion suppression or as a result from the
-  stochastic, data-dependent nature of the MS acquisition
-  method. These missing value are expected to be randomly distributed
-  in the data and are defined as **missing at random** (MAR) or
-  **missing completely at random** (MCAR).
-
-- Biologically relevant missing values, resulting from the absence of
-  the low abundance of ions (below the limit of detection of the
-  instrument). These missing values are not expected to be randomly
-  distributed in the data and are defined as **missing not at random**
-  (MNAR).
-
-MNAR features should ideally be imputed with a **left-censor**
-(minimum value, ~zero~, ...)  method. Conversely, it is recommended to
-use **hot deck** methods (nearest neighbour, maximum likelihood, ...)
-when data are missing at random.
+There are two types of mechanisms resulting in missing values in
+LC/MSMS experiments.
 
 
 ```r
 library("MSnbase")
 data(naset)
+dim(naset)
+```
 
+```
+## [1] 689  16
+```
+
+```r
 table(is.na(naset))
 ```
 
@@ -120,9 +108,75 @@ table(fData(naset)$nNA)
 ## 301 247  91  13   2  23  10   2
 ```
 
-```r
-fData(naset)$rwmn <- rowMeans(exprs(naset), na.rm = TRUE)
+Options are:
 
+1. Remove missing values, or at least features or samples with
+   excessive number of missing values:
+
+
+```r
+flt <- filterNA(naset)
+processingData(flt)
+```
+
+```
+## - - - Processing information - - -
+## Subset [689,16][301,16] Thu Feb 26 10:58:13 2015 
+## Removed features with more than 0 NAs: Thu Feb 26 10:58:13 2015 
+## Dropped featureData's levels Thu Feb 26 10:58:13 2015 
+##  MSnbase version: 1.15.6
+```
+
+```r
+any(is.na(filterNA(naset)))
+```
+
+```
+## [1] FALSE
+```
+
+2. Data imputation
+
+- Missing values resulting from absence of detection of a feature,
+  despite ions being present at detectable concentrations.  For
+  example in the case of ion suppression or as a result from the
+  stochastic, data-dependent nature of the MS acquisition
+  method. These missing value are expected to be randomly distributed
+  in the data and are defined as **missing at random** (MAR) or
+  **missing completely at random** (MCAR).
+
+- Biologically relevant missing values, resulting from the *absence*
+  of the low abundance of ions (below the limit of detection of the
+  instrument). These missing values are not expected to be randomly
+  distributed in the data and are defined as **missing not at random**
+  (MNAR).
+
+MNAR features should ideally be imputed with a **left-censor**
+(minimum value, ~zero~, ...)  method. Conversely, it is recommended to
+use **hot deck** methods (nearest neighbour, maximum likelihood, ...)
+when data are missing at random.
+
+
+```
+## 
+## Attaching package: 'gplots'
+## 
+## The following object is masked from 'package:IRanges':
+## 
+##     space
+## 
+## The following object is masked from 'package:stats':
+## 
+##     lowess
+```
+
+```
+## Error in heatmap.2(mx, col = c("lightgray", "black"), scale = "none", : object 'mx' not found
+```
+
+
+
+```r
 boxplot(fData(naset)$nNA ~ fData(naset)$randna,
         names = c("MNAR", "MAR"),
         ylab = "Number of missing values")
@@ -136,5 +190,4 @@ x <- impute(naset, method = "mixed",
             randna = fData(naset)$randna,
             mar = "knn", mnar = "min")
 ```
-
 
