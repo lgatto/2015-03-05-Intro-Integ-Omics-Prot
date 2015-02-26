@@ -16,7 +16,7 @@ But...
 The following values are higher bounds, without peptide filtering for
 gene groups.
 
-![plot of chunk cvg](figure/cvg-1.png) 
+<img src="figure/cvg-1.png" title="plot of chunk cvg" alt="plot of chunk cvg" style="display: block; margin: auto;" />
 
 | Min.| 1st Qu.| Median|  Mean| 3rd Qu.| Max.|
 |----:|-------:|------:|-----:|-------:|----:|
@@ -67,7 +67,7 @@ transcipt identifiers):
 
 - Among these, about half map to mulitple transcript identifiers.
 
-![plot of chunk ids2](figure/ids2-1.png) 
+<img src="figure/ids2-1.png" title="plot of chunk ids2" alt="plot of chunk ids2" style="display: block; margin: auto;" />
 
 **Caveat**: Mapping between single protein and unique transcripts?
 
@@ -138,9 +138,9 @@ processingData(flt)
 
 ```
 ## - - - Processing information - - -
-## Subset [689,16][301,16] Thu Feb 26 11:52:33 2015 
-## Removed features with more than 0 NAs: Thu Feb 26 11:52:33 2015 
-## Dropped featureData's levels Thu Feb 26 11:52:33 2015 
+## Subset [689,16][301,16] Thu Feb 26 11:57:56 2015 
+## Removed features with more than 0 NAs: Thu Feb 26 11:57:56 2015 
+## Dropped featureData's levels Thu Feb 26 11:57:56 2015 
 ##  MSnbase version: 1.15.6
 ```
 
@@ -175,23 +175,10 @@ when data are missing at random.
 
 
 ```
-## 
-## Attaching package: 'gplots'
-## 
-## The following object is masked from 'package:IRanges':
-## 
-##     space
-## 
-## The following object is masked from 'package:stats':
-## 
-##     lowess
-```
-
-```
 ## Error in plot.new(): figure margins too large
 ```
 
-![plot of chunk xv](figure/xv-1.png) 
+<img src="figure/xv-1.png" title="plot of chunk xv" alt="plot of chunk xv" style="display: block; margin: auto;" />
 
 
 ```r
@@ -217,7 +204,7 @@ x
 ## experimentData: use 'experimentData(object)'
 ## Annotation:  
 ## - - - Processing information - - -
-## Data imputation using mixed Thu Feb 26 11:52:34 2015 
+## Data imputation using mixed Thu Feb 26 11:57:56 2015 
 ##   Using default parameters 
 ##  MSnbase version: 1.15.6
 ```

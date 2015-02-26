@@ -5,7 +5,7 @@
 The **goal** is to map peptides from protein coordinates (1 to *L_p*)
 to genomic coordinates.
 
-![plot of chunk mapplot](figure/mapplot-1.png) 
+<img src="figure/mapplot-1.png" title="plot of chunk mapplot" alt="plot of chunk mapplot" style="display: block; margin: auto;" />
 
 Illustration with the
 [`Pbase`](http://bioconductor.org/packages/devel/bioc/html/Pbase.html)
@@ -33,7 +33,7 @@ peptides:
 
 For example, P00558:
 
-![plot of chunk pplot1](figure/pplot1-1.png) 
+<img src="figure/pplot1-1.png" title="plot of chunk pplot1" alt="plot of chunk pplot1" style="display: block; margin: auto;" />
 
 ## Genomic coordinates of the transcripts/exons
 
@@ -43,7 +43,7 @@ grl <- etrid2grl(acols(p)$ENST)
 pcgrl <- proteinCoding(grl)
 ```
 
-![plot of chunk gviz1](figure/gviz1-1.png) 
+<img src="figure/gviz1-1.png" title="plot of chunk gviz1" alt="plot of chunk gviz1" style="display: block; margin: auto;" />
 
 ## Mapping peptides to the genome
 
@@ -52,13 +52,43 @@ pcgrl <- proteinCoding(grl)
 res <- pmapToGenome(p, pcgrl)
 ```
 
-![plot of chunk gviz2](figure/gviz2-1.png) 
+```
+## Warning: Mapping failed. Returning an empty range.
+```
+
+```
+## Warning: Mapping failed. Returning an empty range.
+```
+
+```
+## Warning: Mapping failed. Returning an empty range.
+```
+
+```
+## Warning: Mapping failed. Returning an empty range.
+```
+
+
+```
+## Warning in plotTracks(list(ideoTrack, axisTrack, grTrack, pepTrack),
+## groupAnnotation = "id", : The track chromosomes in 'trackList' differ.
+## Setting all tracks to chromosome 'chrX'
+```
+
+<img src="figure/gviz2-1.png" title="plot of chunk gviz2" alt="plot of chunk gviz2" style="display: block; margin: auto;" />
 
 ## Detailed annotation tracks
 
 Maintaining access to the raw MS data
 
-![plot of chunk gviz3](figure/gviz3-1.png) 
+
+```
+## Error in .fillWithDefaults(data.frame(start = as.integer(start), end = as.integer(end)), : Number of elements in argument 'id' is invalid
+```
+
+```
+## Error in plotTracks(list(ideoTrack, axisTrack, deTrack, grTrack), add53 = TRUE, : object 'deTrack' not found
+```
 
 See also
 [Pang et al. (2014)](http://www.ncbi.nlm.nih.gov/pubmed/24152167),

@@ -3,7 +3,9 @@
 ```{r env, echo=FALSE}
 suppressPackageStartupMessages(library("Pbase"))
 library("knitr")
-opts_chunk$set(fig.width=12, fig.height=7)
+opts_chunk$set(fig.width=12,
+               fig.height=7,
+               fig.align = "center")
 library("rtracklayer")
 data(p)
 ```
