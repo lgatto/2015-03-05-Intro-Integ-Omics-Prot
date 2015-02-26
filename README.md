@@ -1,5 +1,8 @@
 # Introduction to Integrative Omics
 
+- [Laurent Gatto](http://cpu.sysbiol.cam.ac.uk/)
+- [Kathryn Lilley](http://proteomics.bio.cam.ac.uk/)
+
 - http://www.ebi.ac.uk/training/course/introduction-integrative-omics
 - Tuesday, March 3, 2015 - Friday, March 6, 2015
 - European Bioinformatics Institute

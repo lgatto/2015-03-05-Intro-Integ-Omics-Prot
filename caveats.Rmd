@@ -20,7 +20,7 @@ But...
 The following values are higher bounds, without peptide filtering for
 gene groups.
 
-```{r cvg, echo=FALSE}
+```{r cvg, echo=FALSE, fig.width=12}
 cvg <- data.table::fread("./data/Ensembl_76.csv", skip = 17,
                          stringsAsFactors = FALSE)
 sel <- cvg$length > 100 & cvg$length < 10000
@@ -28,9 +28,6 @@ cvg <- cvg[sel, ]
 hist(cvg$coverage, breaks = 100, xlab = "coverage", main = "")
 kable(rbind(summary(cvg$coverage)))
 ```
-
-This has an impact on **protein inference** (see above) and **missing
-values** for quantitation.
 
 ## Protein inference
 
@@ -92,26 +89,29 @@ kable(tab)
 
 - Among these, about half map to mulitple transcript identifiers.
 
-```{r ids2, echo=FALSE}
+```{r ids2, echo=FALSE, fig.width=12}
 ## How many transcripts per accession do we find?
 tab <- rbind(table(table(upbm$uniprot_swissprot_accession)))
 barplot(tab)
 ```
+
 **Caveat**: Mapping between single protein and unique transcripts?
 
 ## Missing values
 
-There are two types of mechanisms resulting in missing values in
-LC/MSMS experiments.
+An example data:
 
 ```{r}
 library("MSnbase")
 data(naset)
-dim(naset)
+naset
 
 table(is.na(naset))
 table(fData(naset)$nNA)
 ```
+
+There are two types of mechanisms resulting in missing values in
+LC/MSMS experiments.
 
 Options are:
 
@@ -145,27 +145,22 @@ MNAR features should ideally be imputed with a **left-censor**
 use **hot deck** methods (nearest neighbour, maximum likelihood, ...)
 when data are missing at random.
 
-```{r xv, echo=FALSE}
+```{r xv, echo=FALSE, fig.width=12}
 x <- impute(naset, "zero")
 exprs(x)[exprs(x) != 0] <- 1
 
 library("gplots")
-heatmap.2(mx, col = c("lightgray", "black"),
+heatmap.2(exprs(x), col = c("lightgray", "black"),
           scale = "none", dendrogram = "none",
           trace = "none", keysize = 0.1, key = FALSE,
           RowSideColors = ifelse(fData(x)$randna, "orange", "brown"),
           ColSideColors = rep(c("steelblue", "darkolivegreen"), each = 8))
 ```
 
-
 ```{r impute}
-boxplot(fData(naset)$nNA ~ fData(naset)$randna,
-        names = c("MNAR", "MAR"),
-        ylab = "Number of missing values")
-abline(h = 8, col = "red")
-
 x <- impute(naset, method = "mixed",
             randna = fData(naset)$randna,
             mar = "knn", mnar = "min")
+x
 ```
 

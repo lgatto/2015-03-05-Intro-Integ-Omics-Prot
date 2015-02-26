@@ -22,9 +22,6 @@ gene groups.
 |----:|-------:|------:|-----:|-------:|----:|
 |    0|   10.61|  42.41| 42.13|   69.51|  100|
 
-This has an impact on **protein inference** (see above) and **missing
-values** for quantitation.
-
 ## Protein inference
 
 <!-- ![Basic peptide grouping](./figure/F5.large.jpg) -->
@@ -71,22 +68,37 @@ transcipt identifiers):
 - Among these, about half map to mulitple transcript identifiers.
 
 ![plot of chunk ids2](figure/ids2-1.png) 
+
 **Caveat**: Mapping between single protein and unique transcripts?
 
 ## Missing values
 
-There are two types of mechanisms resulting in missing values in
-LC/MSMS experiments.
+An example data:
 
 
 ```r
 library("MSnbase")
 data(naset)
-dim(naset)
+naset
 ```
 
 ```
-## [1] 689  16
+## MSnSet (storageMode: lockedEnvironment)
+## assayData: 689 features, 16 samples 
+##   element names: exprs 
+## protocolData: none
+## phenoData
+##   sampleNames: M1F1A M1F4A ... M2F11B (16 total)
+##   varLabels: nNA
+##   varMetadata: labelDescription
+## featureData
+##   featureNames: AT1G09210 AT1G21750 ... AT4G39080 (689 total)
+##   fvarLabels: nNA randna
+##   fvarMetadata: labelDescription
+## experimentData: use 'experimentData(object)'
+## Annotation:  
+## - - - Processing information - - -
+##  MSnbase version: 1.15.6
 ```
 
 ```r
@@ -109,6 +121,9 @@ table(fData(naset)$nNA)
 ## 301 247  91  13   2  23  10   2
 ```
 
+There are two types of mechanisms resulting in missing values in
+LC/MSMS experiments.
+
 Options are:
 
 1. Remove missing values, or at least features or samples with
@@ -122,9 +137,9 @@ processingData(flt)
 
 ```
 ## - - - Processing information - - -
-## Subset [689,16][301,16] Thu Feb 26 11:17:35 2015 
-## Removed features with more than 0 NAs: Thu Feb 26 11:17:35 2015 
-## Dropped featureData's levels Thu Feb 26 11:17:35 2015 
+## Subset [689,16][301,16] Thu Feb 26 11:49:47 2015 
+## Removed features with more than 0 NAs: Thu Feb 26 11:49:48 2015 
+## Dropped featureData's levels Thu Feb 26 11:49:48 2015 
 ##  MSnbase version: 1.15.6
 ```
 
@@ -172,23 +187,37 @@ when data are missing at random.
 ```
 
 ```
-## Error in heatmap.2(mx, col = c("lightgray", "black"), scale = "none", : object 'mx' not found
+## Error in plot.new(): figure margins too large
 ```
 
+![plot of chunk xv](figure/xv-1.png) 
 
-
-```r
-boxplot(fData(naset)$nNA ~ fData(naset)$randna,
-        names = c("MNAR", "MAR"),
-        ylab = "Number of missing values")
-abline(h = 8, col = "red")
-```
-
-![plot of chunk impute](figure/impute-1.png) 
 
 ```r
 x <- impute(naset, method = "mixed",
             randna = fData(naset)$randna,
             mar = "knn", mnar = "min")
+x
+```
+
+```
+## MSnSet (storageMode: lockedEnvironment)
+## assayData: 689 features, 16 samples 
+##   element names: exprs 
+## protocolData: none
+## phenoData
+##   sampleNames: M1F1A M1F4A ... M2F11B (16 total)
+##   varLabels: nNA
+##   varMetadata: labelDescription
+## featureData
+##   featureNames: AT1G09210 AT1G21750 ... AT4G39080 (689 total)
+##   fvarLabels: nNA randna
+##   fvarMetadata: labelDescription
+## experimentData: use 'experimentData(object)'
+## Annotation:  
+## - - - Processing information - - -
+## Data imputation using mixed Thu Feb 26 11:49:48 2015 
+##   Using default parameters 
+##  MSnbase version: 1.15.6
 ```
 
