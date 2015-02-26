@@ -5,7 +5,7 @@
 The **goal** is to map peptides from protein coordinates (1 to *L_p*)
 to genomic coordinates.
 
-<img src="figure/mapplot-1.png" title="plot of chunk mapplot" alt="plot of chunk mapplot" style="display: block; margin: auto;" />
+![plot of chunk mapplot](figure/mapplot-1.png) 
 
 Illustration with the
 [`Pbase`](http://bioconductor.org/packages/devel/bioc/html/Pbase.html)
@@ -33,7 +33,7 @@ peptides:
 
 For example, P00558:
 
-<img src="figure/pplot1-1.png" title="plot of chunk pplot1" alt="plot of chunk pplot1" style="display: block; margin: auto;" />
+![plot of chunk pplot1](figure/pplot1-1.png) 
 
 ## Genomic coordinates of the transcripts/exons
 
@@ -43,7 +43,7 @@ grl <- etrid2grl(acols(p)$ENST)
 pcgrl <- proteinCoding(grl)
 ```
 
-<img src="figure/gviz1-1.png" title="plot of chunk gviz1" alt="plot of chunk gviz1" style="display: block; margin: auto;" />
+![plot of chunk gviz1](figure/gviz1-1.png) 
 
 ## Mapping peptides to the genome
 
@@ -75,7 +75,7 @@ res <- pmapToGenome(p, pcgrl)
 ## Setting all tracks to chromosome 'chrX'
 ```
 
-<img src="figure/gviz2-1.png" title="plot of chunk gviz2" alt="plot of chunk gviz2" style="display: block; margin: auto;" />
+![plot of chunk gviz2](figure/gviz2-1.png) 
 
 ## Detailed annotation tracks
 

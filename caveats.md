@@ -138,9 +138,9 @@ processingData(flt)
 
 ```
 ## - - - Processing information - - -
-## Subset [689,16][301,16] Thu Feb 26 13:57:25 2015 
-## Removed features with more than 0 NAs: Thu Feb 26 13:57:25 2015 
-## Dropped featureData's levels Thu Feb 26 13:57:25 2015 
+## Subset [689,16][301,16] Thu Feb 26 14:03:03 2015 
+## Removed features with more than 0 NAs: Thu Feb 26 14:03:03 2015 
+## Dropped featureData's levels Thu Feb 26 14:03:03 2015 
 ##  MSnbase version: 1.15.6
 ```
 
@@ -169,8 +169,8 @@ any(is.na(filterNA(naset)))
   (MNAR).
 
 
-![RSR KNN imputation](./figure/PXD000438_KNN_ProtLevel_err.png)
-![RSR MinDet imputation](./figure/PXD000438_MinDet_ProtLevel_err.png)
+![RSR KNN and MinDet imputation](./figure/imp-sim.png)
+
 
 MNAR features should ideally be imputed with a **left-censor**
 (minimum value, ~zero~, ...)  method. Conversely, it is recommended to
@@ -203,7 +203,7 @@ x
 ## experimentData: use 'experimentData(object)'
 ## Annotation:  
 ## - - - Processing information - - -
-## Data imputation using mixed Thu Feb 26 13:57:26 2015 
+## Data imputation using mixed Thu Feb 26 14:03:04 2015 
 ##   Using default parameters 
 ##  MSnbase version: 1.15.6
 ```
