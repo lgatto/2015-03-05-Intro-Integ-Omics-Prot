@@ -126,8 +126,9 @@ LC/MSMS experiments.
 
 Options are:
 
-1. Remove missing values, or at least features or samples with
-   excessive number of missing values:
+### Filtering
+
+Remove missing values, or at least features or samples with excessive number of missing values:
 
 
 ```r
@@ -137,9 +138,9 @@ processingData(flt)
 
 ```
 ## - - - Processing information - - -
-## Subset [689,16][301,16] Thu Feb 26 11:49:47 2015 
-## Removed features with more than 0 NAs: Thu Feb 26 11:49:48 2015 
-## Dropped featureData's levels Thu Feb 26 11:49:48 2015 
+## Subset [689,16][301,16] Thu Feb 26 11:52:33 2015 
+## Removed features with more than 0 NAs: Thu Feb 26 11:52:33 2015 
+## Dropped featureData's levels Thu Feb 26 11:52:33 2015 
 ##  MSnbase version: 1.15.6
 ```
 
@@ -151,7 +152,7 @@ any(is.na(filterNA(naset)))
 ## [1] FALSE
 ```
 
-2. Data imputation
+### Data imputation
 
 - Missing values resulting from absence of detection of a feature,
   despite ions being present at detectable concentrations.  For
@@ -216,7 +217,7 @@ x
 ## experimentData: use 'experimentData(object)'
 ## Annotation:  
 ## - - - Processing information - - -
-## Data imputation using mixed Thu Feb 26 11:49:48 2015 
+## Data imputation using mixed Thu Feb 26 11:52:34 2015 
 ##   Using default parameters 
 ##  MSnbase version: 1.15.6
 ```

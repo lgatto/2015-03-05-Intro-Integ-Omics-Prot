@@ -115,8 +115,9 @@ LC/MSMS experiments.
 
 Options are:
 
-1. Remove missing values, or at least features or samples with
-   excessive number of missing values:
+### Filtering
+
+Remove missing values, or at least features or samples with excessive number of missing values:
 
 ```{r}
 flt <- filterNA(naset)
@@ -124,7 +125,7 @@ processingData(flt)
 any(is.na(filterNA(naset)))
 ```
 
-2. Data imputation
+### Data imputation
 
 - Missing values resulting from absence of detection of a feature,
   despite ions being present at detectable concentrations.  For
