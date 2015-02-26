@@ -138,9 +138,9 @@ processingData(flt)
 
 ```
 ## - - - Processing information - - -
-## Subset [689,16][301,16] Thu Feb 26 13:32:52 2015 
-## Removed features with more than 0 NAs: Thu Feb 26 13:32:52 2015 
-## Dropped featureData's levels Thu Feb 26 13:32:52 2015 
+## Subset [689,16][301,16] Thu Feb 26 13:40:00 2015 
+## Removed features with more than 0 NAs: Thu Feb 26 13:40:00 2015 
+## Dropped featureData's levels Thu Feb 26 13:40:00 2015 
 ##  MSnbase version: 1.15.6
 ```
 
@@ -173,11 +173,6 @@ MNAR features should ideally be imputed with a **left-censor**
 use **hot deck** methods (nearest neighbour, maximum likelihood, ...)
 when data are missing at random.
 
-
-```
-## Error in plot.new(): figure margins too large
-```
-
 <img src="figure/xv-1.png" title="plot of chunk xv" alt="plot of chunk xv" style="display: block; margin: auto;" />
 
 
@@ -204,7 +199,7 @@ x
 ## experimentData: use 'experimentData(object)'
 ## Annotation:  
 ## - - - Processing information - - -
-## Data imputation using mixed Thu Feb 26 13:32:53 2015 
+## Data imputation using mixed Thu Feb 26 13:40:00 2015 
 ##   Using default parameters 
 ##  MSnbase version: 1.15.6
 ```

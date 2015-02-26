@@ -4,7 +4,7 @@
 suppressPackageStartupMessages(library("Pbase"))
 suppressPackageStartupMessages(library("MSnbase"))
 library("knitr")
-opts_chunk$set(fig.align = "center")
+opts_chunk$set(fig.align = 'center')
 ```
 
 **Mapping** of *peptides along protein sequences (although not
@@ -147,7 +147,7 @@ MNAR features should ideally be imputed with a **left-censor**
 use **hot deck** methods (nearest neighbour, maximum likelihood, ...)
 when data are missing at random.
 
-```{r xv, echo=FALSE, erro = FALSE}
+```{r xv, echo=FALSE, fig.align = 'center'}
 x <- impute(naset, "zero")
 exprs(x)[exprs(x) != 0] <- 1
 
@@ -155,7 +155,7 @@ suppressPackageStartupMessages(library("gplots"))
 
 heatmap.2(exprs(x), col = c("lightgray", "black"),
           scale = "none", dendrogram = "none",
-          trace = "none", keysize = 0.1, key = FALSE,
+          trace = "none", keysize = 0.5, key = FALSE,
           RowSideColors = ifelse(fData(x)$randna, "orange", "brown"),
           ColSideColors = rep(c("steelblue", "darkolivegreen"), each = 8))
 ```
