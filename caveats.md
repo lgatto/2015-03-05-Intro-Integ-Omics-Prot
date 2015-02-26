@@ -16,6 +16,7 @@ But...
 The following values are higher bounds, without peptide filtering for
 gene groups.
 
+![plot of chunk cvg](figure/cvg-1.png) 
 
 | Min.| 1st Qu.| Median|  Mean| 3rd Qu.| Max.|
 |----:|-------:|------:|-----:|-------:|----:|
@@ -121,9 +122,9 @@ processingData(flt)
 
 ```
 ## - - - Processing information - - -
-## Subset [689,16][301,16] Thu Feb 26 10:58:13 2015 
-## Removed features with more than 0 NAs: Thu Feb 26 10:58:13 2015 
-## Dropped featureData's levels Thu Feb 26 10:58:13 2015 
+## Subset [689,16][301,16] Thu Feb 26 11:14:27 2015 
+## Removed features with more than 0 NAs: Thu Feb 26 11:14:28 2015 
+## Dropped featureData's levels Thu Feb 26 11:14:28 2015 
 ##  MSnbase version: 1.15.6
 ```
 
