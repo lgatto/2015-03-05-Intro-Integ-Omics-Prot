@@ -138,9 +138,9 @@ processingData(flt)
 
 ```
 ## - - - Processing information - - -
-## Subset [689,16][301,16] Thu Feb 26 11:57:56 2015 
-## Removed features with more than 0 NAs: Thu Feb 26 11:57:56 2015 
-## Dropped featureData's levels Thu Feb 26 11:57:56 2015 
+## Subset [689,16][301,16] Thu Feb 26 13:32:52 2015 
+## Removed features with more than 0 NAs: Thu Feb 26 13:32:52 2015 
+## Dropped featureData's levels Thu Feb 26 13:32:52 2015 
 ##  MSnbase version: 1.15.6
 ```
 
@@ -204,7 +204,7 @@ x
 ## experimentData: use 'experimentData(object)'
 ## Annotation:  
 ## - - - Processing information - - -
-## Data imputation using mixed Thu Feb 26 11:57:56 2015 
+## Data imputation using mixed Thu Feb 26 13:32:53 2015 
 ##   Using default parameters 
 ##  MSnbase version: 1.15.6
 ```
