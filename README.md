@@ -1,24 +1,22 @@
-# Introduction to Integrative Omics
+# Introduction to Integrative Omics: Proteomics
 
-
-- [Laurent Gatto](http://cpu.sysbiol.cam.ac.uk/)
-- [Kathryn Lilley](http://proteomics.bio.cam.ac.uk/)
-
----
-
-- http://www.ebi.ac.uk/training/course/introduction-integrative-omics
+- [Introduction to Integrative Omics](http://www.ebi.ac.uk/training/course/introduction-integrative-omics)
 - Tuesday, March 3, 2015 - Friday, March 6, 2015
 - European Bioinformatics Institute
 
-| When              | What                                              |
-|-------------------|---------------------------------------------------|
-| Wed 17:30 - 18:00 |  ~~Keynote Lecture II~~ Intoduction to proteomics |
+| When              | What                                               |
+|-------------------|----------------------------------------------------|
+| Wed 17:30 - 18:00 |  ~~Keynote Lecture II~~ Introduction to proteomics |
 | Thu 09:00 - 10:30 | The nature of proteomics data – caveats for integration and use cases ~~(Tutorial with hands on)~~ |
 
-- [Introduction](./proteomics.md)
-- [Caveats](./caveats.md)
-- Use case: [mapping](./mapping.md), [multiple matches](./mapping2.md)
-- Use case: [transfer learning](./transfer-learning.md)
+[Laurent Gatto](http://cpu.sysbiol.cam.ac.uk/) and [Kathryn Lilley](http://proteomics.bio.cam.ac.uk/)
+
+### Material
+
+1. [Introduction](./proteomics.md)
+2. [Caveats](./caveats.md)
+3. Use case 1: [mapping](./mapping.md), [multiple matches](./mapping2.md)
+4. Use case 2: [transfer learning](./transfer-learning.md)
 
 ### Software
 
