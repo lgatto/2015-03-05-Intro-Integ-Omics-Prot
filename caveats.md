@@ -16,7 +16,7 @@ But...
 The following values are higher bounds, without peptide filtering for
 gene groups.
 
-<img src="figure/cvg-1.png" title="plot of chunk cvg" alt="plot of chunk cvg" style="display: block; margin: auto;" />
+![plot of chunk cvg](figure/cvg-1.png) 
 
 | Min.| 1st Qu.| Median|  Mean| 3rd Qu.| Max.|
 |----:|-------:|------:|-----:|-------:|----:|
@@ -67,7 +67,7 @@ transcipt identifiers):
 
 - Among these, about half map to mulitple transcript identifiers.
 
-<img src="figure/ids2-1.png" title="plot of chunk ids2" alt="plot of chunk ids2" style="display: block; margin: auto;" />
+![plot of chunk ids2](figure/ids2-1.png) 
 
 **Caveat**: Mapping between single protein and unique transcripts?
 
@@ -138,9 +138,9 @@ processingData(flt)
 
 ```
 ## - - - Processing information - - -
-## Subset [689,16][301,16] Thu Feb 26 13:40:00 2015 
-## Removed features with more than 0 NAs: Thu Feb 26 13:40:00 2015 
-## Dropped featureData's levels Thu Feb 26 13:40:00 2015 
+## Subset [689,16][301,16] Thu Feb 26 13:46:49 2015 
+## Removed features with more than 0 NAs: Thu Feb 26 13:46:49 2015 
+## Dropped featureData's levels Thu Feb 26 13:46:49 2015 
 ##  MSnbase version: 1.15.6
 ```
 
@@ -173,7 +173,7 @@ MNAR features should ideally be imputed with a **left-censor**
 use **hot deck** methods (nearest neighbour, maximum likelihood, ...)
 when data are missing at random.
 
-<img src="figure/xv-1.png" title="plot of chunk xv" alt="plot of chunk xv" style="display: block; margin: auto;" />
+![plot of chunk xv](figure/xv-1.png) 
 
 
 ```r
@@ -199,7 +199,7 @@ x
 ## experimentData: use 'experimentData(object)'
 ## Annotation:  
 ## - - - Processing information - - -
-## Data imputation using mixed Thu Feb 26 13:40:00 2015 
+## Data imputation using mixed Thu Feb 26 13:46:49 2015 
 ##   Using default parameters 
 ##  MSnbase version: 1.15.6
 ```

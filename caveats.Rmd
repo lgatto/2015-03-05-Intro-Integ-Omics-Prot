@@ -4,7 +4,6 @@
 suppressPackageStartupMessages(library("Pbase"))
 suppressPackageStartupMessages(library("MSnbase"))
 library("knitr")
-opts_chunk$set(fig.align = 'center')
 ```
 
 **Mapping** of *peptides along protein sequences (although not
@@ -147,7 +146,7 @@ MNAR features should ideally be imputed with a **left-censor**
 use **hot deck** methods (nearest neighbour, maximum likelihood, ...)
 when data are missing at random.
 
-```{r xv, echo=FALSE, fig.align = 'center'}
+```{r xv, echo=FALSE, fig.width=9, fig.heigth=9}
 x <- impute(naset, "zero")
 exprs(x)[exprs(x) != 0] <- 1
 
