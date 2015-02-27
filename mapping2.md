@@ -164,7 +164,7 @@ sapply(laln, nmatch)/width(aa(p[k]))
 ```
 ## ########################################
 ## # Program: Biostrings (version 2.35.11), a Bioconductor package
-## # Rundate: Thu Feb 26 01:33:40 2015
+## # Rundate: Fri Feb 27 22:37:44 2015
 ## ########################################
 ## #=======================================
 ## #
