@@ -217,12 +217,12 @@ stopifnot(eid[ki] == acols(p)$ENST[k])
 
 ```{r map}
 res <- pmapToGenome(p[k], pcgrl[ki])
-res <- res[[1]]
 ```
 
+
+
 ```{r pepcoords2, echo=FALSE}
-
-
+res <- res[[1]]
 pepTr <- AnnotationTrack(start = start(res),
                          end = end(res),
                          chr = chrom(res),
@@ -250,14 +250,14 @@ and
 (SRR791580) where processed with standard pipelines. 
 
 
-```{r peptrack,echo=FALSE}
+```{r peptrack, echo=FALSE}
 suppressPackageStartupMessages(library("Gviz"))
 load("./data/peptrack.rda")
 plotTracks(peptrack[-5])
 plotTracks(peptrack)
 ```
 
-```{r alntrack}
+```{r alntrack, echo=FALSE}
 options(ucscChromosomeNames=FALSE)
 load("./data/alntrack.rda")
 alntrack[[2]]@reference <- "./data/mybam.bam"

@@ -222,7 +222,7 @@ sapply(laln, nmatch)/width(aa(p[k]))
 ```
 ## ########################################
 ## # Program: Biostrings (version 2.35.11), a Bioconductor package
-## # Rundate: Fri Feb 27 23:01:58 2015
+## # Rundate: Fri Feb 27 23:09:29 2015
 ## ########################################
 ## #=======================================
 ## #
@@ -312,8 +312,9 @@ to the curated Ensembl transcript in `acols(p)$ENST`.
 
 ```r
 res <- pmapToGenome(p[k], pcgrl[ki])
-res <- res[[1]]
 ```
+
+
 
 ![plot of chunk pepcoords2](figure/pepcoords2-1.png) 
 
@@ -332,14 +333,6 @@ and
 
 
 ![plot of chunk peptrack](figure/peptrack-1.png) ![plot of chunk peptrack](figure/peptrack-2.png) 
-
-
-```r
-options(ucscChromosomeNames=FALSE)
-load("./data/alntrack.rda")
-alntrack[[2]]@reference <- "./data/mybam.bam"
-plotTracks(alntrack, from = 30116807, to = 30186474)
-```
 
 ![plot of chunk alntrack](figure/alntrack-1.png) 
 
