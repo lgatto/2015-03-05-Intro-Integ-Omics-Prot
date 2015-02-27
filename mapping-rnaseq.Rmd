@@ -27,10 +27,16 @@ plotTracks(peptrack)
 ```{r alntrack}
 options(ucscChromosomeNames=FALSE)
 load("./data/alntrack.rda")
+alntrack[[2]]@reference <- "./data/mybam.bam"
 plotTracks(alntrack, from = 30116807, to = 30186474)
 ```
 
+### References
 
+Laurent Gatto and Sebastian Gibb
+(2014). [`Pbase`](http://bioconductor.org/packages/devel/bioc/html/Pbase.html):
+Manipulating and exploring protein and proteomics data. R package
+version 0.6.9. https://github.com/ComputationalProteomicsUnit/Pbase
 
 Pang et al. Tools to covisualize and coanalyze proteomic data with
 genomes and transcriptomes: validation of genes and alternative mRNA

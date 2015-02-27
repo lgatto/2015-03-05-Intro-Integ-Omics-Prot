@@ -33,5 +33,13 @@ and
 - [Sheynkman et al. (2014)](http://www.ncbi.nlm.nih.gov/pubmed/25149441)
 - [Qeli and Ahrens (2010)](http://www.ncbi.nlm.nih.gov/pubmed/20622826)
 - [Wang and Zhang (2013)](http://www.ncbi.nlm.nih.gov/pubmed/24058055) [`customProDB`](http://bioconductor.org/packages/release/bioc/html/customProDB.html)
-- [Boekel et al (2014)](http://www.ncbi.nlm.nih.gov/pubmed/25658277)
+
+
+
+Boekel J, Chilton JM, Cooke IR, Horvatovich PL, Jagtap PD, Käll L,
+Lehtiö J, Lukasse P, Moerland PD, Griffin TJ. Multi-omic data analysis
+using Galaxy. Nat Biotechnol. 2015 Feb 6;33(2):137-9. doi:
+10.1038/nbt.3134. PubMed
+[PMID: 25658277](http://www.ncbi.nlm.nih.gov/pubmed/25658277).
+
 

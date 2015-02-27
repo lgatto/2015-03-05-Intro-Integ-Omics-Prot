@@ -24,15 +24,22 @@ and
 ```r
 options(ucscChromosomeNames=FALSE)
 load("./data/alntrack.rda")
+alntrack[[2]]@reference <- "./data/mybam.bam"
 plotTracks(alntrack, from = 30116807, to = 30186474)
 ```
 
-```
-## Error in colnames(mcols(data)): error in evaluating the argument 'x' in selecting a method for function 'colnames': Error in mcols(data) : 
-##   error in evaluating the argument 'x' in selecting a method for function 'mcols': Error in x@stream(x@reference, subRegion) : 
-##   Unable to find index for BAM file './mybam.bam'. You can build an index using the following command:
-## 	library(Rsamtools)
-## 	indexBam("./mybam.bam")
-```
-
 ![plot of chunk alntrack](figure/alntrack-1.png) 
+
+### References
+
+Laurent Gatto and Sebastian Gibb
+(2014). [`Pbase`](http://bioconductor.org/packages/devel/bioc/html/Pbase.html):
+Manipulating and exploring protein and proteomics data. R package
+version 0.6.9. https://github.com/ComputationalProteomicsUnit/Pbase
+
+Pang et al. Tools to covisualize and coanalyze proteomic data with
+genomes and transcriptomes: validation of genes and alternative mRNA
+splicing. J Proteome Res. 2014 Jan 3;13(1):84-98. doi:
+10.1021/pr400820p. Epub 2013 Nov 12. PubMed
+[PMID: 24152167](http://www.ncbi.nlm.nih.gov/pubmed/24152167).
+
