@@ -1,10 +1,6 @@
 # Mapping MS peptides and RNA-Seq short reads
 
 
-```r
-library("knitr")
-opts_chunk$set(fig.width=12, fig.height=7)
-```
 
 The last step of the mapping process is the combine the newly mapped
 peptides and reads from RNA-Seq experiments. The figures below

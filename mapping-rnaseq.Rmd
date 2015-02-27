@@ -1,6 +1,6 @@
 # Mapping MS peptides and RNA-Seq short reads
 
-```{r env}
+```{r env, echo=FALSE}
 library("knitr")
 opts_chunk$set(fig.width=12, fig.height=7)
 ```
