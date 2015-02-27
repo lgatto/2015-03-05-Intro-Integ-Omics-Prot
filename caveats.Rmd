@@ -170,5 +170,4 @@ x <- impute(naset, method = "mixed",
 x
 ```
 
-
-[Home](./README.md) | [Caveats](./Caveats.md) | [Mapping](./mapping.md) | [transfer learning](./transfer-learning.md)
+| [Home](./README.md) | [Caveats](./Caveats.md) | [Mapping](./mapping.md) | [Transfer learning](./transfer-learning.md) |

@@ -222,7 +222,7 @@ sapply(laln, nmatch)/width(aa(p[k]))
 ```
 ## ########################################
 ## # Program: Biostrings (version 2.35.11), a Bioconductor package
-## # Rundate: Fri Feb 27 22:57:51 2015
+## # Rundate: Fri Feb 27 23:01:58 2015
 ## ########################################
 ## #=======================================
 ## #
@@ -356,4 +356,4 @@ splicing. J Proteome Res. 2014 Jan 3;13(1):84-98. doi:
 10.1021/pr400820p. Epub 2013 Nov 12. PubMed
 [PMID: 24152167](http://www.ncbi.nlm.nih.gov/pubmed/24152167).
 
-[Home](./README.md) | [Caveats](./Caveats.md) | [Mapping](./mapping.md) | [transfer learning](./transfer-learning.md)
+| [Home](./README.md) | [Caveats](./Caveats.md) | [Mapping](./mapping.md) | [Transfer learning](./transfer-learning.md) |
