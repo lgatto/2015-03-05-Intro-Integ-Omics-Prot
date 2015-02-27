@@ -15,7 +15,7 @@
 
 1. [Introduction](./proteomics.md)
 2. [Caveats](./caveats.md)
-3. Use case 1: [mapping](./mapping.md), [multiple matches](./mapping2.md)
+3. Use case 1: [mapping](./mapping.md)
 4. Use case 2: [transfer learning](./transfer-learning.md)
 
 ### Software

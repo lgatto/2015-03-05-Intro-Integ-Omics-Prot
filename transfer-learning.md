@@ -3,3 +3,5 @@
 Combining quantitative spatial proteomics and (binary) annotation
 features using the
 [`pRoloc`](http://bioconductor.org/packages/devel/bioc/html/pRoloc.html))
+
+[Home](./README.md) | [Caveats](./Caveats.md) | [Mapping](./mapping.md) | [transfer learning](./transfer-learning.md)
