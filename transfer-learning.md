@@ -8,13 +8,30 @@ features.
 ![Spatial proteomics workflow](./figure/workflow_primary.png)
 
 
-|     | F1   | F2   | ...  | Fm   |   makers   |
+|     | F1   | F2   | ...  | Fm   |  markers   |
 |----:|-----:|-----:|-----:|-----:|-----------:|
 | p1  |q(1,1)|q(1,2)| ...  |q(1,m)| unknown    |
 | p2  |q(2,1)|q(2,2)| ...  |q(2,m)| Mito       |
 | p3  |q(3,1)|q(3,2)| ...  |q(3,m)| Golgi      |
 | ... | ...  | ...  | ...  | ...  | ...        |
 | pn  |q(n,1)|q(n,2)| ...  |q(n,m)| unknown    |
+
+
+###
+
+What about annotation data from repositories such as GO, sequence
+features, signal peptide, transmembrane domains, images,
+protein-protein interactions, ...
+
+From a user perspective:
+
+- free/cheap vs. expensive
+- Abundant (all proteins, 100s of features) vs. (experimentally)
+  limited/targeted (1000s of proteins, 6 - 20 of features)
+- But, for localisation in system at hand: low vs. high quality
+  (i.e. sub-cellular discriminative power and specificity)
+
+![Dual proteomics workflow](./figure/workflow.png)
 
 
 ### References
