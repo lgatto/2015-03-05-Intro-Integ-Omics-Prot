@@ -30,10 +30,10 @@ From a user perspective:
 - Abundant (all proteins, 100s of features) vs. (experimentally)
   limited/targeted (1000s of proteins, 6 - 20 of features)
 
-- **But**, for localisation in system at hand: low vs. high quality
-  (i.e. sub-cellular discriminative power and specificity). We need to
-  be careful not to dilute the signal in the experimental data with
-  the annotation data.
+- **But**, for the localisation of proteins in the cells and
+  conditions at hand: low vs. high quality (i.e. sub-cellular
+  discriminative power and specificity). We need to be careful not to
+  dilute the signal in the experimental data with the annotation data.
 
 Updated **dual** worflow:
 
@@ -45,7 +45,7 @@ We use a *class-weighted kNN transfer learning algorithm* to combine
 primary (experimental) and auxiliary (annotation) data, based on
 [Wu and Dietterich (2004)](http://citeseer.ist.psu.edu/viewdoc/summary?doi=10.1.1.94.594).
 
-We compute *weigths* for:
+We compute *weights* for:
 
 - the two data sources (experimental = primary and annotation =
   auxiliary)
@@ -54,6 +54,7 @@ We compute *weigths* for:
 ### [Method description](https://github.com/ComputationalProteomicsUnit/Intro-Integ-Omics-Prot/blob/master/thetatut.pdf?raw=true)
 
 ### Example code
+
 
 
 ```r
@@ -66,12 +67,33 @@ ap <- setAnnotationParams(inputs =
 
 fData(andy2011)$UniProtKB.entry.name <- featureNames(andy2011)
 featureNames(andy2011) <- fData(andy2011)$Accession.No.
-
 andygoset <- makeGoSet(andy2011)
+```
 
+
+```r
 ttopt <- thetaOptimisation(andy2011, andygoset)
+```
+
+```
+## Error in eval(expr, envir, enclos): could not find function "thetaOptimisation"
+```
+
+
+```r
 th <- getParams(opt)
+```
+
+```
+## Error in eval(expr, envir, enclos): could not find function "getParams"
+```
+
+```r
 thes <- thetaClassification(andy2011, andygoset, bestTheta = th)
+```
+
+```
+## Error in eval(expr, envir, enclos): could not find function "thetaClassification"
 ```
 
 ### References
