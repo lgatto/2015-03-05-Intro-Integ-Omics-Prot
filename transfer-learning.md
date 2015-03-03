@@ -17,7 +17,7 @@ features.
 | pn  |q(n,1)|q(n,2)| ...  |q(n,m)| unknown    |
 
 
-###
+### Another data source
 
 What about annotation data from repositories such as GO, sequence
 features, signal peptide, transmembrane domains, images,
@@ -32,6 +32,15 @@ From a user perspective:
   (i.e. sub-cellular discriminative power and specificity)
 
 ![Dual proteomics workflow](./figure/workflow.png)
+
+### Data integration
+
+We use a class-weighted kNN transfer learning algorithm to combine
+primary and auxiliary data, based on
+[Wu and Dietterich (2004)](http://citeseer.ist.psu.edu/viewdoc/summary?doi=10.1.1.94.594).
+
+[Method description](https://github.com/ComputationalProteomicsUnit/Intro-Integ-Omics-Prot/blob/master/thetatut.pdf?raw=true)
+
 
 
 ### References
