@@ -5,7 +5,7 @@ features.
 
 ### Standard spatial protoemics workflow
 
-![Spatial proteomics workflow](./figure/workflow_primary.svg)
+![Spatial proteomics workflow](./figure/workflow_primary.png)
 
 
 
