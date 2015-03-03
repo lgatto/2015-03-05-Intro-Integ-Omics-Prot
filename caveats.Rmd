@@ -1,6 +1,6 @@
 # Proteomics data: caveats
 
-```{r env, echo=FALSE}
+```{r env, echo=FALSE, warning=FALSE}
 suppressPackageStartupMessages(library("Pbase"))
 suppressPackageStartupMessages(library("MSnbase"))
 library("knitr")

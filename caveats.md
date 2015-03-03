@@ -1,21 +1,6 @@
 # Proteomics data: caveats
 
 
-```
-## Warning: multiple methods tables found for 'score'
-```
-
-```
-## Warning: multiple methods tables found for 'score'
-```
-
-```
-## Warning: multiple methods tables found for 'score'
-```
-
-```
-## Warning: multiple methods tables found for 'fileName'
-```
 
 **Mapping** of *peptides along protein sequences (although not
   explicitly considered a mapping exercise)* and *short reads along
@@ -150,9 +135,9 @@ processingData(flt)
 
 ```
 ## - - - Processing information - - -
-## Subset [689,16][301,16] Tue Mar  3 13:14:05 2015 
-## Removed features with more than 0 NAs: Tue Mar  3 13:14:05 2015 
-## Dropped featureData's levels Tue Mar  3 13:14:05 2015 
+## Subset [689,16][301,16] Tue Mar  3 13:16:22 2015 
+## Removed features with more than 0 NAs: Tue Mar  3 13:16:22 2015 
+## Dropped featureData's levels Tue Mar  3 13:16:22 2015 
 ##  MSnbase version: 1.15.6
 ```
 
@@ -218,7 +203,7 @@ x
 ## experimentData: use 'experimentData(object)'
 ## Annotation:  
 ## - - - Processing information - - -
-## Data imputation using mixed Tue Mar  3 13:14:06 2015 
+## Data imputation using mixed Tue Mar  3 13:16:23 2015 
 ##   Using default parameters 
 ##  MSnbase version: 1.15.6
 ```
