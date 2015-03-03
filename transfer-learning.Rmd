@@ -7,8 +7,6 @@ features.
 
 ![Spatial proteomics workflow](./figure/workflow_primary.png)
 
-
-
 ### References
 
 Gatto L, Breckels LM, Burger T, Nightingale DJ, Groen AJ, Campbell C,
