@@ -5,7 +5,6 @@ network-based approaches that identify common patterns in different
 data sources as well as (ii) reference-based approaches, that map
 different sources of data against a common reference.
 
-
 The former are very versatile and rely on experiment-wide
 clustering/modelling and crucially depend on reliably linking features
 (explicitly via common identifiers or through functional
@@ -23,11 +22,11 @@ data features along a **genome reference**.
 
 # Mapping peptides to genomic coordinates
 
-```{r env, echo=FALSE}
+```{r env, echo=FALSE, warning=FALSE}
 suppressPackageStartupMessages(library("Pbase"))
+suppressPackageStartupMessages(library("rtracklayer"))
 library("knitr")
 opts_chunk$set(fig.width=12, fig.height=7)
-library("rtracklayer")
 data(p)
 ```
 

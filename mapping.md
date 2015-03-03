@@ -5,7 +5,6 @@ network-based approaches that identify common patterns in different
 data sources as well as (ii) reference-based approaches, that map
 different sources of data against a common reference.
 
-
 The former are very versatile and rely on experiment-wide
 clustering/modelling and crucially depend on reliably linking features
 (explicitly via common identifiers or through functional
@@ -24,21 +23,6 @@ data features along a **genome reference**.
 # Mapping peptides to genomic coordinates
 
 
-```
-## Warning: multiple methods tables found for 'score'
-```
-
-```
-## Warning: multiple methods tables found for 'score'
-```
-
-```
-## Warning: multiple methods tables found for 'score'
-```
-
-```
-## Warning: multiple methods tables found for 'fileName'
-```
 
 The **goal** is to map peptides from protein coordinates (1 to *L_p*)
 to genomic coordinates.
@@ -260,7 +244,7 @@ sapply(laln, nmatch)/width(aa(p[k]))
 ```
 ## ########################################
 ## # Program: Biostrings (version 2.35.11), a Bioconductor package
-## # Rundate: Tue Mar  3 10:36:41 2015
+## # Rundate: Tue Mar  3 11:22:48 2015
 ## ########################################
 ```
 
