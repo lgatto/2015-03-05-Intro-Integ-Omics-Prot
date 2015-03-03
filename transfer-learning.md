@@ -2,6 +2,30 @@
 
 Combining quantitative spatial proteomics and (binary) annotation
 features using the
-[`pRoloc`](http://bioconductor.org/packages/devel/bioc/html/pRoloc.html))
+[`pRoloc`](http://bioconductor.org/packages/devel/bioc/html/pRoloc.html)
+
+
+### References
+
+Gatto L, Breckels LM, Burger T, Nightingale DJ, Groen AJ, Campbell C,
+Nikolovski N, Mulvey CM, Christoforou A, Ferro M, Lilley KS. A
+foundation for reliable spatial proteomics data analysis. Mol Cell
+Proteomics. 2014 Aug;13(8):1937-52. doi: 10.1074/mcp.M113.036350. Epub
+2014 May 20. PubMed
+PMID:[24846987](http://www.ncbi.nlm.nih.gov/pubmed/24846987); PubMed
+Central PMCID:PMC4125728.
+
+
+Gatto L, Breckels LM, Wieczorek S, Burger T, Lilley KS.
+Mass-spectrometry-based spatial proteomics data analysis using pRoloc
+and pRolocdata. Bioinformatics. 2014 May 1;30(9):1322-4. doi:
+10.1093/bioinformatics/btu013. Epub 2014 Jan 11. PubMed
+PMID:[24413670](http://www.ncbi.nlm.nih.gov/pubmed/24413670); PubMed
+Central PMCID:PMC3998135.
+
+
+Breckels LM, Holden S, Christoforou A, Lilley KS, Gatto L. A Transfer
+Learning Framework for Spatial Proteomics Data. In prep.
+
 
 | [Home](./README.md) | [Caveats](./Caveats.md) | [Mapping](./mapping.md) | [Transfer learning](./transfer-learning.md) |
