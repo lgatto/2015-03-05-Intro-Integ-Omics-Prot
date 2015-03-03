@@ -42,6 +42,23 @@ primary and auxiliary data, based on
 [Method description](https://github.com/ComputationalProteomicsUnit/Intro-Integ-Omics-Prot/blob/master/thetatut.pdf?raw=true)
 
 
+```r
+library("pRoloc")
+library("pRolocdata")
+data(andy2011)
+ap <- setAnnotationParams(inputs =
+                              c("Homo sapiens",
+                                "UniProt/Swissprot ID"))
+
+fData(andy2011)$UniProtKB.entry.name <- featureNames(andy2011)
+featureNames(andy2011) <- fData(andy2011)$Accession.No.
+
+andygoset <- makeGoSet(andy2011)
+
+ttopt <- thetaOptimisation(andy2011, andygoset)
+th <- getParams(opt)
+thes <- thetaClassification(andy2011, andygoset, bestTheta = th)
+```
 
 ### References
 
