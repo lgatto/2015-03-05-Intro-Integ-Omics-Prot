@@ -1,6 +1,21 @@
 # Proteomics data: caveats
 
 
+```
+## Warning: multiple methods tables found for 'score'
+```
+
+```
+## Warning: multiple methods tables found for 'score'
+```
+
+```
+## Warning: multiple methods tables found for 'score'
+```
+
+```
+## Warning: multiple methods tables found for 'fileName'
+```
 
 **Mapping** of *peptides along protein sequences (although not
   explicitly considered a mapping exercise)* and *short reads along
@@ -121,9 +136,6 @@ table(fData(naset)$nNA)
 ## 301 247  91  13   2  23  10   2
 ```
 
-There are two types of mechanisms resulting in missing values in
-LC/MSMS experiments.
-
 Options are:
 
 ### Filtering
@@ -138,9 +150,9 @@ processingData(flt)
 
 ```
 ## - - - Processing information - - -
-## Subset [689,16][301,16] Fri Feb 27 23:00:23 2015 
-## Removed features with more than 0 NAs: Fri Feb 27 23:00:23 2015 
-## Dropped featureData's levels Fri Feb 27 23:00:23 2015 
+## Subset [689,16][301,16] Tue Mar  3 13:14:05 2015 
+## Removed features with more than 0 NAs: Tue Mar  3 13:14:05 2015 
+## Dropped featureData's levels Tue Mar  3 13:14:05 2015 
 ##  MSnbase version: 1.15.6
 ```
 
@@ -153,6 +165,9 @@ any(is.na(filterNA(naset)))
 ```
 
 ### Data imputation
+
+There are two types of mechanisms resulting in missing values in
+LC/MSMS experiments.
 
 - Missing values resulting from absence of detection of a feature,
   despite ions being present at detectable concentrations.  For
@@ -203,7 +218,7 @@ x
 ## experimentData: use 'experimentData(object)'
 ## Annotation:  
 ## - - - Processing information - - -
-## Data imputation using mixed Fri Feb 27 23:00:23 2015 
+## Data imputation using mixed Tue Mar  3 13:14:06 2015 
 ##   Using default parameters 
 ##  MSnbase version: 1.15.6
 ```

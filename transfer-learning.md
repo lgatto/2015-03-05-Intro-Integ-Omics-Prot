@@ -8,13 +8,13 @@ features.
 ![Spatial proteomics workflow](./figure/workflow_primary.png)
 
 
-|     | F1   | F2   | ...  | Fm   |  markers   |
-|----:|-----:|-----:|-----:|-----:|-----------:|
-| p1  |q(1,1)|q(1,2)| ...  |q(1,m)| unknown    |
-| p2  |q(2,1)|q(2,2)| ...  |q(2,m)| Mito       |
-| p3  |q(3,1)|q(3,2)| ...  |q(3,m)| Golgi      |
-| ... | ...  | ...  | ...  | ...  | ...        |
-| pn  |q(n,1)|q(n,2)| ...  |q(n,m)| unknown    |
+|        | F1   | F2   | ...  | Fm   |  markers   |
+|-------:|-----:|-----:|-----:|-----:|-----------:|
+| prot 1 |q(1,1)|q(1,2)| ...  |q(1,m)| unknown    |
+| prot 2 |q(2,1)|q(2,2)| ...  |q(2,m)| Mito       |
+| prot 3 |q(3,1)|q(3,2)| ...  |q(3,m)| Golgi      |
+| ...    | ...  | ...  | ...  | ...  | ...        |
+| prot n |q(n,1)|q(n,2)| ...  |q(n,m)| unknown    |
 
 
 ### Another data source
@@ -26,18 +26,30 @@ protein-protein interactions, ...
 From a user perspective:
 
 - free/cheap vs. expensive
+
 - Abundant (all proteins, 100s of features) vs. (experimentally)
   limited/targeted (1000s of proteins, 6 - 20 of features)
-- But, for localisation in system at hand: low vs. high quality
-  (i.e. sub-cellular discriminative power and specificity)
+
+- **But**, for localisation in system at hand: low vs. high quality
+  (i.e. sub-cellular discriminative power and specificity). We need to
+  be careful not to dilute the signal in the experimental data with
+  the annotation data.
+
+Updated **dual** worflow:
 
 ![Dual proteomics workflow](./figure/workflow.png)
 
 ### Data integration
 
-We use a class-weighted kNN transfer learning algorithm to combine
-primary and auxiliary data, based on
+We use a *class-weighted kNN transfer learning algorithm* to combine
+primary (experimental) and auxiliary (annotation) data, based on
 [Wu and Dietterich (2004)](http://citeseer.ist.psu.edu/viewdoc/summary?doi=10.1.1.94.594).
+
+We compute *weigths* for:
+
+- the two data sources (experimental = primary and annotation =
+  auxiliary)
+- for different data classes (organelles)
 
 ### [Method description](https://github.com/ComputationalProteomicsUnit/Intro-Integ-Omics-Prot/blob/master/thetatut.pdf?raw=true)
 

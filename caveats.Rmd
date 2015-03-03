@@ -110,9 +110,6 @@ table(is.na(naset))
 table(fData(naset)$nNA)
 ```
 
-There are two types of mechanisms resulting in missing values in
-LC/MSMS experiments.
-
 Options are:
 
 ### Filtering
@@ -126,6 +123,9 @@ any(is.na(filterNA(naset)))
 ```
 
 ### Data imputation
+
+There are two types of mechanisms resulting in missing values in
+LC/MSMS experiments.
 
 - Missing values resulting from absence of detection of a feature,
   despite ions being present at detectable concentrations.  For
