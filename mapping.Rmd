@@ -299,4 +299,10 @@ splicing. J Proteome Res. 2014 Jan 3;13(1):84-98. doi:
 10.1021/pr400820p. Epub 2013 Nov 12. PubMed
 [PMID: 24152167](http://www.ncbi.nlm.nih.gov/pubmed/24152167).
 
+## Session information
+
+```{r si}
+sessionInformation()
+```
+
 | [Home](./README.md) | [Caveats](./Caveats.md) | [Mapping](./mapping.md) | [Transfer learning](./transfer-learning.md) |

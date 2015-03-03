@@ -244,7 +244,7 @@ sapply(laln, nmatch)/width(aa(p[k]))
 ```
 ## ########################################
 ## # Program: Biostrings (version 2.35.11), a Bioconductor package
-## # Rundate: Tue Mar  3 11:22:48 2015
+## # Rundate: Tue Mar  3 13:21:58 2015
 ## ########################################
 ```
 
@@ -303,5 +303,16 @@ genomes and transcriptomes: validation of genes and alternative mRNA
 splicing. J Proteome Res. 2014 Jan 3;13(1):84-98. doi:
 10.1021/pr400820p. Epub 2013 Nov 12. PubMed
 [PMID: 24152167](http://www.ncbi.nlm.nih.gov/pubmed/24152167).
+
+## Session information
+
+
+```r
+sessionInformation()
+```
+
+```
+## Error in eval(expr, envir, enclos): could not find function "sessionInformation"
+```
 
 | [Home](./README.md) | [Caveats](./Caveats.md) | [Mapping](./mapping.md) | [Transfer learning](./transfer-learning.md) |

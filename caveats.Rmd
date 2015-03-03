@@ -170,4 +170,11 @@ x <- impute(naset, method = "mixed",
 x
 ```
 
+## Session information
+
+```{r si}
+sessionInformation()
+```
+
 | [Home](./README.md) | [Caveats](./Caveats.md) | [Mapping](./mapping.md) | [Transfer learning](./transfer-learning.md) |
+

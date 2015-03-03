@@ -135,9 +135,9 @@ processingData(flt)
 
 ```
 ## - - - Processing information - - -
-## Subset [689,16][301,16] Tue Mar  3 13:16:22 2015 
-## Removed features with more than 0 NAs: Tue Mar  3 13:16:22 2015 
-## Dropped featureData's levels Tue Mar  3 13:16:22 2015 
+## Subset [689,16][301,16] Tue Mar  3 13:21:19 2015 
+## Removed features with more than 0 NAs: Tue Mar  3 13:21:19 2015 
+## Dropped featureData's levels Tue Mar  3 13:21:19 2015 
 ##  MSnbase version: 1.15.6
 ```
 
@@ -203,9 +203,21 @@ x
 ## experimentData: use 'experimentData(object)'
 ## Annotation:  
 ## - - - Processing information - - -
-## Data imputation using mixed Tue Mar  3 13:16:23 2015 
+## Data imputation using mixed Tue Mar  3 13:21:19 2015 
 ##   Using default parameters 
 ##  MSnbase version: 1.15.6
 ```
 
+## Session information
+
+
+```r
+sessionInformation()
+```
+
+```
+## Error in eval(expr, envir, enclos): could not find function "sessionInformation"
+```
+
 | [Home](./README.md) | [Caveats](./Caveats.md) | [Mapping](./mapping.md) | [Transfer learning](./transfer-learning.md) |
+
