@@ -7,6 +7,16 @@ features.
 
 ![Spatial proteomics workflow](./figure/workflow_primary.png)
 
+
+|     | F1   | F2   | ...  | Fm   |   makers   |
+|----:|-----:|-----:|-----:|-----:|-----------:|
+| p1  |q(1,1)|q(1,2)| ...  |q(1,m)| unknown    |
+| p2  |q(2,1)|q(2,2)| ...  |q(2,m)| Mito       |
+| p3  |q(3,1)|q(3,2)| ...  |q(3,m)| Golgi      |
+| ... | ...  | ...  | ...  | ...  | ...        |
+| pn  |q(n,1)|q(n,2)| ...  |q(n,m)| unknown    |
+
+
 ### References
 
 Gatto L, Breckels LM, Burger T, Nightingale DJ, Groen AJ, Campbell C,
