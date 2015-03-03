@@ -173,7 +173,7 @@ x
 ## Session information
 
 ```{r si}
-sessionInformation()
+sessionInfo()
 ```
 
 | [Home](./README.md) | [Caveats](./Caveats.md) | [Mapping](./mapping.md) | [Transfer learning](./transfer-learning.md) |

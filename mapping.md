@@ -244,7 +244,7 @@ sapply(laln, nmatch)/width(aa(p[k]))
 ```
 ## ########################################
 ## # Program: Biostrings (version 2.35.11), a Bioconductor package
-## # Rundate: Tue Mar  3 13:21:58 2015
+## # Rundate: Tue Mar  3 13:24:10 2015
 ## ########################################
 ```
 
@@ -308,11 +308,80 @@ splicing. J Proteome Res. 2014 Jan 3;13(1):84-98. doi:
 
 
 ```r
-sessionInformation()
+sessionInfo()
 ```
 
 ```
-## Error in eval(expr, envir, enclos): could not find function "sessionInformation"
+## R Under development (unstable) (2015-01-22 r67580)
+## Platform: x86_64-unknown-linux-gnu (64-bit)
+## Running under: Ubuntu 14.04.1 LTS
+## 
+## locale:
+##  [1] LC_CTYPE=en_GB.UTF-8       LC_NUMERIC=C              
+##  [3] LC_TIME=en_GB.UTF-8        LC_COLLATE=en_GB.UTF-8    
+##  [5] LC_MONETARY=en_GB.UTF-8    LC_MESSAGES=en_GB.UTF-8   
+##  [7] LC_PAPER=en_GB.UTF-8       LC_NAME=C                 
+##  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+## [11] LC_MEASUREMENT=en_GB.UTF-8 LC_IDENTIFICATION=C       
+## 
+## attached base packages:
+##  [1] grid      stats4    parallel  methods   stats     graphics  grDevices
+##  [8] utils     datasets  base     
+## 
+## other attached packages:
+##  [1] BSgenome.Hsapiens.NCBI.GRCh38_1.3.1000
+##  [2] BSgenome_1.35.17                      
+##  [3] Biostrings_2.35.11                    
+##  [4] biomaRt_2.23.5                        
+##  [5] ggplot2_1.0.0                         
+##  [6] XVector_0.7.4                         
+##  [7] knitr_1.9                             
+##  [8] rtracklayer_1.27.8                    
+##  [9] Pbase_0.6.11                          
+## [10] Gviz_1.11.12                          
+## [11] GenomicRanges_1.19.42                 
+## [12] GenomeInfoDb_1.3.13                   
+## [13] IRanges_2.1.41                        
+## [14] S4Vectors_0.5.21                      
+## [15] Rcpp_0.11.4.7                         
+## [16] BiocGenerics_0.13.6                   
+## 
+## loaded via a namespace (and not attached):
+##  [1] acepack_1.3-3.3           affy_1.45.2              
+##  [3] affyio_1.35.0             AnnotationDbi_1.29.17    
+##  [5] base64enc_0.1-2           BatchJobs_1.5            
+##  [7] BBmisc_1.9                Biobase_2.27.2           
+##  [9] BiocInstaller_1.17.5      BiocParallel_1.1.13      
+## [11] biovizBase_1.15.2         bitops_1.0-6             
+## [13] brew_1.0-6                checkmate_1.5.1          
+## [15] chron_2.3-45              cleaver_1.5.3            
+## [17] cluster_2.0.1             codetools_0.2-10         
+## [19] colorspace_1.2-4          data.table_1.9.4         
+## [21] DBI_0.3.1                 dichromat_2.0-0          
+## [23] digest_0.6.8              doParallel_1.0.8         
+## [25] evaluate_0.5.5            fail_1.2                 
+## [27] foreach_1.4.2             foreign_0.8-63           
+## [29] formatR_1.0               Formula_1.2-0            
+## [31] GenomicAlignments_1.3.29  GenomicFeatures_1.19.20  
+## [33] gtable_0.1.2              Hmisc_3.15-0             
+## [35] impute_1.41.0             iterators_1.0.7          
+## [37] labeling_0.3              lattice_0.20-30          
+## [39] latticeExtra_0.6-26       limma_3.23.10            
+## [41] MALDIquant_1.11           MASS_7.3-39              
+## [43] matrixStats_0.14.0        MSnbase_1.15.6           
+## [45] munsell_0.4.2             mzID_1.5.2               
+## [47] mzR_2.1.12                nnet_7.3-9               
+## [49] pcaMethods_1.57.2         plyr_1.8.1               
+## [51] preprocessCore_1.29.0     ProtGenerics_0.99.1      
+## [53] proto_0.3-10              Pviz_1.1.1               
+## [55] RColorBrewer_1.1-2        RCurl_1.95-4.5           
+## [57] reshape2_1.4.1            rpart_4.1-9              
+## [59] Rsamtools_1.19.38         RSQLite_1.0.0            
+## [61] scales_0.2.4              sendmailR_1.2-1          
+## [63] splines_3.2.0             stringr_0.6.2            
+## [65] survival_2.38-1           tools_3.2.0              
+## [67] VariantAnnotation_1.13.38 vsn_3.35.0               
+## [69] XML_3.98-1.1              zlibbioc_1.13.1
 ```
 
 | [Home](./README.md) | [Caveats](./Caveats.md) | [Mapping](./mapping.md) | [Transfer learning](./transfer-learning.md) |

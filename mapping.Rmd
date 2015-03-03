@@ -302,7 +302,7 @@ splicing. J Proteome Res. 2014 Jan 3;13(1):84-98. doi:
 ## Session information
 
 ```{r si}
-sessionInformation()
+sessionInfo()
 ```
 
 | [Home](./README.md) | [Caveats](./Caveats.md) | [Mapping](./mapping.md) | [Transfer learning](./transfer-learning.md) |
