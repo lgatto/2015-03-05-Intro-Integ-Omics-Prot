@@ -1,6 +1,44 @@
+# Integrating transcriptomics and proteomics data
+
+Different approaches to data integration exist: (i) model- or
+network-based approaches that identify common patterns in different
+data sources as well as (ii) reference-based approaches, that map
+different sources of data against a common reference.
+
+
+The former are very versatile and rely on experiment-wide
+clustering/modelling and crucially depend on reliably linking features
+(explicitly via common identifiers or through functional
+contextualisation). Transcript and protein measurement have previously
+been combined and compared by linking the respective features by a
+**common (gene) identifier** 
+([1](http://www.ncbi.nlm.nih.gov/pubmed/21179022),
+[2](http://www.ncbi.nlm.nih.gov/pubmed/22068331)). Such approaches are
+often difficult to track and are susceptible to inconsistencies in the
+relation between different data sources when, for example, multiple
+transcripts are compared to ambiguous protein groups. The latter
+approaches are a natural choice for data stemming from genomics,
+transcriptomics, epigenomics, etc that directly rely on **mapping** their
+data features along a **genome reference**.
+
 # Mapping peptides to genomic coordinates
 
 
+```
+## Warning: multiple methods tables found for 'score'
+```
+
+```
+## Warning: multiple methods tables found for 'score'
+```
+
+```
+## Warning: multiple methods tables found for 'score'
+```
+
+```
+## Warning: multiple methods tables found for 'fileName'
+```
 
 The **goal** is to map peptides from protein coordinates (1 to *L_p*)
 to genomic coordinates.
@@ -222,83 +260,16 @@ sapply(laln, nmatch)/width(aa(p[k]))
 ```
 ## ########################################
 ## # Program: Biostrings (version 2.35.11), a Bioconductor package
-## # Rundate: Fri Feb 27 23:09:29 2015
+## # Rundate: Tue Mar  3 10:36:41 2015
 ## ########################################
-## #=======================================
-## #
-## # Aligned_sequences: 2
-## # 1: P1
-## # 2: P02545
-## # Matrix: NA
-## # Gap_penalty: 14.0
-## # Extend_penalty: 4.0
-## #
-## # Length: 665
-## # Identity:     664/665 (99.8%)
-## # Similarity:    NA/665 (NA%)
-## # Gaps:           1/665 (0.2%)
-## # Score: 2843.652
-## #
-## #
-## #=======================================
-## 
-## P1                 1 METPSQRRATRSGAQASSTPLSPTRITRLQEKEDLQELNDRLAVYIDRVR     50
-##                      ||||||||||||||||||||||||||||||||||||||||||||||||||
-## P02545             1 METPSQRRATRSGAQASSTPLSPTRITRLQEKEDLQELNDRLAVYIDRVR     50
-## 
-## P1                51 SLETENAGLRLRITESEEVVSREVSGIKAAYEAELGDARKTLDSVAKERA    100
-##                      ||||||||||||||||||||||||||||||||||||||||||||||||||
-## P02545            51 SLETENAGLRLRITESEEVVSREVSGIKAAYEAELGDARKTLDSVAKERA    100
-## 
-## P1               101 RLQLELSKVREEFKELKARNTKKEGDLIAAQARLKDLEALLNSKEAALST    150
-##                      ||||||||||||||||||||||||||||||||||||||||||||||||||
-## P02545           101 RLQLELSKVREEFKELKARNTKKEGDLIAAQARLKDLEALLNSKEAALST    150
-## 
-## P1               151 ALSEKRTLEGELHDLRGQVAKLEAALGEAKKQLQDEMLRRVDAENRLQTM    200
-##                      ||||||||||||||||||||||||||||||||||||||||||||||||||
-## P02545           151 ALSEKRTLEGELHDLRGQVAKLEAALGEAKKQLQDEMLRRVDAENRLQTM    200
-## 
-## P1               201 KEELDFQKNIYSEELRETKRRHETRLVEIDNGKQREFESRLADALQELRA    250
-##                      ||||||||||||||||||||||||||||||||||||||||||||||||||
-## P02545           201 KEELDFQKNIYSEELRETKRRHETRLVEIDNGKQREFESRLADALQELRA    250
-## 
-## P1               251 QHEDQVEQYKKELEKTYSAKLDNARQSAERNSNLVGAAHEELQQSRIRID    300
-##                      ||||||||||||||||||||||||||||||||||||||||||||||||||
-## P02545           251 QHEDQVEQYKKELEKTYSAKLDNARQSAERNSNLVGAAHEELQQSRIRID    300
-## 
-## P1               301 SLSAQLSQLQKQLAAKEAKLRDLEDSLARERDTSRRLLAEKEREMAEMRA    350
-##                      ||||||||||||||||||||||||||||||||||||||||||||||||||
-## P02545           301 SLSAQLSQLQKQLAAKEAKLRDLEDSLARERDTSRRLLAEKEREMAEMRA    350
-## 
-## P1               351 RMQQQLDEYQELLDIKLALDMEIHAYRKLLEGEEERLRLSPSPTSQRSRG    400
-##                      ||||||||||||||||||||||||||||||||||||||||||||||||||
-## P02545           351 RMQQQLDEYQELLDIKLALDMEIHAYRKLLEGEEERLRLSPSPTSQRSRG    400
-## 
-## P1               401 RASSHSSQTQGGGSVTKKRKLESTESRSSFSQHARTSGRVAVEEVDEEGK    450
-##                      ||||||||||||||||||||||||||||||||||||||||||||||||||
-## P02545           401 RASSHSSQTQGGGSVTKKRKLESTESRSSFSQHARTSGRVAVEEVDEEGK    450
-## 
-## P1               451 FVRLRNKSNEDQSMGNWQIKRQNGDDPLLTYRFPPKFTLKAGQVVTIWAA    500
-##                      ||||||||||||||||||||||||||||||||||||||||||||||||||
-## P02545           451 FVRLRNKSNEDQSMGNWQIKRQNGDDPLLTYRFPPKFTLKAGQVVTIWAA    500
-## 
-## P1               501 GAGATHSPPTDLVWKAQNTWGCGNSLRTALINSTGEEVAMRKLVRSVTVV    550
-##                      ||||||||||||||||||||||||||||||||||||||||||||||||||
-## P02545           501 GAGATHSPPTDLVWKAQNTWGCGNSLRTALINSTGEEVAMRKLVRSVTVV    550
-## 
-## P1               551 EDDEDEDGDDLLHHHHGSHCSSSGDPAEYNLRSRTVLCGTCGQPADKASA    600
-##                      ||||||||||||||||||||||||||||||||||||||||||||||||||
-## P02545           551 EDDEDEDGDDLLHHHHGSHCSSSGDPAEYNLRSRTVLCGTCGQPADKASA    600
-## 
-## P1               601 SGSGAQVGGPISSGSSASSVTVTRSYRSVGGSGGGSFGDNLVTRSYLLGN    650
-##                      ||||||||||||||||||||||||||||||||||||||||||||||||||
-## P02545           601 SGSGAQVGGPISSGSSASSVTVTRSYRSVGGSGGGSFGDNLVTRSYLLGN    650
-## 
-## P1               651 SSPRTQSPQNCSIM*    665
-##                      |||||||||||||| 
-## P02545           651 SSPRTQSPQNCSIM-    664
-## 
-## 
+```
+
+```
+## Warning in writePairwiseAlignments(laln[[ki]]): 'x' is an empty
+## PairwiseAlignments object -> nothing to write
+```
+
+```
 ## #---------------------------------------
 ## #---------------------------------------
 ```

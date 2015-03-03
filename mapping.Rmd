@@ -1,3 +1,26 @@
+# Integrating transcriptomics and proteomics data
+
+Different approaches to data integration exist: (i) model- or
+network-based approaches that identify common patterns in different
+data sources as well as (ii) reference-based approaches, that map
+different sources of data against a common reference.
+
+
+The former are very versatile and rely on experiment-wide
+clustering/modelling and crucially depend on reliably linking features
+(explicitly via common identifiers or through functional
+contextualisation). Transcript and protein measurement have previously
+been combined and compared by linking the respective features by a
+**common (gene) identifier** 
+([1](http://www.ncbi.nlm.nih.gov/pubmed/21179022),
+[2](http://www.ncbi.nlm.nih.gov/pubmed/22068331)). Such approaches are
+often difficult to track and are susceptible to inconsistencies in the
+relation between different data sources when, for example, multiple
+transcripts are compared to ambiguous protein groups. The latter
+approaches are a natural choice for data stemming from genomics,
+transcriptomics, epigenomics, etc that directly rely on **mapping** their
+data features along a **genome reference**.
+
 # Mapping peptides to genomic coordinates
 
 ```{r env, echo=FALSE}
