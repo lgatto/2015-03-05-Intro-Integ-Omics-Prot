@@ -39,12 +39,6 @@ splicing. J Proteome Res. 2014 Jan 3;13(1):84-98. doi:
 10.1021/pr400820p. Epub 2013 Nov 12. PubMed
 [PMID: 24152167](http://www.ncbi.nlm.nih.gov/pubmed/24152167).
 
-Evans VC, Barker G, Heesom KJ, Fan J, Bessant C, Matthews DA. De novo
-derivation of proteomes from transcriptomes for transcript and protein
-identification. Nat Methods. 2012 Dec;9(12):1207-11. doi:
-10.1038/nmeth.2227.  Epub 2012 Nov 11. PubMed
-[PMID: 23142869](http://www.ncbi.nlm.nih.gov/pubmed/23142869).
-
 Sheynkman GM, Johnson JE, Jagtap PD, Shortreed MR, Onsongo G, Frey BL,
 Griffin TJ, Smith LM. Using Galaxy-P to leverage RNA-Seq for the
 discovery of novel protein variations. BMC Genomics. 2014 Aug
@@ -62,4 +56,19 @@ using Galaxy. Nat Biotechnol. 2015 Feb 6;33(2):137-9. doi:
 10.1038/nbt.3134. PubMed
 [PMID: 25658277](http://www.ncbi.nlm.nih.gov/pubmed/25658277).
 
+Gatto L, Lilley KS. MSnbase-an R/Bioconductor package for isobaric
+tagged mass spectrometry data visualization, processing and
+quantitation. Bioinformatics.  2012 Jan 15;28(2):288-9. doi:
+10.1093/bioinformatics/btr645. Epub 2011 Nov 22.  PubMed
+PMID:[22113085](http://www.ncbi.nlm.nih.gov/pubmed/22113085).
+
+
+
+---
+
+This material is licensed under a
+[Creative Commons Attribution-ShareAlike 3.0 License](http://creativecommons.org/licenses/by-sa/3.0/).
+This means you are free to copy, distribute and transmit the work,
+adapt it to your needs as long as you cite its origin and, if you do
+redistribute it, do so under the same license.
 
