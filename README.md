@@ -21,7 +21,7 @@
 
 ### Software
 
-All the example are produced with Bioconductor package, in particular
+All the example are produced with Bioconductor packages, in particular
 [`Pbase`](http://bioconductor.org/packages/devel/bioc/html/Pbase.html),
 [`MSnbase`](http://bioconductor.org/packages/devel/bioc/html/MSnbase.html)
 and

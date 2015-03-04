@@ -10,17 +10,13 @@ But...
 
 ## Coverage
 
-- Proteomics in `%`
-- RNA-Seq in fold `X`
+- Coverage in proteomics in `%`
+- [Coverage](http://www.ncbi.nlm.nih.gov/pubmed/24434847) in RNA-Seq in fold `X`
 
-The following values are higher bounds, without peptide filtering for
-gene groups.
+The following values are higher bounds, *without* peptide filtering for
+about 80000 *gene groups* 
 
 ![plot of chunk cvg](figure/cvg-1.png) 
-
-| Min.| 1st Qu.| Median|  Mean| 3rd Qu.| Max.|
-|----:|-------:|------:|-----:|-------:|----:|
-|    0|   10.61|  42.41| 42.13|   69.51|  100|
 
 ## Protein inference
 
@@ -135,9 +131,9 @@ processingData(flt)
 
 ```
 ## - - - Processing information - - -
-## Subset [689,16][301,16] Wed Mar  4 13:35:21 2015 
-## Removed features with more than 0 NAs: Wed Mar  4 13:35:21 2015 
-## Dropped featureData's levels Wed Mar  4 13:35:21 2015 
+## Subset [689,16][301,16] Wed Mar  4 15:36:39 2015 
+## Removed features with more than 0 NAs: Wed Mar  4 15:36:39 2015 
+## Dropped featureData's levels Wed Mar  4 15:36:39 2015 
 ##  MSnbase version: 1.15.6
 ```
 
@@ -203,7 +199,7 @@ x
 ## experimentData: use 'experimentData(object)'
 ## Annotation:  
 ## - - - Processing information - - -
-## Data imputation using mixed Wed Mar  4 13:35:22 2015 
+## Data imputation using mixed Wed Mar  4 15:36:40 2015 
 ##   Using default parameters 
 ##  MSnbase version: 1.15.6
 ```

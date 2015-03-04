@@ -14,11 +14,11 @@ But...
 
 ## Coverage
 
-- Proteomics in `%`
-- RNA-Seq in fold `X`
+- Coverage in proteomics in `%`
+- [Coverage](http://www.ncbi.nlm.nih.gov/pubmed/24434847) in RNA-Seq in fold `X`
 
-The following values are higher bounds, without peptide filtering for
-gene groups.
+The following values are higher bounds, *without* peptide filtering for
+about 80000 *gene groups* 
 
 ```{r cvg, echo=FALSE, fig.width=12}
 cvg <- data.table::fread("./data/Ensembl_76.csv", skip = 17,
@@ -26,7 +26,6 @@ cvg <- data.table::fread("./data/Ensembl_76.csv", skip = 17,
 sel <- cvg$length > 100 & cvg$length < 10000
 cvg <- cvg[sel, ]
 hist(cvg$coverage, breaks = 100, xlab = "coverage", main = "")
-kable(rbind(summary(cvg$coverage)))
 ```
 
 ## Protein inference
