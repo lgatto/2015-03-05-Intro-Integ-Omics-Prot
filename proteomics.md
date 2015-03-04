@@ -4,8 +4,6 @@
   understanding of proteomics data, in terms of quantitation and
   identification.
 
-- Challenges of MS-based proteomics
-
-- What can we assays with proteomics: differential protein expression,
+- Proteomics assays: differential protein expression,
   post-translational modifications, protein-protein interactions,
   spatial proteomics.
