@@ -3,7 +3,7 @@
 Combining quantitative (spatial) proteomics and (binary) annotation
 features.
 
-### Standard spatial protoemics workflow
+### Standard spatial proteomics workflow
 
 ![Spatial proteomics workflow](./figure/workflow_primary.png)
 
@@ -49,51 +49,38 @@ We compute *weights* for:
 
 - the two data sources (experimental = primary and annotation =
   auxiliary)
-- for different data classes (organelles)
+- for different data classes (sub-cellular niches)
 
 ### [Method description](https://github.com/ComputationalProteomicsUnit/Intro-Integ-Omics-Prot/blob/master/thetatut.pdf?raw=true)
 
 ### Example code
 
 
-
 ```r
 library("pRoloc")
 library("pRolocdata")
 data(andy2011)
+```
+
+
+```r
 ap <- setAnnotationParams(inputs =
                               c("Homo sapiens",
                                 "UniProt/Swissprot ID"))
 
-fData(andy2011)$UniProtKB.entry.name <- featureNames(andy2011)
-featureNames(andy2011) <- fData(andy2011)$Accession.No.
 andygoset <- makeGoSet(andy2011)
 ```
 
 
 ```r
-ttopt <- thetaOptimisation(andy2011, andygoset)
-```
-
-```
-## Error in eval(expr, envir, enclos): could not find function "thetaOptimisation"
+thopt <- thetaOptimisation(andy2011, andygoset)
+plot(thopt)
 ```
 
 
 ```r
-th <- getParams(opt)
-```
-
-```
-## Error in eval(expr, envir, enclos): could not find function "getParams"
-```
-
-```r
+th <- getParams(thopt)
 thes <- thetaClassification(andy2011, andygoset, bestTheta = th)
-```
-
-```
-## Error in eval(expr, envir, enclos): could not find function "thetaClassification"
 ```
 
 ### References
