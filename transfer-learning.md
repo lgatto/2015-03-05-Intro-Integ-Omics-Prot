@@ -63,4 +63,4 @@ Breckels LM, Holden S, Christoforou A, Lilley KS, Gatto L. A Transfer
 Learning Framework for Spatial Proteomics Data. In prep.
 
 
-| [Home](./README.md) | [Caveats](./Caveats.md) | [Mapping](./mapping.md) | [Transfer learning](./transfer-learning.md) |
+| [Home](./README.md) | [Caveats](./caveats.md) | [Mapping](./mapping.md) | [Transfer learning](./transfer-learning.md) |

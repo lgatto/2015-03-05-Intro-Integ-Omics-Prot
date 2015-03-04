@@ -244,7 +244,7 @@ sapply(laln, nmatch)/width(aa(p[k]))
 ```
 ## ########################################
 ## # Program: Biostrings (version 2.35.11), a Bioconductor package
-## # Rundate: Tue Mar  3 13:24:10 2015
+## # Rundate: Wed Mar  4 13:36:04 2015
 ## ########################################
 ```
 
@@ -384,4 +384,4 @@ sessionInfo()
 ## [69] XML_3.98-1.1              zlibbioc_1.13.1
 ```
 
-| [Home](./README.md) | [Caveats](./Caveats.md) | [Mapping](./mapping.md) | [Transfer learning](./transfer-learning.md) |
+| [Home](./README.md) | [Caveats](./caveats.md) | [Mapping](./mapping.md) | [Transfer learning](./transfer-learning.md) |

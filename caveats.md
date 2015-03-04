@@ -135,9 +135,9 @@ processingData(flt)
 
 ```
 ## - - - Processing information - - -
-## Subset [689,16][301,16] Tue Mar  3 13:23:08 2015 
-## Removed features with more than 0 NAs: Tue Mar  3 13:23:08 2015 
-## Dropped featureData's levels Tue Mar  3 13:23:08 2015 
+## Subset [689,16][301,16] Wed Mar  4 13:35:21 2015 
+## Removed features with more than 0 NAs: Wed Mar  4 13:35:21 2015 
+## Dropped featureData's levels Wed Mar  4 13:35:21 2015 
 ##  MSnbase version: 1.15.6
 ```
 
@@ -203,7 +203,7 @@ x
 ## experimentData: use 'experimentData(object)'
 ## Annotation:  
 ## - - - Processing information - - -
-## Data imputation using mixed Tue Mar  3 13:23:09 2015 
+## Data imputation using mixed Wed Mar  4 13:35:22 2015 
 ##   Using default parameters 
 ##  MSnbase version: 1.15.6
 ```
@@ -280,5 +280,5 @@ sessionInfo()
 ## [75] zlibbioc_1.13.1
 ```
 
-| [Home](./README.md) | [Caveats](./Caveats.md) | [Mapping](./mapping.md) | [Transfer learning](./transfer-learning.md) |
+| [Home](./README.md) | [Caveats](./caveats.md) | [Mapping](./mapping.md) | [Transfer learning](./transfer-learning.md) |
 
