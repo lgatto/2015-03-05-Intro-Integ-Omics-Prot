@@ -84,7 +84,8 @@ upbm <- select(ens, keys = seqnames(up),
 - The UniProt human proteome (release 2015_02) has `r length(up)` entries.
 
 - If we query the Ensembl Biomart server for their transcript
-  identifiers, we obtain results for `r length(unique(upbm$uniprot_swissprot_accession))`.
+  identifiers, we obtain transcript entries for
+  `r length(unique(upbm$uniprot_swissprot_accession))`.
 
 
 ```{r ids1, echo=FALSE}

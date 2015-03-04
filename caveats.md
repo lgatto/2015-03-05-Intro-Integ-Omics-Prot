@@ -60,7 +60,8 @@ If we want to map UniProt accession numbers to genomic identifiers
 - The UniProt human proteome (release 2015_02) has 89796 entries.
 
 - If we query the Ensembl Biomart server for their transcript
-  identifiers, we obtain results for 19015.
+  identifiers, we obtain transcript entries for
+  19015.
 
 
 
@@ -138,9 +139,9 @@ processingData(flt)
 
 ```
 ## - - - Processing information - - -
-## Subset [689,16][301,16] Wed Mar  4 15:46:10 2015 
-## Removed features with more than 0 NAs: Wed Mar  4 15:46:10 2015 
-## Dropped featureData's levels Wed Mar  4 15:46:10 2015 
+## Subset [689,16][301,16] Wed Mar  4 15:48:19 2015 
+## Removed features with more than 0 NAs: Wed Mar  4 15:48:19 2015 
+## Dropped featureData's levels Wed Mar  4 15:48:19 2015 
 ##  MSnbase version: 1.15.6
 ```
 
@@ -206,7 +207,7 @@ x
 ## experimentData: use 'experimentData(object)'
 ## Annotation:  
 ## - - - Processing information - - -
-## Data imputation using mixed Wed Mar  4 15:46:11 2015 
+## Data imputation using mixed Wed Mar  4 15:48:20 2015 
 ##   Using default parameters 
 ##  MSnbase version: 1.15.6
 ```
