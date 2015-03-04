@@ -57,11 +57,18 @@ using Galaxy. Nat Biotechnol. 2015 Feb 6;33(2):137-9. doi:
 10.1038/nbt.3134. PubMed
 [PMID: 25658277](http://www.ncbi.nlm.nih.gov/pubmed/25658277).
 
-Gatto L, Lilley KS. MSnbase-an R/Bioconductor package for isobaric
-tagged mass spectrometry data visualization, processing and
-quantitation. Bioinformatics.  2012 Jan 15;28(2):288-9. doi:
-10.1093/bioinformatics/btr645. Epub 2011 Nov 22.  PubMed
-PMID:[22113085](http://www.ncbi.nlm.nih.gov/pubmed/22113085).
+Evans VC, Barker G, Heesom KJ, Fan J, Bessant C, Matthews DA. De novo
+derivation of proteomes from transcriptomes for transcript and protein
+identification. Nat Methods. 2012 Dec;9(12):1207-11. doi:
+10.1038/nmeth.2227.  Epub 2012 Nov 11. PubMed
+PMID:[http://www.ncbi.nlm.nih.gov/pubmed/23142869](23142869); PubMed
+Central PMCID:PMC3581816.
+
+Gatto L, Lilley KS. [`MSnbase`](http://bioconductor.org/packages/devel/bioc/html/MSnbase.html) -
+an R/Bioconductor package for isobaric tagged mass spectrometry data
+visualization, processing and quantitation. Bioinformatics.  2012 Jan
+15;28(2):288-9. doi: 10.1093/bioinformatics/btr645. Epub 2011 Nov 22.
+PubMed PMID:[22113085](http://www.ncbi.nlm.nih.gov/pubmed/22113085).
 
 
 
