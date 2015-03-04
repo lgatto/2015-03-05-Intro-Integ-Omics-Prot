@@ -98,7 +98,6 @@ Proteomics. 2014 Aug;13(8):1937-52. doi: 10.1074/mcp.M113.036350. Epub
 PMID:[24846987](http://www.ncbi.nlm.nih.gov/pubmed/24846987); PubMed
 Central PMCID:PMC4125728.
 
-
 Gatto L, Breckels LM, Wieczorek S, Burger T, Lilley KS.
 Mass-spectrometry-based spatial proteomics data analysis using pRoloc
 and pRolocdata. Bioinformatics. 2014 May 1;30(9):1322-4. doi:
@@ -106,6 +105,9 @@ and pRolocdata. Bioinformatics. 2014 May 1;30(9):1322-4. doi:
 PMID:[24413670](http://www.ncbi.nlm.nih.gov/pubmed/24413670); PubMed
 Central PMCID:PMC3998135.
 
+Wu P, Dietterich WG.
+[Improving SVM accuracy by training on auxiliary data sources](http://citeseer.ist.psu.edu/viewdoc/summary?doi=10.1.1.94.594).
+ICML 2004.
 
 Breckels LM, Holden S, Christoforou A, Lilley KS, Gatto L. A Transfer
 Learning Framework for Spatial Proteomics Data. In prep.
