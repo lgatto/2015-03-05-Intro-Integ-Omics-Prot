@@ -45,8 +45,10 @@ Bioconductor package (devel version).
 
 We have an example data, named `p`, composed of `r length(p)`
 proteins, with UniProt accession numbers and Ensembl transcipt
-identifers and each protein has a set experimentally observed
-peptides:
+identifiers and each protein has a set experimentally observed peptides
+(see table below). This `p` object is generated from the protein
+database (fasta file) and the MS identification results (`mzIdentML`
+file) against this very same protein database.
 
 ```{r ids, echo=FALSE}
 kable(cbind(Acc = seqnames(p),
@@ -69,15 +71,7 @@ pcgrl <- proteinCoding(grl)
 ```
 
 ```{r gviz1, echo=FALSE, cache=TRUE}
-grTrack <- GeneRegionTrack(grl[[5]],
-                           name = acols(p)$ENST[5])
-grTrack2 <- GeneRegionTrack(pcgrl[[5]],
-                           name = acols(p)$ENST[5])
-ideoTrack <- IdeogramTrack(genome = "hg38",
-                           chromosome = "chrX")
-axisTrack <- GenomeAxisTrack()
-plotTracks(list(ideoTrack, axisTrack, grTrack, grTrack2),
-           add53 = TRUE, add35 = TRUE)
+plotAsGeneRegionTrack(grl[[5]], pcgrl[[5]])
 ```
 
 ## Mapping peptides to the genome
@@ -87,24 +81,13 @@ res <- pmapToGenome(p, pcgrl)
 ```
 
 ```{r gviz2, echo=FALSE}
-.res <- res[[5]]
-pepTrack <- AnnotationTrack(start = start(.res),
-                            end = end(.res),
-                            chr = chrom(.res),
-                            strand = strand(.res),
-                            id = mcols(.res)$pepseq,
-                            name = paste0(seqnames(p[5]),
-                                " peptides"))
-plotTracks(list(ideoTrack, axisTrack, grTrack, pepTrack),
-           groupAnnotation = "id",
-           just.group = "below",
-           fontsize.group = 9,
-           add53 = TRUE, add35 = TRUE)
+plotAsAnnotationTrack(res[[5]], grl[[5]])
 ```
 
 ## Detailed annotation tracks
 
-Maintaining access to the raw MS data
+Maintaining access to the raw MS data (used as input with the fasta
+file to generate the identification results).
 
 ```{r gviz3, echo=FALSE}
 data(pms)
