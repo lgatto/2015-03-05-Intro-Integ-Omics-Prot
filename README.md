@@ -61,7 +61,7 @@ Evans VC, Barker G, Heesom KJ, Fan J, Bessant C, Matthews DA. De novo
 derivation of proteomes from transcriptomes for transcript and protein
 identification. Nat Methods. 2012 Dec;9(12):1207-11. doi:
 10.1038/nmeth.2227.  Epub 2012 Nov 11. PubMed
-PMID:[http://www.ncbi.nlm.nih.gov/pubmed/23142869](23142869); PubMed
+PMID:[23142869](http://www.ncbi.nlm.nih.gov/pubmed/23142869); PubMed
 Central PMCID:PMC3581816.
 
 Gatto L, Lilley KS. [`MSnbase`](http://bioconductor.org/packages/devel/bioc/html/MSnbase.html) -
