@@ -12,6 +12,13 @@ library("knitr")
 
 But...
 
+- coverage
+- protein inference
+- identifier mapping
+- missing values
+
+---
+
 ## Coverage
 
 - Coverage in proteomics in `%`
@@ -54,8 +61,8 @@ from.
 
 ![linking with genomics](./figure/gen-prot-db.png)
 
-If we want to map UniProt accession to genomic identifiers (Ensembl
-transcipt identifiers):
+If we want to map UniProt accession numbers to genomic identifiers
+(Ensembl transcipt identifiers):
 
 
 ```{r ids, cache=TRUE, echo=FALSE}

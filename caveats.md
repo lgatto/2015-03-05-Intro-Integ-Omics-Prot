@@ -8,6 +8,13 @@
 
 But...
 
+- coverage
+- protein inference
+- identifier mapping
+- missing values
+
+---
+
 ## Coverage
 
 - Coverage in proteomics in `%`
@@ -44,8 +51,8 @@ from.
 
 ![linking with genomics](./figure/gen-prot-db.png)
 
-If we want to map UniProt accession to genomic identifiers (Ensembl
-transcipt identifiers):
+If we want to map UniProt accession numbers to genomic identifiers
+(Ensembl transcipt identifiers):
 
 
 
@@ -131,9 +138,9 @@ processingData(flt)
 
 ```
 ## - - - Processing information - - -
-## Subset [689,16][301,16] Wed Mar  4 15:36:39 2015 
-## Removed features with more than 0 NAs: Wed Mar  4 15:36:39 2015 
-## Dropped featureData's levels Wed Mar  4 15:36:39 2015 
+## Subset [689,16][301,16] Wed Mar  4 15:46:10 2015 
+## Removed features with more than 0 NAs: Wed Mar  4 15:46:10 2015 
+## Dropped featureData's levels Wed Mar  4 15:46:10 2015 
 ##  MSnbase version: 1.15.6
 ```
 
@@ -199,7 +206,7 @@ x
 ## experimentData: use 'experimentData(object)'
 ## Annotation:  
 ## - - - Processing information - - -
-## Data imputation using mixed Wed Mar  4 15:36:40 2015 
+## Data imputation using mixed Wed Mar  4 15:46:11 2015 
 ##   Using default parameters 
 ##  MSnbase version: 1.15.6
 ```
