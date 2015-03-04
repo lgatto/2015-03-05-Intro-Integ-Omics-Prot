@@ -55,12 +55,15 @@ We compute *weights* for:
 
 ### Example code
 
+#### Loading the software and data
+
 ```{r env, eval=FALSE}
 library("pRoloc")
 library("pRolocdata")
 data(andy2011)
 ```
 
+#### Preparing the auxiliary data
 ```{r aux, eval=FALSE}
 ap <- setAnnotationParams(inputs =
                               c("Homo sapiens",
@@ -69,11 +72,13 @@ ap <- setAnnotationParams(inputs =
 andygoset <- makeGoSet(andy2011)
 ```
 
+#### Optimising weights
 ```{r thetaopt, eval=FALSE}
 thopt <- thetaOptimisation(andy2011, andygoset)
 plot(thopt)
 ```
 
+#### Predicting sub-cellular localisation
 ```{r thetaclass, eval=FALSE}
 th <- getParams(thopt)
 thes <- thetaClassification(andy2011, andygoset, bestTheta = th)
