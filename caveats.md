@@ -25,7 +25,11 @@ about 80000 *gene groups*
 
 ![plot of chunk cvg](figure/cvg-1.png) 
 
-And, the majority of peptides map to a minority of proteins.
+And
+
+- the majority of peptides map to a minority of proteins
+- different peptides within one protein can differently detectable in
+  an MS
 
 ## Protein inference
 
@@ -141,9 +145,9 @@ processingData(flt)
 
 ```
 ## - - - Processing information - - -
-## Subset [689,16][301,16] Thu Mar  5 06:49:12 2015 
-## Removed features with more than 0 NAs: Thu Mar  5 06:49:12 2015 
-## Dropped featureData's levels Thu Mar  5 06:49:12 2015 
+## Subset [689,16][301,16] Thu Mar  5 07:47:10 2015 
+## Removed features with more than 0 NAs: Thu Mar  5 07:47:10 2015 
+## Dropped featureData's levels Thu Mar  5 07:47:10 2015 
 ##  MSnbase version: 1.15.6
 ```
 
@@ -209,7 +213,7 @@ x
 ## experimentData: use 'experimentData(object)'
 ## Annotation:  
 ## - - - Processing information - - -
-## Data imputation using mixed Thu Mar  5 06:49:13 2015 
+## Data imputation using mixed Thu Mar  5 07:47:11 2015 
 ##   Using default parameters 
 ##  MSnbase version: 1.15.6
 ```

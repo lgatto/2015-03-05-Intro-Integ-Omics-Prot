@@ -35,7 +35,11 @@ cvg <- cvg[sel, ]
 hist(cvg$coverage, breaks = 100, xlab = "coverage", main = "")
 ```
 
-And, the majority of peptides map to a minority of proteins.
+And
+
+- the majority of peptides map to a minority of proteins
+- different peptides within one protein can differently detectable in
+  an MS
 
 ## Protein inference
 
