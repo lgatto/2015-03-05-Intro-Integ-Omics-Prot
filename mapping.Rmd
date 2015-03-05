@@ -215,7 +215,7 @@ sapply(laln, nmatch)/width(aa(p[k]))
 
 ```{r align, echo=FALSE}
 ki <- which.max(sapply(laln, nmatch))
-writePairwiseAlignments(laln[[ki]])
+## writePairwiseAlignments(laln[[ki]])
 ```
 
 We see that transcript number `r ki`, `r eid[ki]`, perfectly aligns
@@ -229,8 +229,6 @@ stopifnot(eid[ki] == acols(p)$ENST[k])
 ```{r map}
 res <- pmapToGenome(p[k], pcgrl[ki])
 ```
-
-
 
 ```{r pepcoords2, echo=FALSE}
 res <- res[[1]]

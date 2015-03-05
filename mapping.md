@@ -244,22 +244,6 @@ sapply(laln, nmatch)/width(aa(p[k]))
 ```
 
 
-```
-## ########################################
-## # Program: Biostrings (version 2.35.11), a Bioconductor package
-## # Rundate: Thu Mar  5 00:00:24 2015
-## ########################################
-```
-
-```
-## Warning in writePairwiseAlignments(laln[[ki]]): 'x' is an empty
-## PairwiseAlignments object -> nothing to write
-```
-
-```
-## #---------------------------------------
-## #---------------------------------------
-```
 
 We see that transcript number 2, ENST00000368300, perfectly aligns
 with our protein sequence. This is also the transcipt that corresponds
@@ -271,8 +255,6 @@ to the curated Ensembl transcript in `acols(p)$ENST`.
 ```r
 res <- pmapToGenome(p[k], pcgrl[ki])
 ```
-
-
 
 ![plot of chunk pepcoords2](figure/pepcoords2-1.png) 
 
