@@ -83,14 +83,7 @@ res <- pmapToGenome(p, pcgrl)
 Maintaining access to the raw MS data (used as input with the fasta
 file to generate the identification results).
 
-
-```
-## Error in start(.res): error in evaluating the argument 'x' in selecting a method for function 'start': Error: object '.res' not found
-```
-
-```
-## Error in plotTracks(list(ideoTrack, axisTrack, deTrack, grTrack), add53 = TRUE, : object 'ideoTrack' not found
-```
+![plot of chunk gviz3](figure/gviz3-1.png) 
 
 
 # Multiple transcipts per protein
@@ -254,7 +247,7 @@ sapply(laln, nmatch)/width(aa(p[k]))
 ```
 ## ########################################
 ## # Program: Biostrings (version 2.35.11), a Bioconductor package
-## # Rundate: Wed Mar  4 23:57:25 2015
+## # Rundate: Thu Mar  5 00:00:24 2015
 ## ########################################
 ```
 
@@ -342,58 +335,57 @@ sessionInfo()
 ##  [1] BSgenome.Hsapiens.NCBI.GRCh38_1.3.1000
 ##  [2] BSgenome_1.35.17                      
 ##  [3] Biostrings_2.35.11                    
-##  [4] ggplot2_1.0.0                         
-##  [5] MSnbase_1.15.6                        
-##  [6] BiocParallel_1.1.13                   
-##  [7] mzR_2.1.12                            
-##  [8] Biobase_2.27.2                        
-##  [9] biomaRt_2.23.5                        
-## [10] XVector_0.7.4                         
-## [11] knitr_1.9                             
-## [12] rtracklayer_1.27.8                    
-## [13] Pbase_0.6.11                          
-## [14] Gviz_1.11.12                          
-## [15] GenomicRanges_1.19.42                 
-## [16] GenomeInfoDb_1.3.13                   
-## [17] IRanges_2.1.41                        
-## [18] S4Vectors_0.5.21                      
-## [19] Rcpp_0.11.4.7                         
-## [20] BiocGenerics_0.13.6                   
+##  [4] biomaRt_2.23.5                        
+##  [5] ggplot2_1.0.0                         
+##  [6] XVector_0.7.4                         
+##  [7] knitr_1.9                             
+##  [8] rtracklayer_1.27.8                    
+##  [9] Pbase_0.6.11                          
+## [10] Gviz_1.11.12                          
+## [11] GenomicRanges_1.19.42                 
+## [12] GenomeInfoDb_1.3.13                   
+## [13] IRanges_2.1.41                        
+## [14] S4Vectors_0.5.21                      
+## [15] Rcpp_0.11.4.7                         
+## [16] BiocGenerics_0.13.6                   
 ## 
 ## loaded via a namespace (and not attached):
 ##  [1] acepack_1.3-3.3           affy_1.45.2              
 ##  [3] affyio_1.35.0             AnnotationDbi_1.29.17    
 ##  [5] base64enc_0.1-2           BatchJobs_1.5            
-##  [7] BBmisc_1.9                BiocInstaller_1.17.5     
-##  [9] biovizBase_1.15.2         bitops_1.0-6             
-## [11] brew_1.0-6                checkmate_1.5.1          
-## [13] chron_2.3-45              cleaver_1.5.3            
-## [15] cluster_2.0.1             codetools_0.2-10         
-## [17] colorspace_1.2-4          data.table_1.9.4         
-## [19] DBI_0.3.1                 dichromat_2.0-0          
-## [21] digest_0.6.8              doParallel_1.0.8         
-## [23] evaluate_0.5.5            fail_1.2                 
-## [25] foreach_1.4.2             foreign_0.8-63           
-## [27] formatR_1.0               Formula_1.2-0            
-## [29] GenomicAlignments_1.3.29  GenomicFeatures_1.19.20  
-## [31] gtable_0.1.2              Hmisc_3.15-0             
-## [33] impute_1.41.0             iterators_1.0.7          
-## [35] lattice_0.20-30           latticeExtra_0.6-26      
-## [37] limma_3.23.10             MALDIquant_1.11          
-## [39] MASS_7.3-39               matrixStats_0.14.0       
-## [41] munsell_0.4.2             mzID_1.5.2               
-## [43] nnet_7.3-9                pcaMethods_1.57.2        
-## [45] plyr_1.8.1                preprocessCore_1.29.0    
-## [47] ProtGenerics_0.99.1       proto_0.3-10             
-## [49] Pviz_1.1.1                RColorBrewer_1.1-2       
-## [51] RCurl_1.95-4.5            reshape2_1.4.1           
-## [53] rpart_4.1-9               Rsamtools_1.19.38        
-## [55] RSQLite_1.0.0             scales_0.2.4             
-## [57] sendmailR_1.2-1           splines_3.2.0            
-## [59] stringr_0.6.2             survival_2.38-1          
-## [61] tools_3.2.0               VariantAnnotation_1.13.38
-## [63] vsn_3.35.0                XML_3.98-1.1             
-## [65] zlibbioc_1.13.1
+##  [7] BBmisc_1.9                Biobase_2.27.2           
+##  [9] BiocInstaller_1.17.5      BiocParallel_1.1.13      
+## [11] biovizBase_1.15.2         bitops_1.0-6             
+## [13] brew_1.0-6                checkmate_1.5.1          
+## [15] chron_2.3-45              cleaver_1.5.3            
+## [17] cluster_2.0.1             codetools_0.2-10         
+## [19] colorspace_1.2-5          data.table_1.9.4         
+## [21] DBI_0.3.1                 dichromat_2.0-0          
+## [23] digest_0.6.8              doParallel_1.0.8         
+## [25] evaluate_0.5.5            fail_1.2                 
+## [27] foreach_1.4.2             foreign_0.8-63           
+## [29] formatR_1.0               Formula_1.2-0            
+## [31] GenomicAlignments_1.3.30  GenomicFeatures_1.19.20  
+## [33] gtable_0.1.2              Hmisc_3.15-0             
+## [35] impute_1.41.0             iterators_1.0.7          
+## [37] labeling_0.3              lattice_0.20-30          
+## [39] latticeExtra_0.6-26       limma_3.23.10            
+## [41] MALDIquant_1.11           MASS_7.3-39              
+## [43] matrixStats_0.14.0        MSnbase_1.15.7           
+## [45] munsell_0.4.2             mzID_1.5.2               
+## [47] mzR_2.1.12                nnet_7.3-9               
+## [49] pcaMethods_1.57.2         plyr_1.8.1               
+## [51] preprocessCore_1.29.0     ProtGenerics_0.99.2      
+## [53] proto_0.3-10              Pviz_1.1.1               
+## [55] RColorBrewer_1.1-2        RCurl_1.95-4.5           
+## [57] reshape2_1.4.1            rpart_4.1-9              
+## [59] Rsamtools_1.19.39         RSQLite_1.0.0            
+## [61] scales_0.2.4              sendmailR_1.2-1          
+## [63] splines_3.2.0             stringr_0.6.2            
+## [65] survival_2.38-1           tcltk_3.2.0              
+## [67] tools_3.2.0               VariantAnnotation_1.13.38
+## [69] vsn_3.35.0                XML_3.98-1.1             
+## [71] zlibbioc_1.13.1
 ```
 
 | [Home](./README.md) | [Caveats](./caveats.md) | [Mapping](./mapping.md) | [Transfer learning](./transfer-learning.md) |

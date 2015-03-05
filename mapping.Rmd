@@ -91,6 +91,7 @@ file to generate the identification results).
 
 ```{r gviz3, echo=FALSE}
 data(pms)
+.res <- res[[5]]
 
 library("ggplot2")
 details <- function(identifier, ...) {
@@ -108,6 +109,11 @@ deTrack <- AnnotationTrack(start = start(.res),
                            name = "MS2 spectra",
                            stacking = "squish", fun = details)
 
+grTrack <- GeneRegionTrack(grl[[5]],
+                           name = acols(p)$ENST[5])
+ideoTrack <- IdeogramTrack(genome = "hg38",
+                           chromosome = "chrX")
+axisTrack <- GenomeAxisTrack()
 
 plotTracks(list(ideoTrack, axisTrack, deTrack, grTrack),
            add53 = TRUE, add35 = TRUE)
