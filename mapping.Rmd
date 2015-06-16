@@ -146,11 +146,14 @@ ens <- useMart("ensembl", "hsapiens_gene_ensembl")
 ens
 ```
 
+<!-- ## Updated on 16-06-2015: -->
+<!-- ## replaced uniprot_swissprot_accession with uniprot_swissprot -->
+
 ```{r bm}
 bm <- select(ens, keys = seqnames(p),
-             keytype = "uniprot_swissprot_accession",
+             keytype = "uniprot_swissprot",
              columns = c(
-                 "uniprot_swissprot_accession",
+                 "uniprot_swissprot",
                  "ensembl_transcript_id"))
 
 bm
@@ -158,7 +161,7 @@ bm
 
 ```{r bm2, echo=FALSE}
 k <- 6
-sel <- bm$uniprot_swissprot_accession == seqnames(p)[k]
+sel <- bm$uniprot_swissprot == seqnames(p)[k]
 bm2 <- bm[sel, ]
 eid <- bm2[, 2]
 names(eid) <- bm2[, 1]

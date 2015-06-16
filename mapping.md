@@ -125,67 +125,68 @@ ens
 ##  Using the hsapiens_gene_ensembl dataset
 ```
 
+<!-- ## Updated on 16-06-2015: -->
+<!-- ## replaced uniprot_swissprot_accession with uniprot_swissprot -->
+
 
 ```r
 bm <- select(ens, keys = seqnames(p),
-             keytype = "uniprot_swissprot_accession",
+             keytype = "uniprot_swissprot",
              columns = c(
-                 "uniprot_swissprot_accession",
+                 "uniprot_swissprot",
                  "ensembl_transcript_id"))
 
 bm
 ```
 
 ```
-##    uniprot_swissprot_accession ensembl_transcript_id
-## 1                       A4UGR9       ENST00000409043
-## 2                       A4UGR9       ENST00000409728
-## 3                       A4UGR9       ENST00000409195
-## 4                       A4UGR9       ENST00000409273
-## 5                       A4UGR9       ENST00000409605
-## 6                       A6H8Y1       ENST00000617085
-## 7                       A6H8Y1       ENST00000358731
-## 8                       O43707       ENST00000252699
-## 9                       O43707       ENST00000390009
-## 10                      O75369       ENST00000490882
-## 11                      O75369       ENST00000295956
-## 12                      O75369       ENST00000358537
-## 13                      O75369       ENST00000429972
-## 14                      P00558       ENST00000373316
-## 15                      P02545       ENST00000368301
-## 16                      P02545       ENST00000368300
-## 17                      P02545       ENST00000368299
-## 18                      P02545       ENST00000448611
-## 19                      P02545       ENST00000473598
-## 20                      P02545       ENST00000508500
-## 21                      P02545       ENST00000347559
-## 22                      P04075       ENST00000338110
-## 23                      P04075       ENST00000395248
-## 24                      P04075       ENST00000566897
-## 25                      P04075       ENST00000569545
-## 26                      P04075       ENST00000563060
-## 27                      P04075       ENST00000412304
-## 28                      P04075       ENST00000564546
-## 29                      P04075       ENST00000564595
-## 30                      P60709       ENST00000331789
+##    uniprot_swissprot ensembl_transcript_id
+## 1             A4UGR9       ENST00000409043
+## 2             A4UGR9       ENST00000409728
+## 3             A4UGR9       ENST00000409195
+## 4             A4UGR9       ENST00000409273
+## 5             A4UGR9       ENST00000409605
+## 6             A6H8Y1       ENST00000617085
+## 7             A6H8Y1       ENST00000358731
+## 8             O43707       ENST00000252699
+## 9             O43707       ENST00000390009
+## 10            O75369       ENST00000490882
+## 11            O75369       ENST00000295956
+## 12            O75369       ENST00000358537
+## 13            O75369       ENST00000429972
+## 14            P00558       ENST00000373316
+## 15            P02545       ENST00000368301
+## 16            P02545       ENST00000368300
+## 17            P02545       ENST00000368299
+## 18            P02545       ENST00000448611
+## 19            P02545       ENST00000473598
+## 20            P02545       ENST00000347559
+## 21            P04075       ENST00000338110
+## 22            P04075       ENST00000395248
+## 23            P04075       ENST00000566897
+## 24            P04075       ENST00000569545
+## 25            P04075       ENST00000563060
+## 26            P04075       ENST00000412304
+## 27            P04075       ENST00000564546
+## 28            P04075       ENST00000564595
+## 29            P60709       ENST00000331789
 ```
 
 
 
 If we focus on P02545 for example, we see that we
-retrieve 7 possible transcript identifers, including our
+retrieve 6 possible transcript identifers, including our
 annotated ENST00000368300.
 
 
-|uniprot_swissprot_accession |ensembl_transcript_id |
-|:---------------------------|:---------------------|
-|P02545                      |ENST00000368301       |
-|P02545                      |ENST00000368300       |
-|P02545                      |ENST00000368299       |
-|P02545                      |ENST00000448611       |
-|P02545                      |ENST00000473598       |
-|P02545                      |ENST00000508500       |
-|P02545                      |ENST00000347559       |
+|uniprot_swissprot |ensembl_transcript_id |
+|:-----------------|:---------------------|
+|P02545            |ENST00000368301       |
+|P02545            |ENST00000368300       |
+|P02545            |ENST00000368299       |
+|P02545            |ENST00000448611       |
+|P02545            |ENST00000473598       |
+|P02545            |ENST00000347559       |
 
 ## Genomic coordinates
 
@@ -202,8 +203,8 @@ eid
 ```
 ##            P02545            P02545            P02545            P02545 
 ## "ENST00000368301" "ENST00000368300" "ENST00000368299" "ENST00000448611" 
-##            P02545            P02545            P02545 
-## "ENST00000473598" "ENST00000508500" "ENST00000347559"
+##            P02545            P02545 
+## "ENST00000473598" "ENST00000347559"
 ```
 
 ```r
@@ -239,8 +240,8 @@ sapply(laln, nmatch)/width(aa(p[k]))
 ```
 
 ```
-##    P02545    P02545    P02545    P02545    P02545    P02545    P02545 
-## 0.8614458 1.0000000 0.9246988 0.8298193 0.8358434 0.3915663 0.9548193
+##    P02545    P02545    P02545    P02545    P02545    P02545 
+## 0.8614458 1.0000000 0.9246988 0.8298193 0.8358434 0.9548193
 ```
 
 
@@ -297,9 +298,9 @@ sessionInfo()
 ```
 
 ```
-## R Under development (unstable) (2015-01-22 r67580)
+## R version 3.2.0 Patched (2015-04-22 r68234)
 ## Platform: x86_64-unknown-linux-gnu (64-bit)
-## Running under: Ubuntu 14.04.1 LTS
+## Running under: Ubuntu 14.04.2 LTS
 ## 
 ## locale:
 ##  [1] LC_CTYPE=en_GB.UTF-8       LC_NUMERIC=C              
@@ -315,59 +316,59 @@ sessionInfo()
 ## 
 ## other attached packages:
 ##  [1] BSgenome.Hsapiens.NCBI.GRCh38_1.3.1000
-##  [2] BSgenome_1.35.17                      
-##  [3] Biostrings_2.35.11                    
-##  [4] biomaRt_2.23.5                        
-##  [5] ggplot2_1.0.0                         
-##  [6] XVector_0.7.4                         
-##  [7] knitr_1.9                             
-##  [8] rtracklayer_1.27.8                    
-##  [9] Pbase_0.6.11                          
-## [10] Gviz_1.11.12                          
-## [11] GenomicRanges_1.19.42                 
-## [12] GenomeInfoDb_1.3.13                   
-## [13] IRanges_2.1.41                        
-## [14] S4Vectors_0.5.21                      
-## [15] Rcpp_0.11.4.7                         
-## [16] BiocGenerics_0.13.6                   
+##  [2] BSgenome_1.37.1                       
+##  [3] Biostrings_2.37.2                     
+##  [4] biomaRt_2.25.1                        
+##  [5] ggplot2_1.0.1                         
+##  [6] XVector_0.9.1                         
+##  [7] knitr_1.10.5                          
+##  [8] rtracklayer_1.29.10                   
+##  [9] Pbase_0.9.0                           
+## [10] Gviz_1.13.2                           
+## [11] GenomicRanges_1.21.15                 
+## [12] GenomeInfoDb_1.5.7                    
+## [13] IRanges_2.3.11                        
+## [14] S4Vectors_0.7.5                       
+## [15] Rcpp_0.11.6                           
+## [16] BiocGenerics_0.15.2                   
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] acepack_1.3-3.3           affy_1.45.2              
-##  [3] affyio_1.35.0             AnnotationDbi_1.29.17    
-##  [5] base64enc_0.1-2           BatchJobs_1.5            
-##  [7] BBmisc_1.9                Biobase_2.27.2           
-##  [9] BiocInstaller_1.17.5      BiocParallel_1.1.13      
-## [11] biovizBase_1.15.2         bitops_1.0-6             
-## [13] brew_1.0-6                checkmate_1.5.1          
-## [15] chron_2.3-45              cleaver_1.5.3            
-## [17] cluster_2.0.1             codetools_0.2-10         
-## [19] colorspace_1.2-5          data.table_1.9.4         
-## [21] DBI_0.3.1                 dichromat_2.0-0          
-## [23] digest_0.6.8              doParallel_1.0.8         
-## [25] evaluate_0.5.5            fail_1.2                 
-## [27] foreach_1.4.2             foreign_0.8-63           
-## [29] formatR_1.0               Formula_1.2-0            
-## [31] GenomicAlignments_1.3.30  GenomicFeatures_1.19.20  
-## [33] gtable_0.1.2              Hmisc_3.15-0             
-## [35] impute_1.41.0             iterators_1.0.7          
-## [37] labeling_0.3              lattice_0.20-30          
-## [39] latticeExtra_0.6-26       limma_3.23.10            
-## [41] MALDIquant_1.11           MASS_7.3-39              
-## [43] matrixStats_0.14.0        MSnbase_1.15.7           
-## [45] munsell_0.4.2             mzID_1.5.2               
-## [47] mzR_2.1.12                nnet_7.3-9               
-## [49] pcaMethods_1.57.2         plyr_1.8.1               
-## [51] preprocessCore_1.29.0     ProtGenerics_0.99.2      
-## [53] proto_0.3-10              Pviz_1.1.1               
-## [55] RColorBrewer_1.1-2        RCurl_1.95-4.5           
-## [57] reshape2_1.4.1            rpart_4.1-9              
-## [59] Rsamtools_1.19.39         RSQLite_1.0.0            
-## [61] scales_0.2.4              sendmailR_1.2-1          
-## [63] splines_3.2.0             stringr_0.6.2            
-## [65] survival_2.38-1           tcltk_3.2.0              
-## [67] tools_3.2.0               VariantAnnotation_1.13.38
-## [69] vsn_3.35.0                XML_3.98-1.1             
-## [71] zlibbioc_1.13.1
+##  [1] Biobase_2.29.1             vsn_3.37.1                
+##  [3] splines_3.2.0              foreach_1.4.2             
+##  [5] Formula_1.2-1              highr_0.5                 
+##  [7] affy_1.47.1                latticeExtra_0.6-26       
+##  [9] Rsamtools_1.21.8           impute_1.43.0             
+## [11] RSQLite_1.0.0              lattice_0.20-31           
+## [13] biovizBase_1.17.1          limma_3.25.9              
+## [15] chron_2.3-45               digest_0.6.8              
+## [17] RColorBrewer_1.1-2         colorspace_1.2-6          
+## [19] preprocessCore_1.31.0      plyr_1.8.2                
+## [21] MALDIquant_1.12            XML_3.98-1.2              
+## [23] zlibbioc_1.15.0            scales_0.2.4              
+## [25] affyio_1.37.0              cleaver_1.7.0             
+## [27] BiocParallel_1.3.25        SummarizedExperiment_0.1.5
+## [29] GenomicFeatures_1.21.13    nnet_7.3-9                
+## [31] proto_0.3-10               survival_2.38-1           
+## [33] magrittr_1.5               evaluate_0.7              
+## [35] doParallel_1.0.8           MASS_7.3-40               
+## [37] foreign_0.8-63             mzR_2.3.1                 
+## [39] BiocInstaller_1.19.6       Pviz_1.3.0                
+## [41] tools_3.2.0                data.table_1.9.4          
+## [43] formatR_1.2                matrixStats_0.14.0        
+## [45] stringr_1.0.0              MSnbase_1.17.5            
+## [47] munsell_0.4.2              cluster_2.0.1             
+## [49] AnnotationDbi_1.31.16      lambda.r_1.1.7            
+## [51] pcaMethods_1.59.0          mzID_1.7.0                
+## [53] futile.logger_1.4.1        RCurl_1.95-4.6            
+## [55] dichromat_2.0-0            iterators_1.0.7           
+## [57] VariantAnnotation_1.15.13  labeling_0.3              
+## [59] bitops_1.0-6               gtable_0.1.2              
+## [61] codetools_0.2-11           DBI_0.3.1                 
+## [63] reshape2_1.4.1             GenomicAlignments_1.5.9   
+## [65] gridExtra_0.9.1            Hmisc_3.16-0              
+## [67] ProtGenerics_1.1.0         futile.options_1.0.0      
+## [69] stringi_0.4-1              rpart_4.1-9               
+## [71] acepack_1.3-3.3
 ```
 
 | [Home](./README.md) | [Caveats](./caveats.md) | [Mapping](./mapping.md) | [Transfer learning](./transfer-learning.md) |
