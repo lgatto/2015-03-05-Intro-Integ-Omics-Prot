@@ -58,7 +58,7 @@ ICML 2004.
 Lisa M Breckels, Sean Holden, David Wojnar, Claire M Mulvey, Andy
 Christoforou, Arnoud J Groen, Matthew WB Trotter, Oliver Kohlbacher,
 Kathryn S Lilley, Laurent Gatto 2016 bioRXiv doi:
-[http://dx.doi.org/10.1101/022152].
+http://dx.doi.org/10.1101/022152.
 
 
 
