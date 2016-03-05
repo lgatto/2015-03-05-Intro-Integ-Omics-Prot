@@ -1,7 +1,7 @@
 # Introduction to Integrative Omics: Proteomics
 
 - short URL: http://tinyurl.com/Intro-Integ-Omics-Prot
-- [Introduction to Integrative Omics](http://www.ebi.ac.uk/training/course/introduction-integrative-omics)
+- [Introduction to Integrative Omics](http://www.ebi.ac.uk/training/events/2015/introduction-integrative-omics)
 - Tuesday, March 3, 2015 - Friday, March 6, 2015
 - European Bioinformatics Institute
 
