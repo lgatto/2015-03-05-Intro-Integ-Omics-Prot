@@ -55,8 +55,11 @@ Wu P, Dietterich WG.
 [Improving SVM accuracy by training on auxiliary data sources](http://citeseer.ist.psu.edu/viewdoc/summary?doi=10.1.1.94.594).
 ICML 2004.
 
-Breckels LM, Holden S, Christoforou A, Lilley KS, Gatto L. A Transfer
-Learning Framework for Spatial Proteomics Data. In prep.
+Lisa M Breckels, Sean Holden, David Wojnar, Claire M Mulvey, Andy
+Christoforou, Arnoud J Groen, Matthew WB Trotter, Oliver Kohlbacher,
+Kathryn S Lilley, Laurent Gatto 2016 bioRXiv doi:
+[http://dx.doi.org/10.1101/022152].
+
 
 
 | [Home](./README.md) | [Caveats](./caveats.md) | [Mapping](./mapping.md) | [Transfer learning](./transfer-learning.md) |
