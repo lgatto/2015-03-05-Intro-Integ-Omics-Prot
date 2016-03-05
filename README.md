@@ -1,19 +1,18 @@
 # Introduction to Integrative Omics: Proteomics
 
-- short URL: http://tinyurl.com/Intro-Integ-Omics-Prot
+
+- short URL: http://tinyurl.com/Intro-Integ-Omics-Prot (current)
 - [Introduction to Integrative Omics](http://www.ebi.ac.uk/training/course/introduction-integrative-omics)
-- [05 March 2015, EMBL-EBI](https://github.com/ComputationalProteomicsUnit/Intro-Integ-Omics-Prot/tree/2015-03-05-EBI)
-- 08 Match 2016, EMBL-EBI (current)
+- Previous content [05 March 2015, EMBL-EBI](https://github.com/ComputationalProteomicsUnit/Intro-Integ-Omics-Prot/tree/2015-03-05-EBI)
 
 
-[Laurent Gatto](http://cpu.sysbiol.cam.ac.uk/) and [Kathryn Lilley](http://proteomics.bio.cam.ac.uk/)
+## Table of content
 
-### Material
-
-1. [Introduction](./proteomics.md)
-2. [Caveats](./caveats.md)
-3. Use case 1: [mapping](./mapping.md)
-4. Use case 2: [transfer learning](./transfer-learning.md)
+1. Use case 1: Integration of mass spectrometry based proteomics and
+   RNA-Seq transcriptomics - caveats and [mapping](./mapping.md)
+2. Use case 2: Combining exerimental spatial proteomics and third-pary
+   data using [transfer learning](./transfer-learning.md) to improve
+   inference of sub-cellular localisation of proteins.
 
 ### Software
 
@@ -65,8 +64,6 @@ an R/Bioconductor package for isobaric tagged mass spectrometry data
 visualization, processing and quantitation. Bioinformatics.  2012 Jan
 15;28(2):288-9. doi: 10.1093/bioinformatics/btr645. Epub 2011 Nov 22.
 PubMed PMID:[22113085](http://www.ncbi.nlm.nih.gov/pubmed/22113085).
-
-
 
 ---
 
