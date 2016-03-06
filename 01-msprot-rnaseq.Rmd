@@ -1,8 +1,7 @@
 ---
 title: "Integrating MS-based proteomics and RNA-Seq data"
-author: "Laurent Gatto"
-output:
-    fig_caption: true
+date: ""
+output:  beamer_presentation
 ---
 
 ```{r env, echo=FALSE, warning=FALSE}
@@ -14,33 +13,7 @@ opts_chunk$set(fig.width=12, fig.height=7)
 data(p)
 ```
 
-# Integration
-
-Different approaches to data integration exist:
-
-- Convertion to common feature identifiers and measuring co relation
-  (or lack thereof). Transcript and protein measurement have
-  previously been combined and compared by linking the respective
-  features by a **common (gene) identifier**
-  ([1](http://www.ncbi.nlm.nih.gov/pubmed/21179022),
-  [2](http://www.ncbi.nlm.nih.gov/pubmed/22068331)). Such approaches
-  are often difficult to track and are susceptible to inconsistencies
-  in the relation between different data sources when, for example,
-  multiple transcripts are compared to ambiguous protein groups.
-
-- Model- or network-based approaches that identify common patterns in
-  different data sources. Very versatile and rely on experiment-wide
-  clustering/modelling and crucially depend on reliably linking
-  features (explicitly via common identifiers or through functional
-  contextualisation).
-
-- Reference-based approaches, that map different sources of data
-  against a common reference. These approaches are a natural choice
-  for data stemming from genomics, transcriptomics, epigenomics, etc
-  that directly rely on **mapping** their data features along a
-  **genome reference**.
-
-# MS-based proteomics: caveats 
+# Use case 1: mapping peptides 
 
 **Mapping** of *peptides along protein sequences (although not
 explicitly considered a mapping exercise)* and *short reads along
@@ -53,7 +26,7 @@ But...
 - identifier mapping
 - missing values
 
-## Coverage
+# Coverage
 
 - Coverage in proteomics in `%`
 - [Coverage](http://www.ncbi.nlm.nih.gov/pubmed/24434847) in RNA-Seq in fold `X`
@@ -61,7 +34,7 @@ But...
 The following values are higher bounds, *without* peptide filtering for
 about 80000 *gene groups* 
 
-```{r cvg, echo=FALSE, fig.width=12}
+```{r cvg, echo=FALSE, fig.height=5}
 cvg <- data.table::fread("./data/Ensembl_76.csv", skip = 17,
                          stringsAsFactors = FALSE)
 sel <- cvg$length > 100 & cvg$length < 10000
@@ -69,21 +42,23 @@ cvg <- cvg[sel, ]
 hist(cvg$coverage, breaks = 100, xlab = "coverage", main = "")
 ```
 
-And
+# And
 
 - the majority of peptides map to a minority of proteins
 - different peptides within one protein can differently detectable in
   an MS
 
-## Protein inference
+# Protein inference
 
 <!-- ![Basic peptide grouping](./figure/F5.large.jpg) -->
 
 
-![Peptide evidence classes](./figure/nbt0710-647-F2.gif)
+![Peptide evidence classes](./figure/nbt0710-647-F2.pdf)
 
 From [Qeli and Ahrens (2010)](http://www.ncbi.nlm.nih.gov/pubmed/20622826).
 See also [Nesvizhskii and Aebersold (2005)](http://www.ncbi.nlm.nih.gov/pubmed/16009968).
+
+# Protein groups
 
 Often, in proteomics experiments, the features represent single
 proteins and **groups** of indistinguishable or non-differentiable
@@ -91,7 +66,7 @@ proteins identified by shared (non-unique) peptides.
 
 **Caveat**: Mapping between protein groups and unique transcripts?
 
-## Mapping protein and gene identifers
+# Mapping protein and gene identifers
 
 The protein database and the genome are _independent_, i.e. the
 proteins do not make explicitly reference to the genome they originate
@@ -99,24 +74,33 @@ from.
 
 ![DB in proteomics](./figure/indep-prot-db.png)
 
+# Mapping protein and gene identifers
+
 ![linking with genomics](./figure/gen-prot-db.png)
 
 If we want to map UniProt accession numbers to genomic identifiers
 (Ensembl transcipt identifiers):
 
+# Mapping identifiers
 
-```{r ids, cache=TRUE, echo=FALSE}
+```{r ids, echo=FALSE, cache=TRUE}
 ## The UniProt human proteome (release 2015_02)
 library("Pbase")
 up <- Proteins("data/HUMAN_2015_02.fasta.gz")
 
-library("UniProt.ws")
-upws <- UniProt.ws()
-## Using the accession number to query for transcript identifiers
-upens <- select(upws, seqnames(up), "ENSEMBL_TRANSCRIPT", "UNIPROTKB")
+if (file.exists("data/upens.rda")) {
+	load(file = "data/upens.rda")
+} else {
+	library("UniProt.ws")
+	upws <- UniProt.ws()
+	## Using the accession number to query for transcript identifiers
+	upens <- select(upws, seqnames(up), "ENSEMBL_TRANSCRIPT", "UNIPROTKB")
+}	
 ```
 
-- The UniProt human proteome (release 2015_02) has `r length(up)` entries.
+The UniProt human proteome (release 2015_02) has `r length(up)`
+entries. Using
+[`UniProt.ws`](http://www.bioconductor.org/packages/release/bioc/html/UniProt.ws.html):
 
 - `r sum(tapply(upens[, 2], upens[, 1], function(x) length(na.omit(x))) == 0)`
   have no transcript identifier
@@ -128,56 +112,67 @@ upens <- select(upws, seqnames(up), "ENSEMBL_TRANSCRIPT", "UNIPROTKB")
   have more than one transcript identifier
 
 
-```{r ids1, echo=FALSE}
+```{r ids1, echo=FALSE, fig.heigth=4}
 barplot(table(tapply(upens[, 2], upens[, 1], function(x) length(na.omit(x)))))
 ```
 
+# Using `biomaRt`:
 
-```{r, eval=FALSE}
+```{r upids, eval=TRUE, echo=FALSE}
+if (file.exists("./data/upbm.rda")) {
+	load("./data/upbm.rda")
+} else {
 ## same via biomart - very different numbers
-library("biomaRt")
-ens <- useMart("ensembl", "hsapiens_gene_ensembl")
-upbm <- select(ens, keys = seqnames(up),
-               keytype = "uniprot_swissprot",
-               columns = c(
-                   "uniprot_swissprot",
-                   "ensembl_transcript_id"))
+	library("biomaRt")
+	ens <- useMart("ensembl", "hsapiens_gene_ensembl")
+	upbm <- select(ens, keys = seqnames(up),
+	               keytype = "uniprot_swissprot",
+                   columns = c("uniprot_swissprot",
+                               "ensembl_transcript_id"))
+}
 
-length(unique(upbm$uniprot_swissprot))
+## length(unique(upbm$uniprot_swissprot))
 tab <- rbind(table(seqnames(up) %in% unique(upbm$uniprot_swissprot)))
-kable(tab)
+## kable(tab)
 
 tab <- rbind(table(table(upbm$uniprot_swissprot)))
+```
+
+Mapping `r length(unique(upbm$uniprot_swissprot))` identifiers, of which
+
+```{r bmplot, echo=FALSE, fig.height=5}
 barplot(tab)
 ```
+
 **Caveat**: Mapping between single protein and unique transcripts?
 
-## Missing values
+# Missing values
 
-An example data:
+<!-- An example data: -->
 
-```{r}
+```{r, echo=FALSE}
 library("MSnbase")
 data(naset)
-naset
-
-table(is.na(naset))
-table(fData(naset)$nNA)
+## naset
+## table(is.na(naset))
+## table(fData(naset)$nNA)
 ```
 
 Options are:
 
-### Filtering
+- Filtering: Remove missing values, or at least features or samples
+  with excessive number of missing values:
 
-Remove missing values, or at least features or samples with excessive number of missing values:
-
-```{r}
+```{r, eval=FALSE, echo=FALSE}
 flt <- filterNA(naset)
 processingData(flt)
 any(is.na(filterNA(naset)))
 ```
 
-### Data imputation
+- Data imputation: infering plausible values for missing data.
+
+
+# Data imputation
 
 There are two types of mechanisms resulting in missing values in
 LC/MSMS experiments.
@@ -196,14 +191,16 @@ LC/MSMS experiments.
   distributed in the data and are defined as **missing not at random**
   (MNAR).
 
+# 
 
 ![RSR KNN and MinDet imputation](./figure/imp-sim.png)
-(`KNN` and `MinDet` - with Cosmin Lazar and Thomas Burger)
 
 MNAR features should ideally be imputed with a **left-censor**
 (minimum value, ~zero~, ...)  method. Conversely, it is recommended to
 use **hot deck** methods (nearest neighbour, maximum likelihood, ...)
 when data are missing at random.
+
+# 
 
 ```{r xv, echo=FALSE, fig.width=9, fig.heigth=9}
 x <- impute(naset, "zero")
@@ -218,7 +215,7 @@ heatmap.2(exprs(x), col = c("lightgray", "black"),
           ColSideColors = rep(c("steelblue", "darkolivegreen"), each = 8))
 ```
 
-```{r impute}
+```{r impute, eval=FALSE, echo=FALSE}
 x <- impute(naset, method = "mixed",
             randna = fData(naset)$randna,
             mar = "knn", mnar = "min")
@@ -230,27 +227,27 @@ x
 The **goal** is to map peptides from protein coordinates (1 to *L_p*)
 to genomic coordinates.
 
-```{r mapplot, echo=FALSE}
+```{r mapplot, echo=FALSE, fig.heigth=6}
 Pbase:::mapplot()
 ```
+
+# Data
 
 Illustration with the
 [`Pbase`](http://bioconductor.org/packages/devel/bioc/html/Pbase.html)
 Bioconductor package (devel version).
 
-## Data
-
-We have an example data, named `p`, composed of `r length(p)`
+We have an example data (named `p`) composed of `r length(p)`
 proteins, with UniProt accession numbers and Ensembl transcipt
-identifiers and each protein has a set experimentally observed peptides
-(see table below). This `p` object is generated from the protein
-database (fasta file) and the MS identification results (`mzIdentML`
-file) against this very same protein database.
+identifiers and each protein has a set experimentally observed
+peptides (see table below). This `p` object is generated from the
+protein database (fasta file) and the MS identification results
+(`mzIdentML` file) against this very same protein database.
 
 ```{r xids, echo=FALSE}
 kable(cbind(Acc = seqnames(p),
             ENST = acols(p)$ENST,
-            npep = elementLengths(pranges(p))),
+            npep = elementNROWS(pranges(p))),
       row.names = 0)
 ```
 
@@ -329,7 +326,7 @@ peptides:
 ```{r xids2, echo=FALSE}
 kable(cbind(Acc = seqnames(p),
             ENST = acols(p)$ENST,
-            npep = elementLengths(pranges(p))),
+            npep = elementNROWS(pranges(p))),
       row.names = 0)
 ```
 
@@ -480,11 +477,17 @@ Laurent Gatto and Sebastian Gibb
 Manipulating and exploring protein and proteomics data. R package
 version 0.11.3. https://github.com/ComputationalProteomicsUnit/Pbase
 
-
 Bernd Fischer, Steffen Neumann, Laurent Gatto and Qiang
 Kou. [`mzR`](http://bioconductor.org/packages/release/bioc/html/mzR.html):
 parser for netCDF, mzXML, mzData and mzML and mzIdentML files (mass
 spectrometry data). R package version 2.5.3.
+
+
+Lazar C, Gatto L, Ferro M, Bruley C, and Burger T. Accounting for the
+Multiple Natures of Missing Values in Label-Free Quantitative
+Proteomics Data Sets to Compare Imputation Strategies. Publication
+Date: February 23, 2016
+DOI:[10.1021/acs.jproteome.5b00981](http://pubs.acs.org/doi/abs/10.1021/acs.jproteome.5b00981).
 
 Pang et al. Tools to covisualize and coanalyze proteomic data with
 genomes and transcriptomes: validation of genes and alternative mRNA
