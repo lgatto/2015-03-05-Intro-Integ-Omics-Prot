@@ -4,6 +4,6 @@
 %.pdf: %.md
 	Rscript -e "rmarkdown::render('$^')"
 
-01-msprot-rnaseq.pdf: 01-msprot-rnaseq.Rmd
-	Rscript -e "rmarkdown::render('01-msprot-rnaseq.Rmd', output_file = 'mapping-slides.pdf', output_format = 'beamer_presentation')"
+all: 00-intro.pdf 01-msprot-rnaseq.pdf
+	pdftk A=00-intro.pdf B=01-msprot-rnaseq.pdf C=thetatut.pdf cat A1-5 B C A6 output slides.pdf
 
