@@ -63,6 +63,8 @@ Thank you for your attention.
 - Collaborators: Lisa Breckers and Sebastian Gibb
 - Funding: BBSRC
 
+Slides: doi:10.6084/m9.figshare.3085462
+
 This material is licensed under a [**Creative Commons
 Attribution-ShareAlike 3.0
 License**](http://creativecommons.org/licenses/by-sa/3.0/).  This means

@@ -14,7 +14,9 @@
    data using [transfer learning](./transfer-learning.md) to improve
    inference of sub-cellular localisation of proteins.
 
-Material: [slides.pdf](https://github.com/ComputationalProteomicsUnit/Intro-Integ-Omics-Prot/raw/master/slides.pdf)
+Material:
+[slides.pdf](https://github.com/ComputationalProteomicsUnit/Intro-Integ-Omics-Prot/raw/master/slides.pdf)
+doi:10.6084/m9.figshare.3085462.
 
 ## Software
 
