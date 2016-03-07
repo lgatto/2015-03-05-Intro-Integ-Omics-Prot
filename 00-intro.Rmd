@@ -53,3 +53,17 @@ Very versatile and rely on experiment-wide clustering/modelling and
 crucially depend on reliably linking features (explicitly via common
 identifiers or through functional contextualisation).
 
+
+## Acknowledgement
+
+Thank you for your attention.
+
+- Collaborators: Lisa Breckers and Sebastian Gibb
+- Funding: BBSRC
+
+This material is licensed under a [**Creative Commons
+Attribution-ShareAlike 3.0
+License**](http://creativecommons.org/licenses/by-sa/3.0/).  This means
+you are free to copy, distribute and transmit the work, adapt it to
+your needs as long as you cite its origin and, if you do redistribute
+it, do so under the same license.
