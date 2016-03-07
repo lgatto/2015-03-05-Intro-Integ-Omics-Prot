@@ -151,10 +151,6 @@ kable(bm2, row.names = 0)
 
 # Genomic coordinates
 
-Let's fetch the coordinates of all possible transcipts, making sure
-that the names of the Ensembl identifiers are used to name the grl
-ranges (using `use.names = TRUE`). We obtain 30 sets of ranges for 9
-proteins.
 
 ```{r pcgrl, echo=FALSE}
 ## eid
@@ -438,6 +434,12 @@ MNAR features should ideally be imputed with a **left-censor**
 use **hot deck** methods (nearest neighbour (left), maximum likelihood, ...)
 when data are missing at random.
 
+# Summary
+
+- mapping peptides along genomic coordinates
+- protein/transcipt mapping
+- protein groups
+- missing values and coverage
 
 # References
 
