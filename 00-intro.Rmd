@@ -14,7 +14,7 @@ output:
 
 Two use-cases, and caveats:
 
-- Integration of mass spectrometry based proteomics andRNA-Seq
+- Integration of mass spectrometry based proteomics and RNA-Seq
   transcriptomics: **mapping peptides to genome coordinates**
 
 - Combining exerimental spatial proteomics and third-pary data using
@@ -24,9 +24,11 @@ Two use-cases, and caveats:
 ## Different approaches to data integration (1)
 
 Convertion to common feature identifiers and measuring co relation (or
-lack thereof). Transcript and protein measurement have previously been
-combined and compared by linking the respective features by a **common
-(gene) identifier**
+lack thereof). 
+
+Transcript and protein measurement have previously been combined and
+compared by linking the respective features by a **common (gene)
+identifier**
 ([PMID:21179022](http://www.ncbi.nlm.nih.gov/pubmed/21179022),
 [PMID:22068331](http://www.ncbi.nlm.nih.gov/pubmed/22068331)).
 

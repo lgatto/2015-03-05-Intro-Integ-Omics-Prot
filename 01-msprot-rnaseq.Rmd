@@ -18,6 +18,21 @@ data(p)
 explicitly considered a mapping exercise)* and *short reads along
 genome coordinates*.
 
+# Mapping protein and gene identifers
+
+The protein database and the genome are _independent_, i.e. the
+proteins do not make explicitly reference to the genome they originate
+from.
+
+![DB in proteomics](./figure/indep-prot-db.png)
+
+# Mapping protein and gene identifers
+
+![linking with genomics](./figure/gen-prot-db.png)
+
+If we want to map UniProt accession numbers to genomic identifiers
+(Ensembl transcipt identifiers)
+
 # Mapping peptides to genomic coordinates
 
 The **goal** is to map peptides from protein coordinates (1 to *L_p*)
@@ -31,12 +46,12 @@ Pbase:::mapplot()
 
 Illustration with the
 [`Pbase`](http://bioconductor.org/packages/devel/bioc/html/Pbase.html)
-Bioconductor package (devel version).
+Bioconductor package.
 
-We have an example data (named `p`) composed of `r length(p)`
+We have an example data composed of `r length(p)`
 proteins, with UniProt accession numbers and Ensembl transcipt
 identifiers and each protein has a set experimentally observed
-peptides (see table below). This `p` object was generated from the
+peptides (see table below). This object was generated from the
 protein database (fasta file) and the MS identification results
 (`mzIdentML` file) against this very same protein database.
 
@@ -121,11 +136,12 @@ If we hadn't the curated UniProt accession/Ensembl transcript
 identifer maps, we would, for example, query an online repositary such
 as the Ensembl Biomart instance. For example
 
-```{r P02545, echo=FALSE, cache=TRUE}
+```{r P02545, echo=FALSE, cache=TRUE, message=FALSE}
 library("UniProt.ws")
 upws <- UniProt.ws()
 bm2 <- suppressMessages(select(upws, "P02545", "ENSEMBL_TRANSCRIPT", "UNIPROTKB"))
 eid <- bm2[, 2]
+library("biomaRt")
 ens <- useMart("ensembl", "hsapiens_gene_ensembl")
 ```
 
@@ -280,9 +296,10 @@ hist(cvg$coverage, breaks = 100, xlab = "coverage", main = "")
 
 # And
 
-- the majority of peptides map to a minority of proteins
-- different peptides within one protein can differently detectable in
-  an MS
+- the majority of peptides map to a minority of proteins different
+
+- peptides within one protein can be differently detectable in MS
+  acquistions
 
 # Protein inference
 
@@ -301,21 +318,6 @@ proteins and **groups** of indistinguishable or non-differentiable
 proteins identified by shared (non-unique) peptides.
 
 **Caveat**: Mapping between protein groups and unique transcripts?
-
-# Mapping protein and gene identifers
-
-The protein database and the genome are _independent_, i.e. the
-proteins do not make explicitly reference to the genome they originate
-from.
-
-![DB in proteomics](./figure/indep-prot-db.png)
-
-# Mapping protein and gene identifers
-
-![linking with genomics](./figure/gen-prot-db.png)
-
-If we want to map UniProt accession numbers to genomic identifiers
-(Ensembl transcipt identifiers):
 
 # Mapping identifiers
 
@@ -432,8 +434,8 @@ LC/MSMS experiments.
 ![RSR KNN and MinDet imputation](./figure/imp-sim.png)
 
 MNAR features should ideally be imputed with a **left-censor**
-(minimum value, ~zero~, ...)  method. Conversely, it is recommended to
-use **hot deck** methods (nearest neighbour, maximum likelihood, ...)
+(minimum value (right), but not zero, ...)  method. Conversely, it is recommended to
+use **hot deck** methods (nearest neighbour (left), maximum likelihood, ...)
 when data are missing at random.
 
 
