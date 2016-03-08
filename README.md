@@ -2,7 +2,7 @@
 
 
 - short URL: http://tinyurl.com/Intro-Integ-Omics-Prot (current)
-- [Introduction to Integrative Omics](http://www.ebi.ac.uk/training/course/introduction-integrative-omics)
+- [Introduction to Integrative Omics](http://www.ebi.ac.uk/training/events/2016/introduction-integrative-omics-0)
 - Previous content [05 March 2015, EMBL-EBI](https://github.com/ComputationalProteomicsUnit/Intro-Integ-Omics-Prot/tree/2015-03-05-EBI)
 
 
