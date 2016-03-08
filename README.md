@@ -16,7 +16,7 @@
 
 Material:
 [slides.pdf](https://github.com/ComputationalProteomicsUnit/Intro-Integ-Omics-Prot/raw/master/slides.pdf)
-doi:10.6084/m9.figshare.3085462.
+doi:[10.6084/m9.figshare.3085462](https://figshare.com/articles/Data_integration_in_proteomics/3085462).
 
 ## Software
 
