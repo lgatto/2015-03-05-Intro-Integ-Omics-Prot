@@ -30,8 +30,8 @@ from.
 
 ![linking with genomics](./figure/gen-prot-db.png)
 
-If we want to map UniProt accession numbers to genomic identifiers
-(Ensembl transcipt identifiers)
+Need to map UniProt accession numbers to genomic identifiers (Ensembl
+transcipt identifiers)
 
 # Mapping peptides to genomic coordinates
 
@@ -51,9 +51,11 @@ Bioconductor package.
 We have an example data composed of `r length(p)`
 proteins, with UniProt accession numbers and Ensembl transcipt
 identifiers and each protein has a set experimentally observed
-peptides (see table below). This object was generated from the
-protein database (fasta file) and the MS identification results
-(`mzIdentML` file) against this very same protein database.
+peptides (see table below).
+
+This data was generated from the protein database (`fasta` file) and
+the MS identification results (`mzIdentML` file) against this very
+same protein database.
 
 # 
 
@@ -403,7 +405,7 @@ processingData(flt)
 any(is.na(filterNA(naset)))
 ```
 
-- Data imputation: infering plausible values for missing data.
+- Data imputation: inferring plausible values for missing data.
 
 
 # Data imputation

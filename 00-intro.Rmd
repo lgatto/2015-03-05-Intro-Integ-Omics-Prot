@@ -33,9 +33,8 @@ identifier**
 [PMID:22068331](http://www.ncbi.nlm.nih.gov/pubmed/22068331)).
 
 Such approaches are often difficult to track and are susceptible to
-inconsistencies in the relation between different data sources when,
-for example, multiple transcripts are compared to ambiguous protein
-groups.
+inconsistencies in the relation between different data sources
+(discussed later).
 
 ## Different approaches to data integration (2)
 
