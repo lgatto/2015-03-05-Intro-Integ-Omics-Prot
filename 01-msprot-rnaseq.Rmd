@@ -16,7 +16,7 @@ data(p)
 
 **Mapping** of *peptides along protein sequences (although not
 explicitly considered a mapping exercise)* and *short reads along
-genome coordinates*.
+genome coordinates* along a common reference.
 
 # Mapping protein and gene identifers
 
@@ -267,7 +267,7 @@ http://bioconductor.org/packages/Pbase
 
 **Mapping** of *peptides along protein sequences (although not
 explicitly considered a mapping exercise)* and *short reads along
-genome coordinates*.
+genome coordinates*  along a common reference.
 
 But...
 
